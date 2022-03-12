@@ -1,0 +1,44 @@
+.search-field {
+    position: relative;
+
+    input {
+        font-size: 16px;
+        line-height: 1;
+        padding: 10px 15px;
+        padding-right: 44px;
+        width: 100%;
+
+        border: 1px solid $gray;
+        border-radius: 4px;
+        background-color: $white;
+        color: $main-black;
+        outline: none;
+
+        &::placeholder {
+            font-size: 16px;
+            line-height: 1;
+            color: $main-black;
+        }
+
+        @media(max-width: $lg_w) {
+            font-size: 14px;
+        }
+    }
+
+    button {
+        @extend .button-default;
+        @extend .flex-item-center;
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        border-radius: 4px;
+        height: 100%;
+        width: 40px;
+
+        svg {
+            fill: $main-black;
+        }
+    }
+}

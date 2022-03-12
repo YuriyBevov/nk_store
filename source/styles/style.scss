@@ -1,0 +1,24 @@
+@import "fonts";
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "global";
+@import "common_styles";
+
+//--- plugins
+
+@import "plugins/swiper";
+@import "plugins/nouislider";
+
+//--- components
+
+@import "components/crawl-line";
+@import "components/search-field";
+@import "components/catalog-nav";
+@import "components/burger";
+@import "components/social-list";
+@import "components/mobile-menu";
+
+// blocks
+@import "common/header";
+@import "common/footer";

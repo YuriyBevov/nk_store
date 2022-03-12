@@ -1,0 +1,86 @@
+include ../mixins/svg-icon
+
+-
+  const nav_list = [
+      {
+          title: 'О нас',
+          url:  'about.html'
+      },
+
+      {
+          title: 'Контакты',
+          url:  'contacts.html'
+      },
+
+      {
+          title: 'Доставка',
+          url:  'delivery.html'
+      },
+
+      {
+          title: 'Условия оплаты и возврата',
+          url: '#'
+      },
+
+      {
+          title: 'Политика конфиденциальности',
+          url: '#'
+      }
+  ]
+  
+
+header.header
+  include ../components/crawl-line
+  .header__content
+    .header__wrapper
+      .header__logo
+        img(src="../assets/img/main-logo.png" alt="Лого" width="150" height="80")
+      
+      .header__contacts
+
+        .header__city
+          +svg-icon(24,24,'icon-map')
+          span г. Москва
+
+        .header__phones
+          +svg-icon(24,24,'icon-phone')
+
+          a(href="tel:+79062723744") +7(906)272-37-44
+
+        .header__socials
+          a(href="#") 
+            +svg-icon(20,18,'icon-whatsapp')
+          a(href="#")
+            +svg-icon(20,20,'icon-insta')
+          a(href="#")
+            +svg-icon(20,18,'icon-tg')
+          a(href="#")
+            +svg-icon(12,23,'icon-fb')
+      
+      .header__menu
+        nav.header__nav
+          ul.header__nav-list
+            each item in nav_list
+              li.header__nav-item
+                a(href= item.url)= item.title
+
+        .header__user
+          form(action="#")
+            include ../components/search-field
+          
+          a(href="#").header__user-login
+            +svg-icon(24,24,'icon-user')
+            span Личный кабинет
+          
+          a(href="#").header__user-favourite
+            +svg-icon(24,24,'icon-heart')
+            span Избранное
+          
+          a(href="#").header__user-cart
+            +svg-icon(24,24,'icon-cart')
+            span Корзина
+          
+        include ../components/burger
+
+  .header__catalog
+    include ../components/catalog-nav    

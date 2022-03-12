@@ -1,0 +1,46 @@
+//fonts
+
+$f1_reg: 'Montserrat-Regular';
+$f1_med: 'Montserrat-Medium';
+$f1_semi: 'Montserrat-SemiBold';
+
+$f2_thin: 'Roboto-Thin';
+$f2_reg: 'Roboto-Regular';
+$f2_med: 'Roboto-Medium';
+$f2_bold: 'Roboto-Bold';
+
+$f3_reg: 'HeinrichScript';
+$f4_reg: 'Lobster-Regular';
+
+// animation
+
+// widths
+$xxl_w: 1920px;
+$xl_w: 1440px;
+$lg_w: 1140px;
+$md_w: 768px;
+$sm_w: 480px;
+$xs_w: 320px;
+
+// colors
+
+$main-bg: rgba(255, 233, 118, 0.43);
+
+$white: #ffffff;
+$black: #000000;
+$main-black: #2C2B3C;
+
+$purple: rgba(143, 31, 232, 0.86);
+$blue: rgba(23, 123, 239, 0.86);
+$red: rgba(232, 31, 67, 0.72);
+$gray: #666666;
+$gold: #a58e18;
+
+// transitions
+
+$main-transition: 0.3s ease-out;
+
+// retina
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

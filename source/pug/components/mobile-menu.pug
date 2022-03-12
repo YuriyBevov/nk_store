@@ -1,0 +1,64 @@
+.mobile-menu
+  .mobile-menu__wrapper
+    ul.mobile-menu__nav
+      li.mobile-menu__nav-item
+        a(href="#").mobile-menu__nav-link.mobile-menu__nav-link--user
+          +svg-icon(24,24,'icon-user')
+          span Личный кабинет
+      li.mobile-menu__nav-item    
+        a(href="#").mobile-menu__nav-link.mobile-menu__nav-link--favourite
+          +svg-icon(24,24,'icon-heart')
+          span Избранное
+      li.mobile-menu__nav-item    
+        a(href="#").mobile-menu__nav-link.mobile-menu__nav-link--cart
+          +svg-icon(24,24,'icon-cart')
+          span Корзина
+    
+    form(action="#").mobile-menu__search
+      include ../components/search-field
+
+    ul.mobile-menu__catalog
+      li.mobile-menu__catalog-item
+        a(href="catalog.html")
+          span Новинки
+      
+      li.mobile-menu__catalog-item
+        a(href="catalog.html")
+          span Товары для малышей
+
+      li.mobile-menu__catalog-item
+        a(href="catalog.html")
+          span Мальчики
+
+      li.mobile-menu__catalog-item
+        a(href="catalog.html")
+          span Девочки
+
+      li.mobile-menu__catalog-item
+        a(href="catalog.html")
+          span Обувь
+
+      li.mobile-menu__catalog-item
+        a(href="catalog.html")
+          span Игрушки
+      
+    ul
+      li
+        a(href="about.html")
+          span О нас
+      
+      li
+        a(href="contacts.html")
+          span Контакты
+
+      li
+        a(href="delivery.html")
+          span Доставка
+
+      li
+        a(href="about.html")
+          span Условия оплаты и возврата
+
+      li
+        a(href="about.html")
+          span Политика конфиденциальности

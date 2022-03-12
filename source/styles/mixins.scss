@@ -1,0 +1,24 @@
+@mixin focus-color($color) {
+    transition: color $main-transition;
+    &:hover,
+    &:focus {
+        color: $color;
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+}
+
+@mixin svg-focus-fill($color) {
+    transition: fill $main-transition;
+
+    &:hover,
+    &:focus {
+        fill: $color;
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+}

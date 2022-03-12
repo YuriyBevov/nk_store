@@ -1,0 +1,16 @@
+.crawl-line {
+    background-color: $purple;
+    opacity: 0.8;
+    padding: 5px 0;
+    width: 100%;
+
+    &__wrapper {
+        @extend .flex-item-center;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 14px;
+        color: $white;
+    }
+}

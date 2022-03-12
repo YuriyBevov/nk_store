@@ -1,0 +1,40 @@
+-
+  const navList = [
+      {
+          title: 'Новинки',
+          link:  'catalog.html'
+      },
+
+      {
+          title: 'Товары для малышей',
+          link:  'catalog.html'
+      },
+
+      {
+          title: 'Мальчики',
+          link:  'catalog.html'
+      },
+
+      {
+          title: 'Девочки',
+          link:  'catalog.html'
+      },
+
+      {
+          title: 'Обувь',
+          link:  'catalog.html'
+      },
+
+      {
+          title: 'Игрушки',
+          link:  'catalog.html'
+      },
+  ]
+
+nav.nav
+  .cmn__wrapper.nav__wrapper
+    .nav__list
+      each item in navList
+        .nav__item
+          a(href=item.link).nav__link
+            span= item.title
