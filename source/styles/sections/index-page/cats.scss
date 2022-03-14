@@ -12,11 +12,29 @@
         grid-auto-rows: 350px;
         grid-gap: 20px;
 
+        @media(max-width: $lg_w) {
+            grid-gap: 10px;
+            grid-auto-rows: 300px;
+        }
+
+        @media(max-width: 960px) {
+            grid-auto-rows: 250px;
+        }
+
+        @media(max-width: $md_w) {
+            grid-auto-rows: 200px;
+        }
+
         li {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             box-shadow: 10px 10px 10px 5px rgba(143, 31, 232, 0.15);
+
+            @media(max-width: 660px) {
+                box-shadow: none;
+                background-position: top center;
+            }
 
             a {
                 display: flex;
@@ -24,8 +42,37 @@
                 height: 100%;
                 padding: 30px;
 
+                @media(max-width: $lg_w) {
+                    padding: 20px;
+                }
+
+                @media(max-width: 960px) {
+                    padding: 15px;
+                }
+
+                @media(max-width: $md_w) {
+                    padding: 10px;
+                }
+
                 p {
                     @include main_btn($purple, $yellow);
+                    padding: 5px 20px;
+                    border-radius: 16px;
+                    margin-top: auto;
+
+                    @media(max-width: $lg_w) {
+                        font-size: 22px;
+                    }
+
+                    @media(max-width: $md_w) {
+                        font-size: 18px;
+                        padding: 5px 15px;
+                        border-radius: 12px;
+                    }
+
+                    @media(max-width: 660px) {
+                        margin-right: auto;
+                    }
                 }
             }
         }
@@ -38,10 +85,34 @@
 
             a p {
                 transform: rotate(-90deg);
-                top: 90px;
+                top: 75px;
                 left: -70px;
                 position: relative;
                 padding: 10px 30px;
+                margin-top: 0;
+
+                @media(max-width: $lg_w) {
+                    top: 60px;
+                }
+
+                @media(max-width: $md_w) {
+                    top: 57px;
+                    left: -57px;
+                }
+
+                @media(max-width: 660px) {
+                    top: 0;
+                    left: 0;
+                    transform: rotate(0);
+                    margin-top: auto;
+                }
+            }
+
+            @media(max-width: 660px) {
+                grid-column-start: 1;
+                grid-column-end: 8;
+                grid-row-start: 1;
+                grid-row-end: 2;
             }
         }
 
@@ -52,9 +123,19 @@
             grid-row-start: 1;
             grid-row-end: 2;
 
+            @media(max-width: 660px) {
+                grid-column-start: 1;
+                grid-column-end: 8;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
             a p {
                 margin-left: auto;
-                margin-top: auto;
+
+                @media(max-width: 660px) {
+                    margin-left: 0;
+                }
             }
         }
 
@@ -64,6 +145,13 @@
             grid-column-end: 8;
             grid-row-start: 2;
             grid-row-end: 3;
+
+            @media(max-width: 660px) {
+                grid-column-start: 1;
+                grid-column-end: 8;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
 
             a p{
                 margin-right: auto;
@@ -77,9 +165,15 @@
             grid-row-start: 1;
             grid-row-end: 2;
 
+            @media(max-width: 660px) {
+                grid-column-start: 1;
+                grid-column-end: 8;
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
+
             a p {
                 margin-right: auto;
-                margin-top: auto;
             }
         }
 
@@ -90,9 +184,19 @@
             grid-row-start: 2;
             grid-row-end: 3;
 
-            
+            @media(max-width: 660px) {
+                grid-column-start: 1;
+                grid-column-end: 8;
+                grid-row-start: 5;
+                grid-row-end: 6;
+            }
+
             a p {
                 margin-left: auto;
+
+                @media(max-width: 660px) {
+                    margin-left: 0;
+                }
             }
         }
     }
