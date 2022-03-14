@@ -1,0 +1,113 @@
+.catalog-section {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(360deg,rgba(165,142,24,.36) 14.37%,rgba(214,193,85,.11) 82.08%);
+    padding: 20px 30px 60px 0;
+    overflow: hidden;
+    animation: fadeIn 0.5s linear forwards;
+
+    &.js-active {
+        display: flex;
+    }
+
+    &__close {
+        position: absolute;
+        top: -40px;
+        right: 20px;
+
+        @extend .button-default;
+
+        svg {
+            fill: $main-black;
+        }
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        content: '';
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 9;
+    }
+
+    &::before {
+        bottom: -6px;
+        background-image: url('../assets/img/catalog-section-line1.svg');
+    }
+
+    &::after {
+        bottom: 8px;
+        background-image: url('../assets/img/catalog-section-line2.svg');
+    }
+
+    &__wrapper {
+        @extend .wrapper;
+        display: flex;
+        height: 100%;
+        max-height: 600px;
+        overflow: hidden;
+        overflow-y: auto;
+        padding-top: 40px;
+
+        @extend .scroll-sm;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        max-width: calc(100% - 360px);
+        height: fit-content;
+        padding-right: 20px;
+    }
+
+    &__item {
+        width: calc(50% - 20px);
+        height: fit-content;
+        margin-bottom: 15px;
+        margin-right: auto;
+
+        a {
+            display: flex;
+            padding: 10px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.2;
+            color: rgba(0, 0, 0, 0.56);
+
+            @include focus-color($purple);
+
+            @media(max-width: $lg_w) {
+                font-size: 16px;
+            }
+        }
+
+        @media(max-width: 960px) {
+            width: 100%;
+        }
+    }
+
+    &__side {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        max-width: 360px;
+
+        img {
+            width: 100%;
+            max-width: 350px;
+            height: 100%;
+            min-height: 350px;
+            object-fit: contain;
+            object-position: left;
+        }
+    }
+}

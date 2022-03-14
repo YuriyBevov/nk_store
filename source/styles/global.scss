@@ -34,6 +34,8 @@ body {
   &.body-locked {
     overflow: hidden;
   }
+  
+  @extend .main-scroll;
 }
 
 ::-webkit-scrollbar { /* 1 - скроллбар */

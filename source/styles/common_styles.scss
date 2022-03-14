@@ -41,3 +41,23 @@
     align-items: center;
     justify-content: center;
 }
+
+.main-scroll {
+    &::-webkit-scrollbar {
+        background-color: $gold;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $purple;
+    }
+}
+
+.scroll-sm {
+    &::-webkit-scrollbar {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $gold;
+    }
+}

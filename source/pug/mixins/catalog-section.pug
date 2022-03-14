@@ -1,0 +1,15 @@
+mixin catalog-section(obj)
+
+  .catalog-section
+    .catalog-section__wrapper
+
+      ul.catalog-section__list
+        each item in obj.catalog  
+          li.catalog-section__item
+            a(href= item.url)= item.name
+
+      .catalog-section__side
+        button(type="button").catalog-section__close.js-close
+          svg(width="40" height="40")
+            use(xlink:href="#icon-close")
+        img(src=obj.banner.url alt="Баннер" width="350" height="580")

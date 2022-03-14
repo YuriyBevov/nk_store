@@ -86,16 +86,227 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./source/scripts/functions.js":
+/*!*************************************!*\
+  !*** ./source/scripts/functions.js ***!
+  \*************************************/
+/*! exports provided: limitStr, addClass, removeClass, checkClass, toggleClass, bodyLocker, changeTabs, getBoundingClientRect */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "limitStr", function() { return limitStr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkClass", function() { return checkClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleClass", function() { return toggleClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bodyLocker", function() { return bodyLocker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeTabs", function() { return changeTabs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBoundingClientRect", function() { return getBoundingClientRect; });
+function limitStr( str, n ) {
+    if ( str.length > 50 ) {
+        return str.slice(0, n) + '...';
+    } else {
+        return str
+    }
+}
+
+function addClass(el, cl) {
+    el.classList.add(cl);
+}
+
+function removeClass(el, cl) {
+    el.classList.remove(cl);
+}
+
+function checkClass(el, cl) {
+    return el.classList.contains(cl);
+}
+
+function toggleClass(el, cl) {
+    el.classList.toggle(cl);
+}
+
+function bodyLocker(bool) {
+    let body = document.querySelector('body');
+
+    bool ?
+    body.style.overflow = 'hidden' : body.style.overflow = 'auto';
+}
+
+function changeTabs(el, contentList) {
+    let tabs = document.querySelectorAll(el);
+    let content = document.querySelectorAll(contentList);
+
+    if(tabs) {
+        const onClickChangeTab = (evt) => {
+            let data = evt.currentTarget.getAttribute('data-tab-opener');
+            
+            if(content) {
+                content.forEach(c => {
+                    c.classList.contains('active') ?
+                    c.classList.remove('active') : null;
+
+                    c.getAttribute('data-tab') === data ?
+                    c.classList.add('active') : null;
+                });
+            }
+
+            tabs.forEach(tab => {
+                tab.classList.contains('active') ?
+                tab.classList.remove('active') : null;
+            });
+
+            evt.currentTarget.classList.add('active');
+
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', onClickChangeTab);
+        });
+    }
+}
+
+function getBoundingClientRect(elem, side) {
+
+    if(side === 'height') {
+        return elem.getBoundingClientRect().height
+    }
+
+    
+}
+
+
+
+/***/ }),
+
 /***/ "./source/scripts/index.js":
 /*!*********************************!*\
   !*** ./source/scripts/index.js ***!
   \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_setCatalogHeight_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/setCatalogHeight.js */ "./source/scripts/modules/setCatalogHeight.js");
+/* harmony import */ var _modules_openCatalogMenu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/openCatalogMenu.js */ "./source/scripts/modules/openCatalogMenu.js");
 
 
+
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/openCatalogMenu.js":
+/*!***************************************************!*\
+  !*** ./source/scripts/modules/openCatalogMenu.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+let links = document.querySelectorAll('.catalog-nav__link');
+
+let activeLink = null;
+let activeSection = null;
+
+const onMouseOverShowCatalogSection = (evt) => {
+
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(true);
+    
+    if(activeLink !== evt.currentTarget) {
+        activeLink ?
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(activeLink, 'js-active') : null;
+
+        activeSection ?
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(activeSection, 'js-active') : null;
+
+        activeLink = evt.currentTarget;        
+        activeSection =  activeLink.nextElementSibling;
+        
+        if(activeSection) {
+            !Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["checkClass"])(activeSection, 'js-active') ?
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(activeSection, 'js-active') : null;
+
+            let closeBtn = activeSection.querySelector('.js-close');
+
+            closeBtn.addEventListener('click', onClickCloseCatalogSection);
+        }
+
+        !Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["checkClass"])(activeLink, 'js-active') ?
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(activeLink, 'js-active') : null;
+
+        window.addEventListener('mousemove', onMouseOverHideCatalogSection);
+    }
+}
+
+const onClickCloseCatalogSection = (evt) => {
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(activeLink, 'js-active');
+    activeLink = null;
+
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(activeSection, 'js-active');
+    activeSection = null;
+    window.removeEventListener('mousemove', onMouseOverHideCatalogSection);
+    evt.currentTarget.removeEventListener('click', onClickCloseCatalogSection);
+}
+
+const onMouseOverHideCatalogSection = (evt) => {
+    if(!activeLink.contains(evt.target) && !activeSection.contains(evt.target)){
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(activeLink, 'js-active');
+        activeLink = null;
+
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(activeSection, 'js-active');
+        activeSection = null;
+        window.removeEventListener('mousemove', onMouseOverHideCatalogSection);
+    }
+}
+
+links.forEach(link => {
+    link.addEventListener('mouseover', onMouseOverShowCatalogSection);
+})
+
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/setCatalogHeight.js":
+/*!****************************************************!*\
+  !*** ./source/scripts/modules/setCatalogHeight.js ***!
+  \****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+let header = document.querySelector('header');
+let catalogSections = document.querySelectorAll('.catalog-section');
+
+let headerHeight = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["getBoundingClientRect"])(header, 'height');
+
+function setCatalogSectionWidth() {
+    catalogSections.forEach(section => {
+        section.style.height = 'calc(85vh - ' + headerHeight + 'px)';
+    });
+}
+
+setCatalogSectionWidth();
+
+const onResizeCheckHeaderHeight = () => {
+    if(headerHeight !== Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["getBoundingClientRect"])(header, 'height')) {
+        headerHeight = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["getBoundingClientRect"])(header, 'height');
+        setCatalogSectionWidth();
+    }
+}
+
+window.addEventListener('resize', onResizeCheckHeaderHeight);
 
 
 /***/ })

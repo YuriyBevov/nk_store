@@ -1,5 +1,5 @@
 .catalog-nav {
-
+    position: relative; // для catalog-section
     &__wrapper {
         @extend .wrapper;
         display: flex;
@@ -12,32 +12,33 @@
     }
 
     &__item {
-        a {
-            font-family: $f3_reg;
-            font-size: 24px;
-            line-height: 1;
-            color: $main-black;
+        
+    }
 
-            @extend .flex-item-center;
-            padding: 0 20px;
+    &__link {
+        font-family: $f3_reg;
+        font-size: 24px;
+        line-height: 1;
+        color: $main-black;
 
+        @extend .flex-item-center;
+        padding: 0 20px;
+
+        span {
+            padding-top: 10px;
+            border-bottom: 2px solid transparent;
+            transition: border $main-transition;
+        }
+
+        &.js-active {
             span {
-                padding-top: 10px;
-                border-bottom: 2px solid transparent;
-                transition: border $main-transition;
+                border-color: $gold;
             }
-
-            &:hover,
-            &:focus {
-                span {
-                    border-color: $gold;
-                }
-            }
-            
-            @media(max-width: $lg_w) {
-                font-size: 22px;
-                padding: 0 10px;
-            }
+        }
+        
+        @media(max-width: $lg_w) {
+            font-size: 22px;
+            padding: 0 10px;
         }
     }
 }
