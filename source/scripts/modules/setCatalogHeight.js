@@ -7,7 +7,7 @@ let headerHeight = getBoundingClientRect(header, 'height');
 
 function setCatalogSectionWidth() {
     catalogSections.forEach(section => {
-        section.style.height = 'calc(85vh - ' + headerHeight + 'px)';
+        section.style.height = 'calc(100vh - ' + headerHeight + 'px)';
     });
 }
 

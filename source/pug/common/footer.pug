@@ -1,9 +1,39 @@
 footer.footer
-    .footer__social
-      include ../components/social-list
+  .footer__wrapper
+    .footer__top
+      .footer__logo
+        img(src="../assets/img/main-logo.png" alt="Лого" width="150" height="80")
 
+      ul.footer__nav
+        li.footer__nav-item
+          a(href="about.html").footer__nav-link О нас
+        
+        li.footer__nav-item
+          a(href="contacts.html").footer__nav-link Контакты
+        
+        li.footer__nav-item
+          a(href="delivery.html").footer__nav-link Доставка и оплата
 
-    .footer__bottom-dev
-      p Сайт разработан <a href="mailto:yuriybevov@gmail.com">yuriybevov@gmail.com </a>
+      .footer__social
+        span Мы в соцсетях:
+        include ../components/social-list
+    
+    .footer__bottom
+      ul.footer__bottom-menu
+        li.footer__bottom-menu-item
+          a(href="#") Сертификаты на продукцию 
 
-      
+        li.footer__bottom-menu-item
+          a(href="#") Условия оплаты и возврата 
+        
+        li.footer__bottom-menu-item
+          a(href="#") Реквизиты компании
+
+        li.footer__bottom-menu-item
+          a(href="#") Публичная оферта
+        
+        li.footer__bottom-menu-item
+          a(href="#") Политика об обработке и защите персональных данных
+ 
+      .footer__bottom-dev
+        p Разработка сайта: <a href="mailto:yuriybevov@gmail.com">yuriybevov@gmail.com </a>      

@@ -4,10 +4,10 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: linear-gradient(360deg,rgba(165,142,24,.36) 14.37%,rgba(214,193,85,.11) 82.08%);
+    background: linear-gradient(360deg,rgba(165, 142, 24, 0.36) 14.37%,rgba(214,193,85,.11) 82.08%);
     padding: 20px 30px 60px 0;
     overflow: hidden;
-    animation: fadeIn 0.5s linear forwards;
+    z-index: 11;
 
     &.js-active {
         display: flex;
@@ -58,6 +58,8 @@
         padding-top: 40px;
 
         @extend .scroll-sm;
+        
+        animation: fadeIn 0.5s linear forwards;
     }
 
     &__list {

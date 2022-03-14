@@ -293,7 +293,7 @@ let headerHeight = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["getBoundin
 
 function setCatalogSectionWidth() {
     catalogSections.forEach(section => {
-        section.style.height = 'calc(85vh - ' + headerHeight + 'px)';
+        section.style.height = 'calc(100vh - ' + headerHeight + 'px)';
     });
 }
 
