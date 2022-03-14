@@ -2,14 +2,14 @@
   const reviews = [1,2,3,4,5,6,7,8,9]
 
 section.reviews
-  .cmn__wrapper
-    h2.cmn__block-title Отзывы наших покупателей
+  .reviews__wrapper
+    h2.section-colored-title Отзывы наших покупателей
 
     .swiper.reviews-swiper
       .swiper-wrapper
         each review in reviews
           .swiper-slide
-            include ../../components/cards/review-card
+            include ../../components/review-card
 
       .swiper-button-next.reviews-button-next
         svg(width="20" height="20")

@@ -37,3 +37,16 @@ if(introSlider) {
       },
    })
 }
+
+const reviewsSlider = document.querySelector('.reviews-swiper');
+
+if(reviewsSlider) {
+   new Swiper(reviewsSlider, {
+      slidesPerView: 'auto',
+
+      navigation: {
+         nextEl: ".reviews-button-next",
+         prevEl: ".reviews-button-prev",
+      }
+   })
+}

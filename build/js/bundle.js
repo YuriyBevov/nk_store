@@ -12261,7 +12261,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeTabs", function() { return changeTabs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBoundingClientRect", function() { return getBoundingClientRect; });
 function limitStr( str, n ) {
-    if ( str.length > 50 ) {
+    if ( str.length > n ) {
         return str.slice(0, n) + '...';
     } else {
         return str
@@ -12349,11 +12349,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
 /* harmony import */ var _modules_setCatalogHeight_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/setCatalogHeight.js */ "./source/scripts/modules/setCatalogHeight.js");
 /* harmony import */ var _modules_openCatalogMenu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/openCatalogMenu.js */ "./source/scripts/modules/openCatalogMenu.js");
+/* harmony import */ var _modules_limitStrs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/limitStrs.js */ "./source/scripts/modules/limitStrs.js");
 
 
 
 
 
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/limitStrs.js":
+/*!*********************************************!*\
+  !*** ./source/scripts/modules/limitStrs.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+let reviewCardText = document.querySelectorAll('.review-card__content');
+
+reviewCardText.forEach(content => {
+    content.innerHTML = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["limitStr"])(content.innerHTML, 195);
+})
 
 /***/ }),
 
@@ -12518,6 +12540,19 @@ if(introSlider) {
          el: ".intro-swiper-pagination",
          clickable: true
       },
+   })
+}
+
+const reviewsSlider = document.querySelector('.reviews-swiper');
+
+if(reviewsSlider) {
+   new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](reviewsSlider, {
+      slidesPerView: 'auto',
+
+      navigation: {
+         nextEl: ".reviews-button-next",
+         prevEl: ".reviews-button-prev",
+      }
    })
 }
 
