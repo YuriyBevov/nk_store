@@ -6,7 +6,6 @@ let activeLink = null;
 let activeSection = null;
 
 const onMouseOverShowCatalogSection = (evt) => {
-
     bodyLocker(true);
     
     if(activeLink !== evt.currentTarget) {
@@ -43,6 +42,7 @@ const onClickCloseCatalogSection = (evt) => {
     activeSection = null;
     window.removeEventListener('mousemove', onMouseOverHideCatalogSection);
     evt.currentTarget.removeEventListener('click', onClickCloseCatalogSection);
+    bodyLocker(false);
 }
 
 const onMouseOverHideCatalogSection = (evt) => {
@@ -53,6 +53,7 @@ const onMouseOverHideCatalogSection = (evt) => {
         removeClass(activeSection, 'js-active');
         activeSection = null;
         window.removeEventListener('mousemove', onMouseOverHideCatalogSection);
+        bodyLocker(false);
     }
 }
 

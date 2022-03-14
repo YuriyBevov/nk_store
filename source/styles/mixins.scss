@@ -22,3 +22,34 @@
         opacity: 0.8;
     }
 }
+
+@mixin main_btn($color, $bg-color, $iconSide: null) {
+    @extend .flex-item-center;
+
+    border-radius: 50px;
+    width: fit-content;
+    font-family: $f4_reg;
+    font-size: 26px;
+    line-height: 1.2;
+    padding: 10px 20px;
+    background-color: $bg-color;
+    color: $color;
+
+    box-shadow: 5px 5px 10px rgba(143, 31, 232, 0.2);
+
+    @if $iconSide == 'right' {
+        //color: red;
+    }
+
+    @if $iconSide == 'left' {
+        //color: black;
+    }
+
+    @media(max-width: $md_w) {
+        font-size: 22px;
+    }
+
+    @media(max-width: $sm_w) {
+        font-size: 18px;
+    }
+}

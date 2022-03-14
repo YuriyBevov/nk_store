@@ -1,0 +1,15 @@
+.history {
+    @include block_mb();
+
+    .swiper {
+        //overflow: visible;
+    }
+
+    &-swiper {
+        padding-bottom: 3rem;
+    }
+
+    .swiper-pagination {
+        top: 100%;
+    }
+}

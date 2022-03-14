@@ -17,6 +17,18 @@
     }
 }
 
+.section-margin-bottom {
+    margin-bottom: 50px;
+
+    @media(max-width: $lg_w) {
+        margin-bottom: 30px;
+    }
+
+    @media(max-width: $md_w) {
+        margin-bottom: 20px;
+    }
+}
+
 .img-cover {
     width: 100%;
     height: 100%;

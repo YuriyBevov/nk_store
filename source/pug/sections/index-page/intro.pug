@@ -1,0 +1,40 @@
+include ../../mixins/main_btn
+//mixin main_btn(type, title, url, cls, iconName, iconHeight, iconWidth )
+-
+  const slides = [
+      {
+          title: 'Новая коллекция',
+          url: 'catalog.html',
+          linkText: 'Смотреть',
+          img: './assets/img/intro_slide1.png'
+      },
+
+      {
+          title: 'Распродажа до <span>-40%</span>',
+          url: 'catalog.html',
+          linkText: 'Смотреть',
+          img: './assets/img/intro_slide2.png'
+      },
+
+      {
+          title: '<span>Суперцены</span> на игрушки',
+          url: 'catalog.html',
+          linkText: 'Смотреть',
+          img: './assets/img/intro_slide3.png'
+      },
+  ]
+
+section.intro
+  h1.visually-hidden Главный заголовок сайта!
+  .swiper.intro-swiper
+    .swiper-wrapper
+      each slide in slides
+        .swiper-slide
+          .swiper-slide-container(style='background-image: url(' + slide.img + ')')
+            .intro-swiper__wrapper
+              .intro-swiper__container
+                h2!=slide.title
+                +main_btn('link', slide.linkText, slide.url)
+    
+    .intro-swiper-pagination.swiper-pagination
+

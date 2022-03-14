@@ -1,0 +1,96 @@
+.intro {
+    @extend .section-margin-bottom;
+
+    &-swiper {
+        position: relative;
+        overflow: hidden;
+
+        .swiper-slide {
+            position: relative;
+            &-container {
+                display: flex;
+                width: 100%;
+                height: 75vh;
+                min-height: 600px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top center;
+
+                @media(max-width: $md_w) {
+                    height: 65vh;
+                    min-height: 400px;
+                }
+
+                @media(max-width: $sm_w) {
+                    min-height: 300px;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            &-bullets {
+                position: absolute;
+                top: 0;
+                left: calc(100% - 50px);
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                z-index: 1;
+            }
+
+            &-bullet {
+                width: 15px;
+                height: 15px;
+                margin: 2px 0 !important;
+                background-color: transparent;
+                border: 2px solid $purple;
+
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                transition: opacity $main-transition;
+                &-active {
+                    background-color: $purple;
+                }
+            }
+        }
+
+        &__wrapper {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        &__container {
+            padding-top: 15vh;
+            @extend .wrapper;
+
+            h2 {
+                font-size: 54px;
+                line-height: 1.2;
+                margin-bottom: 2.8rem;
+                text-transform: uppercase;
+                max-width: 70%;
+
+                color: $main-black;
+                text-shadow: 2px 2px 3px $white;
+
+                span {
+                    color: $red;
+                }
+
+                @media(max-width: $md_w) {
+                    font-size: 44px;
+                }
+
+                @media(max-width: $sm_w) {
+                    font-size: 28px;
+                }
+            }
+
+            a {
+                @include main_btn($purple, $yellow);
+            }
+        }
+    }
+}
+

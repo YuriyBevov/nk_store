@@ -1,3 +1,17 @@
-mixin main_btn()
+mixin main_btn(type, title, url, cls, iconName, iconHeight, iconWidth )
   
-  button(type="button") test
+  if type === 'button'
+    button(type="button" class= cls ? cls : null)
+      if iconName
+        svg(width=iconWidth height= iconHeight)
+          use(xlink:href="#" + iconName)
+      
+      span= title
+  
+  if type === 'link'
+    a(href= url class= cls ? cls : null)
+      if iconName
+        svg(width=iconWidth height= iconHeight)
+          use(xlink:href="#" + iconName)
+      
+      span= title

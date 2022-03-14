@@ -1,0 +1,47 @@
+.reviews {
+    @include block_mb();
+
+    &-swiper {
+        position: relative;
+        padding-bottom: 10rem;
+        //overflow: visible !important;
+    }
+
+    .swiper-slide {
+        width: auto;
+        padding: 0 15px;
+    }
+
+    &-button-next,
+    &-button-prev {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5rem;
+        height: 5rem;
+        background: rgba(255, 225, 79, 0.84);
+        box-shadow: 5px 5px 10px rgba(143, 31, 232, 0.2);
+        border-radius: 50px;
+        z-index: 100;
+
+        top: 90%;
+        cursor: pointer;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &-button-prev {
+        left: calc(70% - 100px);
+
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &-button-next {
+        right: 26%;
+    }
+}
