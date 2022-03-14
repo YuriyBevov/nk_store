@@ -55,8 +55,7 @@
 
                 p {
                     @include main_btn($purple, $yellow);
-                    padding: 5px 20px;
-                    border-radius: 16px;
+                    padding: 10px 20px;
                     margin-top: auto;
 
                     @media(max-width: $lg_w) {
@@ -65,8 +64,7 @@
 
                     @media(max-width: $md_w) {
                         font-size: 18px;
-                        padding: 5px 15px;
-                        border-radius: 12px;
+                        padding: 10px 15px;
                     }
 
                     @media(max-width: 660px) {

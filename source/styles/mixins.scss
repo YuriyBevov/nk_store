@@ -26,7 +26,7 @@
 @mixin main_btn($color, $bg-color, $iconSide: null) {
     @extend .flex-item-center;
 
-    border-radius: 50px;
+    border-radius: 16px;
     width: fit-content;
     height: fit-content;
     font-family: $f4_reg;
@@ -52,5 +52,6 @@
 
     @media(max-width: $sm_w) {
         font-size: 18px;
+        border-radius: 12px;
     }
 }

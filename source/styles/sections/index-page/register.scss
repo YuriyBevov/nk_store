@@ -1,11 +1,20 @@
 .register {
-    @include block_mb();
-    min-height: 75rem;
+    @extend .section-margin-bottom;
+
+    min-height: 750px;
     position: relative;
+
+    @media(max-width: $lg_w) {
+        min-height: 500px;
+    }
+
+    @media(max-width: $md_w) {
+        min-height: 400px;
+    }
     
     img {
         position: absolute;
-        top: 0rem;
+        top: 0;
         left: 50%;
         transform: translateX(-50%);
 
@@ -21,7 +30,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 3rem;
+        padding: 30px;
         z-index: 1;
+
+        a {
+            @include main_btn($purple, $yellow);
+        }
     }
 }
