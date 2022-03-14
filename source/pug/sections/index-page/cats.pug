@@ -1,22 +1,29 @@
+include ../../mixins/main_btn
+
 section.cats
-  .cmn__wrapper
+  .cats__wrapper
     h2.visually-hidden Категории товаров
+
     ul.cats__container
       li(style="background-image: url('./assets/img/cat1.png')").cats__item
-        a(href="#")
-          span.cmn__button Распродажа
+        a(href="catalog.html")
+          +main_btn('text', 'Распродажа', 'catalog.html')
+
       li(style="background-image: url('./assets/img/cat2.png')").cats__item
-        a(href="#")  
-          span.cmn__button Девочки
+        a(href="catalog.html")
+          +main_btn('text', 'Мальчики', 'catalog.html')
+
       li(style="background-image: url('./assets/img/cat3.png')").cats__item
-        a(href="#")
-          span.cmn__button Мальчики
+        a(href="catalog.html")
+          +main_btn('text', 'Игрушки', 'catalog.html')
+
       li(style="background-image: url('./assets/img/cat5.png')").cats__item
-        a(href="#")
-          span.cmn__button  Игрушки
+        a(href="catalog.html")
+          +main_btn('text', 'Малыши', 'catalog.html')
+
       li(style="background-image: url('./assets/img/cat4.png')").cats__item
-        a(href="#")
-          span.cmn__button  Малыши 
+        a(href="catalog.html") 
+          +main_btn('text', 'Девочки', 'catalog.html')
 
         
 

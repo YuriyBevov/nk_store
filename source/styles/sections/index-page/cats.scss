@@ -1,10 +1,16 @@
 .cats {
-    @include block_mb();
+    //@include block_mb();
+    @extend .section-margin-bottom;
+
+    &__wrapper {
+        @extend .wrapper;
+    }
+
     &__container {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        grid-auto-rows: 35rem;
-        grid-gap: 2rem;
+        grid-auto-rows: 350px;
+        grid-gap: 20px;
 
         li {
             background-repeat: no-repeat;
@@ -14,19 +20,13 @@
 
             a {
                 display: flex;
-                align-items: flex-end;
-                justify-content: center;
                 width: 100%;
                 height: 100%;
-                padding: 2rem;
-            }
-        }
+                padding: 30px;
 
-        li:not(:first-child) {
-            a span {
-                font-size: 2.6rem;
-                line-height: 2.8rem;
-                padding: 0.5rem 1rem;
+                p {
+                    @include main_btn($purple, $yellow);
+                }
             }
         }
 
@@ -36,14 +36,12 @@
             grid-row-start: 1;
             grid-row-end: 3;
 
-            a {
+            a p {
+                transform: rotate(-90deg);
+                top: 90px;
+                left: -70px;
                 position: relative;
-                span {
-                    position: absolute;
-                    top: 15rem;
-                    left: -5rem;
-                    transform: rotate(-90deg);
-                }
+                padding: 10px 30px;
             }
         }
 
@@ -54,8 +52,9 @@
             grid-row-start: 1;
             grid-row-end: 2;
 
-            a {
-                justify-content: flex-end;
+            a p {
+                margin-left: auto;
+                margin-top: auto;
             }
         }
 
@@ -66,9 +65,8 @@
             grid-row-start: 2;
             grid-row-end: 3;
 
-            a {
-                align-items: flex-start;
-                justify-content: flex-start;
+            a p{
+                margin-right: auto;
             }
         }
 
@@ -79,8 +77,9 @@
             grid-row-start: 1;
             grid-row-end: 2;
 
-            a {
-                justify-content: flex-start;
+            a p {
+                margin-right: auto;
+                margin-top: auto;
             }
         }
 
@@ -92,9 +91,8 @@
             grid-row-end: 3;
 
             
-            a {
-                align-items: flex-start;
-                justify-content: flex-end;
+            a p {
+                margin-left: auto;
             }
         }
     }
