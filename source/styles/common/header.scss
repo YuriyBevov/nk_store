@@ -6,6 +6,7 @@
     z-index: 101;
     
     background: linear-gradient(180deg, rgba(214, 193, 85, 0.09) 0%, rgba(165, 142, 24, 0.36) 100%);
+    background-color: $beige;
     background-blend-mode: darken; 
 
     &__content {

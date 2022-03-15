@@ -12284,12 +12284,13 @@ function toggleClass(el, cl) {
     el.classList.toggle(cl);
 }
 
-function bodyLocker(bool) {
+function bodyLocker(bool, addPadding = false) {
     let body = document.querySelector('body');
 
     if(bool) {
         body.style.overflow = 'hidden';
-        body.style.paddingRight = '4px';
+        addPadding ?
+        body.style.paddingRight = '4px' : null;
     } else {
         body.style.overflow = 'auto';
         body.style.paddingRight = '0';
@@ -12355,6 +12356,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_setCatalogHeight_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/setCatalogHeight.js */ "./source/scripts/modules/setCatalogHeight.js");
 /* harmony import */ var _modules_openCatalogMenu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/openCatalogMenu.js */ "./source/scripts/modules/openCatalogMenu.js");
 /* harmony import */ var _modules_limitStrs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/limitStrs.js */ "./source/scripts/modules/limitStrs.js");
+/* harmony import */ var _modules_mobileMenuOpener_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/mobileMenuOpener.js */ "./source/scripts/modules/mobileMenuOpener.js");
+
 
 
 
@@ -12390,6 +12393,33 @@ productCardTitles.forEach(title => {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/mobileMenuOpener.js":
+/*!****************************************************!*\
+  !*** ./source/scripts/modules/mobileMenuOpener.js ***!
+  \****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+let menu = document.querySelector('.mobile-menu');
+let opener = document.querySelector('.js-mobile-menu-opener');
+
+const onClickOpenMenu = () => {
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(opener, 'active');
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(menu, 'is-opened');
+
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["checkClass"])(menu, 'is-opened') ?
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(true) : Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(false);
+}
+
+opener.addEventListener('click', onClickOpenMenu);
+
+/***/ }),
+
 /***/ "./source/scripts/modules/openCatalogMenu.js":
 /*!***************************************************!*\
   !*** ./source/scripts/modules/openCatalogMenu.js ***!
@@ -12408,7 +12438,7 @@ let activeLink = null;
 let activeSection = null;
 
 const onMouseOverShowCatalogSection = (evt) => {
-    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(true);
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(true, true);
     
     if(activeLink !== evt.currentTarget) {
         activeLink ?

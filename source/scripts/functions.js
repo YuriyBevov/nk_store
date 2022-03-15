@@ -22,12 +22,13 @@ function toggleClass(el, cl) {
     el.classList.toggle(cl);
 }
 
-function bodyLocker(bool) {
+function bodyLocker(bool, addPadding = false) {
     let body = document.querySelector('body');
 
     if(bool) {
         body.style.overflow = 'hidden';
-        body.style.paddingRight = '4px';
+        addPadding ?
+        body.style.paddingRight = '4px' : null;
     } else {
         body.style.overflow = 'auto';
         body.style.paddingRight = '0';

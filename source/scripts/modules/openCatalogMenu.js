@@ -6,7 +6,7 @@ let activeLink = null;
 let activeSection = null;
 
 const onMouseOverShowCatalogSection = (evt) => {
-    bodyLocker(true);
+    bodyLocker(true, true);
     
     if(activeLink !== evt.currentTarget) {
         activeLink ?

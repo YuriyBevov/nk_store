@@ -1,7 +1,7 @@
 .mobile-menu {
     display: none;
     
-    &.active {
+    &.is-opened {
         display: block;
     }
 
@@ -17,6 +17,7 @@
     left: 0;
     width: 100%;
     background: linear-gradient(180deg,rgba(214,193,85,.09) 0,rgba(165,142,24,.36) 100%);
+    background-color: $white; // временно , пока нет фона
     background-blend-mode: darken;
     z-index: 100;
 
