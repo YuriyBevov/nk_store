@@ -102,3 +102,19 @@
         background-color: $gold;
     }
 }
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.main-swiper-pagination {
+    width: 80% !important;
+    top: 98% !important;
+    left: 10% !important;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}

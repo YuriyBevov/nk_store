@@ -4,25 +4,23 @@ import SwiperCore, { Autoplay, Scrollbar, Navigation, Pagination, Thumbs } from 
 SwiperCore.use([Autoplay, Scrollbar, Navigation, Pagination, Thumbs]);
 import Swiper from 'swiper'
 
+let mainSlider = document.querySelectorAll('.main-swiper');
 
-/*const bannerWideSlider = document.querySelector('.banner-wide-swiper-container');
+if(mainSlider) {
+   mainSlider.forEach(slider => {
+      new Swiper(slider, {
+         slidesPerView: 'auto',
+         spaceBetween: 20,
+         modules: [Pagination],
+   
+         pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+         },
+      })
 
-if(bannerWideSlider) {
-   new Swiper(".banner-wide-swiper-container", {
-      slidesPerView: 'auto',
-      loop: true,
-
-      pagination: {
-         el: ".banner-wide-swiper-pagination",
-         clickable: true
-      },
-
-      navigation: {
-         nextEl: ".offer-swiper-button-next",
-         prevEl: ".offer-swiper-button-prev",
-      }
    })
-}; */
+}
 
 const introSlider = document.querySelector('.intro-swiper');
 

@@ -2,12 +2,12 @@
   const items = [1,2,3,4,5,6,7,8,9]
 
 section.popular
-  .cmn__wrapper
-    h2.cmn__block-title Популяные товары
-    .swiper.popular-swiper
+  .popular__wrapper
+    h2.section-colored-title Популяные товары
+    .swiper.main-swiper
       .swiper-wrapper
         each item in items
           .swiper-slide
-            include ../../components/cards/item-card
+            include ../../components/product-card
 
-      .swiper-pagination
+      .swiper-pagination.main-swiper-pagination

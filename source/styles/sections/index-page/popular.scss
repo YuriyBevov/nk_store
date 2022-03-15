@@ -1,15 +1,15 @@
 .popular {
-    @include block_mb();
+    @extend .section-margin-bottom;
+    overflow: hidden;
 
-    .swiper {
-        //overflow: visible;
+    &__wrapper {
+        @extend .wrapper;
+        
+        position: relative;
+        padding-bottom: 40px;
     }
 
     &-swiper {
-        padding-bottom: 3rem;
-    }
-
-    .swiper-pagination {
-        top: 100%;
+        padding-bottom: 30px;
     }
 }

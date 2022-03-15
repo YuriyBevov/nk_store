@@ -308,7 +308,7 @@
       </div>
     </header>
     <main>
-      <div class="index">
+      <div class="index overflow-hidden">
         <section class="intro">
           <h1 class="visually-hidden">Главный заголовок сайта!</h1>
           <div class="swiper intro-swiper">
@@ -349,26 +349,565 @@
             <h2 class="visually-hidden">Категории товаров</h2>
             <ul class="cats__container">
               <li class="cats__item" style="background-image: url('./assets/img/cat1.png')"><a href="catalog.html">
-                          <!--a(href= url class= cls ? cls : null)-->
                           <p><span>Распродажа</span>
                           </p></a></li>
               <li class="cats__item" style="background-image: url('./assets/img/cat2.png')"><a href="catalog.html">
-                          <!--a(href= url class= cls ? cls : null)-->
                           <p><span>Мальчики</span>
                           </p></a></li>
               <li class="cats__item" style="background-image: url('./assets/img/cat3.png')"><a href="catalog.html">
-                          <!--a(href= url class= cls ? cls : null)-->
                           <p><span>Игрушки</span>
                           </p></a></li>
               <li class="cats__item" style="background-image: url('./assets/img/cat5.png')"><a href="catalog.html">
-                          <!--a(href= url class= cls ? cls : null)-->
                           <p><span>Малыши</span>
                           </p></a></li>
               <li class="cats__item" style="background-image: url('./assets/img/cat4.png')"><a href="catalog.html"> 
-                          <!--a(href= url class= cls ? cls : null)-->
                           <p><span>Девочки</span>
                           </p></a></li>
             </ul>
+          </div>
+        </section>
+        <section class="popular">
+          <div class="popular__wrapper">
+            <h2 class="section-colored-title">Популяные товары</h2>
+            <div class="swiper main-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination main-swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <div class="about__wrapper">
+            <div class="bg-decoration bg-decoration-top" aria-hidden="true"></div>
+            <div class="bg-decoration bg-decoration-middle" aria-hidden="true"></div>
+            <div class="bg-decoration bg-decoration-bottom" aria-hidden="true"></div>
+            <h2 class="section-colored-title">О нас</h2>
+            <div class="about__container"><img src="./assets/img/about_content-img.png" alt="О нас" width="600" height="400">
+              <div class="about__content">
+                <h3 class="about__title">Самая модная детская одежда</h3>
+                <ul class="about__list">
+                  <li class="about__item">Самый большой ассортимент — более 15 000 товаров</li>
+                  <li class="about__item">Самая быстрая и бесплатная доставка</li>
+                  <li class="about__item">Самые честные гарантии возврата</li>
+                  <li class="about__item">Самая удобная оплата, отправим без предоплат</li>
+                  <li class="about__item">Самая лучшая команда работает в нашем любимом интернет-магазине!</li>
+                </ul><a class="about__more-btn" href="about.html"><span>Подробнее</span></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="history">
+          <div class="history__wrapper">
+            <h2 class="section-colored-title">Недавно просмотренные</h2>
+            <div class="swiper main-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a href="#">Хар-ки товара</a><a href="#">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination main-swiper-pagination"></div>
+            </div>
           </div>
         </section>
         <section class="register"><img src="./assets/img/reg-img.png" alt="" width="1920" height="1050">

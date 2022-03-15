@@ -23,7 +23,7 @@
     }
 }
 
-@mixin main_btn($color, $bg-color, $iconSide: null) {
+@mixin main_btn($color, $bg-color) {
     @extend .flex-item-center;
 
     border-radius: 16px;
@@ -38,20 +38,52 @@
 
     box-shadow: 5px 5px 10px rgba(143, 31, 232, 0.2);
 
-    @if $iconSide == 'right' {
-        //color: red;
-    }
-
-    @if $iconSide == 'left' {
-        //color: black;
-    }
-
     @media(max-width: $md_w) {
         font-size: 22px;
     }
 
     @media(max-width: $sm_w) {
         font-size: 18px;
-        border-radius: 12px;
+        border-radius: 12px; 
+    }
+}
+
+@mixin badge($bg-color, $color: $white) {
+    @extend .flex-item-center;
+
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+
+    padding: 10px;
+    border-radius: 12px;
+    
+    color: $color;
+    background-color: $bg-color;
+
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@mixin favourite-add-btn($iconFill, $iconFocusFill) {
+    svg {
+        fill: $iconFill;
+        transition: fill $main-transition;
+
+        &:hover,
+        &:focus {
+            fill: $iconFocusFill
+        }
+
+        &:active {
+            opacity: 0.8;
+        }
     }
 }

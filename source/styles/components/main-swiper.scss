@@ -1,0 +1,9 @@
+.main-swiper {
+    .swiper-slide {
+        width: auto;
+    }
+
+    &-pagination {
+        @extend .main-swiper-pagination;
+    }
+}

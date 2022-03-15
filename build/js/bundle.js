@@ -12287,8 +12287,13 @@ function toggleClass(el, cl) {
 function bodyLocker(bool) {
     let body = document.querySelector('body');
 
-    bool ?
-    body.style.overflow = 'hidden' : body.style.overflow = 'auto';
+    if(bool) {
+        body.style.overflow = 'hidden';
+        body.style.paddingRight = '4px';
+    } else {
+        body.style.overflow = 'auto';
+        body.style.paddingRight = '0';
+    }
 }
 
 function changeTabs(el, contentList) {
@@ -12375,6 +12380,12 @@ let reviewCardText = document.querySelectorAll('.review-card__content');
 
 reviewCardText.forEach(content => {
     content.innerHTML = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["limitStr"])(content.innerHTML, 195);
+})
+
+let productCardTitles = document.querySelectorAll('.product-card__title');
+
+productCardTitles.forEach(title => {
+    title.innerHTML = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["limitStr"])(title.innerHTML, 40);
 })
 
 /***/ }),
@@ -12509,25 +12520,23 @@ __webpack_require__.r(__webpack_exports__);
 swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_core__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Scrollbar"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Thumbs"]]);
 
 
+let mainSlider = document.querySelectorAll('.main-swiper');
 
-/*const bannerWideSlider = document.querySelector('.banner-wide-swiper-container');
+if(mainSlider) {
+   mainSlider.forEach(slider => {
+      new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+         slidesPerView: 'auto',
+         spaceBetween: 20,
+         modules: [swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"]],
+   
+         pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+         },
+      })
 
-if(bannerWideSlider) {
-   new Swiper(".banner-wide-swiper-container", {
-      slidesPerView: 'auto',
-      loop: true,
-
-      pagination: {
-         el: ".banner-wide-swiper-pagination",
-         clickable: true
-      },
-
-      navigation: {
-         nextEl: ".offer-swiper-button-next",
-         prevEl: ".offer-swiper-button-prev",
-      }
    })
-}; */
+}
 
 const introSlider = document.querySelector('.intro-swiper');
 

@@ -1,9 +1,9 @@
 @import "fonts";
 @import "normalize";
 @import "variables";
+@import "common_styles"; 
 @import "mixins";
 @import "global";
-@import "common_styles";
 
 //--- plugins
 
@@ -20,14 +20,19 @@
 @import "components/mobile-menu";
 @import "components/catalog-section";
 @import "components/review-card";
+@import "components/product-card";
+@import "components/main-swiper";
 
 // blocks
 @import "common/header";
 
 @import "sections/index-page/intro";
 @import "sections/index-page/cats";
+@import "sections/index-page/popular";
+@import "sections/index-page/about";
 @import "sections/index-page/reviews";
 @import "sections/index-page/register";
+@import "sections/index-page/history";
 
 @import "common/footer";
 

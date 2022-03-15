@@ -1,9 +1,15 @@
+include ../../mixins/main_btn
+
 section.about
-  .cmn__wrapper
-    h2.cmn__block-title О нас
+  .about__wrapper
+    .bg-decoration.bg-decoration-top(aria-hidden="true")
+    .bg-decoration.bg-decoration-middle(aria-hidden="true")
+    .bg-decoration.bg-decoration-bottom(aria-hidden="true")
+
+    h2.section-colored-title О нас
 
     .about__container
-      img(src="./assets/img/about-img.png" alt="О нас" width="783" height="747")
+      img(src="./assets/img/about_content-img.png" alt="О нас" width="600" height="400")
 
       .about__content
         h3.about__title Самая модная детская одежда
@@ -15,5 +21,5 @@ section.about
           li.about__item Самая удобная оплата, отправим без предоплат
           li.about__item Самая лучшая команда работает в нашем любимом интернет-магазине!
 
-        a(href="#").cmn__button.about__button Подробнее 
+        +main_btn('link', 'Подробнее', 'about.html', 'about__more-btn')
 

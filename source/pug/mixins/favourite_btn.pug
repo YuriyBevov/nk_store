@@ -1,0 +1,4 @@
+mixin favourite_btn(cls)
+  a(href="#" class= cls ? cls : null ).favourite-add-btn
+    svg(width="35" height="35")
+      use(xlink:href="#icon-heart")

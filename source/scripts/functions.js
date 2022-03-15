@@ -25,8 +25,13 @@ function toggleClass(el, cl) {
 function bodyLocker(bool) {
     let body = document.querySelector('body');
 
-    bool ?
-    body.style.overflow = 'hidden' : body.style.overflow = 'auto';
+    if(bool) {
+        body.style.overflow = 'hidden';
+        body.style.paddingRight = '4px';
+    } else {
+        body.style.overflow = 'auto';
+        body.style.paddingRight = '0';
+    }
 }
 
 function changeTabs(el, contentList) {

@@ -1,0 +1,33 @@
+include ../mixins/badge
+include ../mixins/favourite_btn
+include ../mixins/main_btn
+
+.product-card
+  .product-card__header
+    img(src="./assets/img/cat3.png" alt="Товар" width="220" height="280")
+
+    .product-card__badges
+      +badge('product-card__badge product-card__badge--new', 'Новинка !')
+      +badge('product-card__badge product-card__badge--sale','Sale')
+
+    +favourite_btn('product-card__favourite-add-btn')
+
+
+    a(href="#").product-card__zoom-btn
+      svg(width="25" height="25")
+        use(xlink:href="#icon-search")
+
+  .product-card__content
+    h2.product-card__title Комбинезон жёлтый утеплённый осенний суперпуховый
+    
+    .product-card__description
+      .product-card__description-chars
+        a(href="#") Хар-ки товара
+        a(href="#") Подробно
+
+      .product-card__description-price
+        span 999 999 руб.
+    
+  .product-card__footer
+    +main_btn('link', 'В корзину', '#', 'product-card__cart-add-btn', 'icon-cart', 24, 24)
+    +main_btn('link', 'Купить в 1 клик', '#', 'product-card__buy-btn')
