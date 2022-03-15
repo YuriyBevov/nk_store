@@ -7,6 +7,8 @@
     height: 40px;
     padding: 7px;
 
+    cursor: pointer;
+
     @media(max-width: $md_w) {
         display: flex;
     }

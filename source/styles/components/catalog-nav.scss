@@ -11,10 +11,6 @@
         margin: 0 auto;
     }
 
-    &__item {
-        
-    }
-
     &__link {
         font-family: $f3_reg;
         font-size: 24px;
@@ -28,6 +24,13 @@
             padding-top: 10px;
             border-bottom: 2px solid transparent;
             transition: border $main-transition;
+        }
+
+        &:hover,
+        &:focus {
+            span {
+                border-color: $purple;
+            }
         }
 
         &.js-active {
