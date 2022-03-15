@@ -1,14 +1,6 @@
 .mobile-menu {
     display: none;
-    
-    &.is-opened {
-        display: block;
-    }
-
     padding: 20px 0;
-    outline: 1px solid red;
-
-    /**/
 
     height: 100vh;
     max-height: calc(100vh - 119px);
@@ -16,36 +8,73 @@
     top: 119px;
     left: 0;
     width: 100%;
-    background: linear-gradient(180deg,rgba(214,193,85,.09) 0,rgba(165,142,24,.36) 100%);
-    background-color: $white; // временно , пока нет фона
+    background: linear-gradient(180deg,rgba(165, 142, 24, 0.36) 0, rgba(214, 193, 85, 0.09) 100% );
+    background-color: $beige;
     background-blend-mode: darken;
+    overflow: hidden;
+    overflow-y: auto;
     z-index: 100;
 
-    /**/
+    transform: translateY(-110%);
+        
+    @media(max-width: $md_w) {
+        &.is-opened {
+            display: block;
+    
+            animation: transform .4s 0.1s linear forwards;
+        }
+    }
+
+    @keyframes transform {
+        0% {
+            transform: translateY(-110%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
     &__wrapper {
         @extend .wrapper;
     }
 
     &__search {
         margin-bottom: 20px;
+        display: none;
+
+        @media(max-width: 660px) {
+            display: block;
+        }
     }
 
-    &__nav {
-        /* прописать новые стили без @extend*/
-        
-        @extend .header__user;
-        display: none !important;
-        flex-direction: column;
-        align-items: flex-start !important;
-        margin-bottom: 20px !important;
+    &__user {
+        display: none;
+
+        @media(max-width: $sm_w) {
+            display: block;
+        }
+        margin-bottom: 20px;
+
+        &-item {
+            margin-bottom: 10px;
+        }
 
         &-link {
-            flex-direction: row !important;
-            padding: 0 !important;
+            display: flex;
+            align-items: flex-end;
+
+            font-size: 18px;
+            line-height: 1;
+
+            color: $main-black;
+
+            @include focus-color($purple);
 
             svg {
-                margin-right: 10px;
+                margin-right: 15px;
             }
+
             &--user {
                 @extend .header__user-login;
             }
@@ -58,10 +87,93 @@
                 @extend .header__user-cart;
             }
         }
-        @media(max-width: $sm_w) {
-            display: flex !important;
+    }
+
+    &__catalog {
+        padding: 20px 0;
+        border-bottom: 1px solid $purple;
+        margin-bottom: 20px;
+
+        &-item {
+            position: relative;
+
+            margin-bottom: 10px;
+            cursor: pointer;
+
+            span {
+                display: block;
+                font-size: 18px;
+                line-height: 1;
+
+                padding: 10px 0;
+                padding-right: 40px;
+
+                color: $main-black;
+
+                @include focus-color($purple);
+
+                &::after {
+                    position: absolute;
+                    top: 9px;
+                    right: 0;
+                    content: '';
+    
+                    width: 20px;
+                    height: 20px;
+    
+                    background-image: url('../assets/img/arrow.svg');
+                    transform: rotate(-90deg);
+                    transition: transform $main-transition;
+                }
+            }
+
+            ul {
+                display: none;
+                animation: fadeIn 0.3s ease-in forwards;
+            }
+
+            &.active {
+                span::after {
+                    transform: rotate(0);
+                }
+
+                ul {
+                    display: block;
+                    height: fit-content;
+                    max-height: 300px;
+                    overflow: hidden;
+                    overflow-y: auto;
+                    margin: 20px 0;
+
+                    li {
+                        margin-bottom: 10px;
+                        padding-left: 15px;
+
+                        a {
+                            font-size: 16px;
+                            line-height: 1.2;    
+
+                            color: $main-black;
+
+                            @include focus-color($purple);
+                        }
+                    }
+                }
+            }
         }
     }
 
-    
+    &__nav {
+        padding-bottom: 30px;
+        &-item {
+            margin-bottom: 10px;
+            a {
+                font-size: 16px;
+                line-height: 1.2;
+                color: $main-black;
+
+                @include focus-color($purple);
+            }
+        }
+    }
 }

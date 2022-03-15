@@ -1,0 +1,5 @@
+mixin catalog-section-mobile(obj)
+  ul
+    each item in obj.catalog  
+      li
+        a(href= item.url)= item.name

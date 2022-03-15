@@ -12357,6 +12357,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_openCatalogMenu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/openCatalogMenu.js */ "./source/scripts/modules/openCatalogMenu.js");
 /* harmony import */ var _modules_limitStrs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/limitStrs.js */ "./source/scripts/modules/limitStrs.js");
 /* harmony import */ var _modules_mobileMenuOpener_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/mobileMenuOpener.js */ "./source/scripts/modules/mobileMenuOpener.js");
+/* harmony import */ var _modules_mobileMenuCatalog_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/mobileMenuCatalog.js */ "./source/scripts/modules/mobileMenuCatalog.js");
+/* harmony import */ var _modules_mobileMenuCatalog_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_mobileMenuCatalog_js__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -12389,6 +12392,25 @@ let productCardTitles = document.querySelectorAll('.product-card__title');
 
 productCardTitles.forEach(title => {
     title.innerHTML = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["limitStr"])(title.innerHTML, 40);
+})
+
+/***/ }),
+
+/***/ "./source/scripts/modules/mobileMenuCatalog.js":
+/*!*****************************************************!*\
+  !*** ./source/scripts/modules/mobileMenuCatalog.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+let items = document.querySelectorAll('.mobile-menu__catalog-item');
+
+const onClickOpenCatalogSection = (evt) => {
+    evt.currentTarget.classList.toggle('active');
+}
+
+items.forEach(item => {
+    item.addEventListener('click', onClickOpenCatalogSection);
 })
 
 /***/ }),
@@ -12556,7 +12578,7 @@ if(mainSlider) {
    mainSlider.forEach(slider => {
       new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
          slidesPerView: 'auto',
-         spaceBetween: 20,
+         spaceBetween: 40,
          modules: [swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"]],
    
          pagination: {

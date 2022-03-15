@@ -85,7 +85,7 @@
             font-weight: 500;
             font-size: 18px;
             line-height: 1.2;
-            color: rgba(0, 0, 0, 0.56);
+            color: $main-black;
 
             @include focus-color($purple);
 

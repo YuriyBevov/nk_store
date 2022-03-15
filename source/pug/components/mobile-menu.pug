@@ -1,16 +1,18 @@
+include ../mixins/catalog-section-mobile
+
 .mobile-menu
   .mobile-menu__wrapper
-    ul.mobile-menu__nav
-      li.mobile-menu__nav-item
-        a(href="#").mobile-menu__nav-link.mobile-menu__nav-link--user
+    ul.mobile-menu__user
+      li.mobile-menu__user-item
+        a(href="#").mobile-menu__user-link.mobile-menu__user-link--user
           +svg-icon(24,24,'icon-user')
           span Личный кабинет
-      li.mobile-menu__nav-item    
-        a(href="#").mobile-menu__nav-link.mobile-menu__nav-link--favourite
+      li.mobile-menu__user-item    
+        a(href="#").mobile-menu__user-link.mobile-menu__user-link--favourite
           +svg-icon(24,24,'icon-heart')
           span Избранное
-      li.mobile-menu__nav-item    
-        a(href="#").mobile-menu__nav-link.mobile-menu__nav-link--cart
+      li.mobile-menu__user-item    
+        a(href="#").mobile-menu__user-link.mobile-menu__user-link--cart
           +svg-icon(24,24,'icon-cart')
           span Корзина
     
@@ -19,46 +21,177 @@
 
     ul.mobile-menu__catalog
       li.mobile-menu__catalog-item
-        a(href="catalog.html")
-          span Новинки
+        span Новинки
+        
+        +catalog-section-mobile({
+
+            catalog: [ 
+              { name: 'Верхняя одежда', url: 'catalog.html' }, 
+              { name: 'Пиджаки и жакеты', url: 'catalog.html' }, 
+              { name: 'Жилеты', url: 'catalog.html' }, 
+              { name: 'Свитеры и кардиганы', url: 'catalog.html' }, 
+              { name: 'Свитшоты и худи', url: 'catalog.html' }, 
+              { name: 'Блузки и рубашки', url: 'catalog.html' }, 
+              { name: 'Футболки и лонгсливы', url: 'catalog.html' }, 
+              { name: 'Костюмы', url: 'catalog.html' }, 
+              { name: 'Платья и сарафаны', url: 'catalog.html' }, 
+              { name: 'Комбенизоны и боди', url: 'catalog.html' }, 
+              { name: 'Джинсы и штаны', url: 'catalog.html' }, 
+              { name: 'Юбки и шорты', url: 'catalog.html' }, 
+              { name: 'Колготки и носки', url: 'catalog.html' }, 
+              { name: 'Пижамы', url: 'catalog.html' }, 
+              { name: 'Нижнее белье', url: 'catalog.html' }, 
+              { name: 'Украшения', url: 'catalog.html' },
+            ]
+          }
+        )
       
       li.mobile-menu__catalog-item
-        a(href="catalog.html")
-          span Товары для малышей
-
-      li.mobile-menu__catalog-item
-        a(href="catalog.html")
-          span Мальчики
-
-      li.mobile-menu__catalog-item
-        a(href="catalog.html")
-          span Девочки
-
-      li.mobile-menu__catalog-item
-        a(href="catalog.html")
-          span Обувь
-
-      li.mobile-menu__catalog-item
-        a(href="catalog.html")
-          span Игрушки
+        span Товары для малышей
       
-    ul
-      li
-        a(href="about.html")
-          span О нас
+        +catalog-section-mobile({
+
+            catalog: [ 
+              { name: 'Верхняя одежда', url: 'catalog.html' }, 
+              { name: 'Пиджаки и жакеты', url: 'catalog.html' }, 
+              { name: 'Жилеты', url: 'catalog.html' }, 
+              { name: 'Свитеры и кардиганы', url: 'catalog.html' }, 
+              { name: 'Свитшоты и худи', url: 'catalog.html' }, 
+              { name: 'Блузки и рубашки', url: 'catalog.html' }, 
+              { name: 'Футболки и лонгсливы', url: 'catalog.html' }, 
+              { name: 'Костюмы', url: 'catalog.html' }, 
+              { name: 'Платья и сарафаны', url: 'catalog.html' }, 
+              { name: 'Комбенизоны и боди', url: 'catalog.html' }, 
+              { name: 'Джинсы и штаны', url: 'catalog.html' }, 
+              { name: 'Юбки и шорты', url: 'catalog.html' }, 
+              { name: 'Колготки и носки', url: 'catalog.html' }, 
+              { name: 'Пижамы', url: 'catalog.html' }, 
+              { name: 'Нижнее белье', url: 'catalog.html' }, 
+              { name: 'Украшения', url: 'catalog.html' },
+            ]
+          }
+        )      
+
+      li.mobile-menu__catalog-item
+        span Мальчики
+
+        +catalog-section-mobile({
+
+            catalog: [ 
+              { name: 'Верхняя одежда', url: 'catalog.html' }, 
+              { name: 'Пиджаки и жакеты', url: 'catalog.html' }, 
+              { name: 'Жилеты', url: 'catalog.html' }, 
+              { name: 'Свитеры и кардиганы', url: 'catalog.html' }, 
+              { name: 'Свитшоты и худи', url: 'catalog.html' }, 
+              { name: 'Блузки и рубашки', url: 'catalog.html' }, 
+              { name: 'Футболки и лонгсливы', url: 'catalog.html' }, 
+              { name: 'Костюмы', url: 'catalog.html' }, 
+              { name: 'Платья и сарафаны', url: 'catalog.html' }, 
+              { name: 'Комбенизоны и боди', url: 'catalog.html' }, 
+              { name: 'Джинсы и штаны', url: 'catalog.html' }, 
+              { name: 'Юбки и шорты', url: 'catalog.html' }, 
+              { name: 'Колготки и носки', url: 'catalog.html' }, 
+              { name: 'Пижамы', url: 'catalog.html' }, 
+              { name: 'Нижнее белье', url: 'catalog.html' }, 
+              { name: 'Украшения', url: 'catalog.html' },
+            ]
+          }
+        )
+
+      li.mobile-menu__catalog-item
+        span Девочки
+
+        +catalog-section-mobile({
+
+            catalog: [ 
+              { name: 'Верхняя одежда', url: 'catalog.html' }, 
+              { name: 'Пиджаки и жакеты', url: 'catalog.html' }, 
+              { name: 'Жилеты', url: 'catalog.html' }, 
+              { name: 'Свитеры и кардиганы', url: 'catalog.html' }, 
+              { name: 'Свитшоты и худи', url: 'catalog.html' }, 
+              { name: 'Блузки и рубашки', url: 'catalog.html' }, 
+              { name: 'Футболки и лонгсливы', url: 'catalog.html' }, 
+              { name: 'Костюмы', url: 'catalog.html' }, 
+              { name: 'Платья и сарафаны', url: 'catalog.html' }, 
+              { name: 'Комбенизоны и боди', url: 'catalog.html' }, 
+              { name: 'Джинсы и штаны', url: 'catalog.html' }, 
+              { name: 'Юбки и шорты', url: 'catalog.html' }, 
+              { name: 'Колготки и носки', url: 'catalog.html' }, 
+              { name: 'Пижамы', url: 'catalog.html' }, 
+              { name: 'Нижнее белье', url: 'catalog.html' }, 
+              { name: 'Украшения', url: 'catalog.html' },
+            ]
+          }
+        )
+
+      li.mobile-menu__catalog-item
+        span Обувь
+
+        +catalog-section-mobile({
+
+            catalog: [ 
+              { name: 'Верхняя одежда', url: 'catalog.html' }, 
+              { name: 'Пиджаки и жакеты', url: 'catalog.html' }, 
+              { name: 'Жилеты', url: 'catalog.html' }, 
+              { name: 'Свитеры и кардиганы', url: 'catalog.html' }, 
+              { name: 'Свитшоты и худи', url: 'catalog.html' }, 
+              { name: 'Блузки и рубашки', url: 'catalog.html' }, 
+              { name: 'Футболки и лонгсливы', url: 'catalog.html' }, 
+              { name: 'Костюмы', url: 'catalog.html' }, 
+              { name: 'Платья и сарафаны', url: 'catalog.html' }, 
+              { name: 'Комбенизоны и боди', url: 'catalog.html' }, 
+              { name: 'Джинсы и штаны', url: 'catalog.html' }, 
+              { name: 'Юбки и шорты', url: 'catalog.html' }, 
+              { name: 'Колготки и носки', url: 'catalog.html' }, 
+              { name: 'Пижамы', url: 'catalog.html' }, 
+              { name: 'Нижнее белье', url: 'catalog.html' }, 
+              { name: 'Украшения', url: 'catalog.html' },
+            ]
+          }
+        )
+
+      li.mobile-menu__catalog-item
+        span Игрушки
+
+        +catalog-section-mobile({
+
+            catalog: [ 
+              { name: 'Верхняя одежда', url: 'catalog.html' }, 
+              { name: 'Пиджаки и жакеты', url: 'catalog.html' }, 
+              { name: 'Жилеты', url: 'catalog.html' }, 
+              { name: 'Свитеры и кардиганы', url: 'catalog.html' }, 
+              { name: 'Свитшоты и худи', url: 'catalog.html' }, 
+              { name: 'Блузки и рубашки', url: 'catalog.html' }, 
+              { name: 'Футболки и лонгсливы', url: 'catalog.html' }, 
+              { name: 'Костюмы', url: 'catalog.html' }, 
+              { name: 'Платья и сарафаны', url: 'catalog.html' }, 
+              { name: 'Комбенизоны и боди', url: 'catalog.html' }, 
+              { name: 'Джинсы и штаны', url: 'catalog.html' }, 
+              { name: 'Юбки и шорты', url: 'catalog.html' }, 
+              { name: 'Колготки и носки', url: 'catalog.html' }, 
+              { name: 'Пижамы', url: 'catalog.html' }, 
+              { name: 'Нижнее белье', url: 'catalog.html' }, 
+              { name: 'Украшения', url: 'catalog.html' },
+            ]
+          }
+        )
       
-      li
+    ul.mobile-menu__nav
+      li.mobile-menu__nav-item
+        span О нас
+      
+      li.mobile-menu__nav-item
         a(href="contacts.html")
           span Контакты
 
-      li
+      li.mobile-menu__nav-item
         a(href="delivery.html")
           span Доставка
 
-      li
+      li.mobile-menu__nav-item
         a(href="about.html")
           span Условия оплаты и возврата
 
-      li
+      li.mobile-menu__nav-item
         a(href="about.html")
           span Политика конфиденциальности

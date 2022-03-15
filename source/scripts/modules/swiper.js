@@ -10,7 +10,7 @@ if(mainSlider) {
    mainSlider.forEach(slider => {
       new Swiper(slider, {
          slidesPerView: 'auto',
-         spaceBetween: 20,
+         spaceBetween: 40,
          modules: [Pagination],
    
          pagination: {
