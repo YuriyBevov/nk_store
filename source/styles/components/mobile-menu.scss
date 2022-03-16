@@ -20,7 +20,9 @@
     @media(max-width: $md_w) {
         &.is-opened {
             display: block;
-    
+            position: fixed;
+            top: 0;
+            left: 0;
             animation: transform .4s 0.1s linear forwards;
         }
     }

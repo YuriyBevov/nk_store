@@ -1,7 +1,7 @@
 //import { offerChange } from './onSwiperChange.js';
 
-import SwiperCore, { Autoplay, Scrollbar, Navigation, Pagination, Thumbs } from 'swiper/core';
-SwiperCore.use([Autoplay, Scrollbar, Navigation, Pagination, Thumbs]);
+import SwiperCore, { EffectFade, Autoplay, Scrollbar, Navigation, Pagination, Thumbs } from 'swiper/core';
+SwiperCore.use([ EffectFade, Autoplay, Scrollbar, Navigation, Pagination, Thumbs]);
 import Swiper from 'swiper'
 
 let mainSlider = document.querySelectorAll('.main-swiper');
@@ -12,7 +12,7 @@ if(mainSlider) {
          slidesPerView: 'auto',
          spaceBetween: 40,
          modules: [Pagination],
-   
+
          pagination: {
             el: ".swiper-pagination",
             type: "progressbar",
@@ -29,6 +29,15 @@ if(introSlider) {
       slidesPerView: 1,
       loop: true,
 
+      speed: 800,
+      autoplay: {
+         delay: 5000,
+      },
+
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      virtualTranslate: true,
+      
       pagination: {
          el: ".intro-swiper-pagination",
          clickable: true

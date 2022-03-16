@@ -39,6 +39,10 @@
                     width: 150px;
                     height: 150px;
                     background-image: url("../assets/img/about_decor4.svg");
+
+                    @media(max-width: $md_w) {
+                        display: none;
+                    }
                 } 
             }
 

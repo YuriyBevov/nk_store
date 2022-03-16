@@ -2,7 +2,6 @@ import { getBoundingClientRect } from '../functions.js';
 
 let header = document.querySelector('header');
 let catalogSections = document.querySelectorAll('.catalog-section');
-
 let headerHeight = getBoundingClientRect(header, 'height');
 
 function setCatalogSectionWidth() {

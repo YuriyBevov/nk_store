@@ -16,6 +16,32 @@
     @extend .section-margin-bottom;
     @extend .intro-width;
 
+    position: relative;
+
+    &::before,
+    &::after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        content: '';
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 9;
+    }
+    
+    &::before {
+        bottom: -6px;
+        background-image: url('../assets/img/catalog-section-line1.svg');
+    }
+
+    &::after {
+        bottom: 8px;
+        background-image: url('../assets/img/catalog-section-line2.svg');
+    }
+
+
     &-swiper {
         position: relative;
         overflow: hidden;
@@ -73,7 +99,7 @@
             @extend .wrapper;
 
             @media(max-width: $md_w) {
-                padding-top: 100px;
+                padding-top: 80px;
             }
         
             @media(max-width: $sm_w) {
@@ -85,7 +111,7 @@
                 line-height: 1.2;
                 margin-bottom: 2.8rem;
                 text-transform: uppercase;
-                max-width: 70%;
+                max-width: 80%;
 
                 color: $main-black;
                 text-shadow: 2px 2px 3px $white;

@@ -11,6 +11,10 @@
         position: relative;
         padding-bottom: 100px;
         overflow: hidden;
+
+        @media(max-width: 960px) {
+            padding-bottom: 40px;
+        }
     }
 
     .swiper-slide {
@@ -37,10 +41,15 @@
         &::after {
             display: none;
         }
+
+        @media(max-width: 960px) {
+            display: none;
+        }
     }
 
     &-button-prev {
-        left: calc(70% - 100px);
+        left: initial;
+        right: calc(25% + 170px);
 
         svg {
             transform: rotate(180deg);
@@ -48,6 +57,6 @@
     }
 
     &-button-next {
-        right: 26%;
+        right: 25%;
     }
 }

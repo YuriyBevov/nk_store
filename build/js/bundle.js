@@ -12331,12 +12331,17 @@ function changeTabs(el, contentList) {
 }
 
 function getBoundingClientRect(elem, side) {
-
     if(side === 'height') {
         return elem.getBoundingClientRect().height
     }
 
-    
+    if(side === 'width') {
+        return elem.getBoundingClientRect().width
+    }
+
+    if(side === 'top') {
+        return elem.getBoundingClientRect().top
+    }
 }
 
 
@@ -12359,6 +12364,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobileMenuOpener_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/mobileMenuOpener.js */ "./source/scripts/modules/mobileMenuOpener.js");
 /* harmony import */ var _modules_mobileMenuCatalog_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/mobileMenuCatalog.js */ "./source/scripts/modules/mobileMenuCatalog.js");
 /* harmony import */ var _modules_mobileMenuCatalog_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_mobileMenuCatalog_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_productCardDetail_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/productCardDetail.js */ "./source/scripts/modules/productCardDetail.js");
+/* harmony import */ var _modules_cartAddBtns_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/cartAddBtns.js */ "./source/scripts/modules/cartAddBtns.js");
 
 
 
@@ -12367,6 +12374,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/cartAddBtns.js":
+/*!***********************************************!*\
+  !*** ./source/scripts/modules/cartAddBtns.js ***!
+  \***********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+
+let cartAddBtns = document.querySelectorAll('.js-cart-add-btn');
+
+const onClickToggleCartAdd = (evt) => {
+    evt.preventDefault();
+    if(!Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["checkClass"])(evt.currentTarget, 'in-cart')) {
+        evt.currentTarget.classList.add('in-cart');
+        evt.currentTarget.style.opacity = 0.5;
+        evt.currentTarget.querySelector('span').innerHTML = 'Убрать из корзины';
+    } else {
+        evt.currentTarget.classList.remove('in-cart');
+        evt.currentTarget.style.opacity = 1;
+        evt.currentTarget.querySelector('span').innerHTML = 'В корзину';
+    }
+
+}
+
+cartAddBtns.forEach(btn => {
+    btn.addEventListener('click', onClickToggleCartAdd);
+})
 
 /***/ }),
 
@@ -12430,6 +12474,15 @@ __webpack_require__.r(__webpack_exports__);
 let menu = document.querySelector('.mobile-menu');
 let opener = document.querySelector('.js-mobile-menu-opener');
 
+let header = document.querySelector('.header');
+let headerHeight = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["getBoundingClientRect"])(header, 'height');
+
+function setMobileMenuPosition() {
+    menu.style.top = headerHeight + 'px';
+}
+
+setMobileMenuPosition();
+
 const onClickOpenMenu = () => {
     Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(opener, 'active');
     Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(menu, 'is-opened');
@@ -12438,6 +12491,20 @@ const onClickOpenMenu = () => {
     Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(true) : Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(false);
 }
 
+const onResizeCheckHeaderHeight = () => {
+    if(headerHeight !== Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["getBoundingClientRect"])(header, 'height')) {
+        headerHeight = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["getBoundingClientRect"])(header, 'height');
+        setMobileMenuPosition();
+    }
+
+    if(window.innerWidth > 767 && Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["checkClass"])(menu, 'is-opened')) {
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(opener, 'active');
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(menu, 'is-opened');
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(false);
+    }
+}
+
+window.addEventListener('resize', onResizeCheckHeaderHeight);
 opener.addEventListener('click', onClickOpenMenu);
 
 /***/ }),
@@ -12562,6 +12629,37 @@ links.forEach(link => {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/productCardDetail.js":
+/*!*****************************************************!*\
+  !*** ./source/scripts/modules/productCardDetail.js ***!
+  \*****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+let btns = document.querySelectorAll('.js-show-detail');
+let productCards = document.querySelectorAll('.product-card');
+
+btns.forEach( (btn,i) => {
+    btn.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        let activeCard = productCards[i];
+        let detail = activeCard.querySelector('.product-card__detail');
+        let productCardHeader = activeCard.querySelector('.product-card__header');
+
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(productCardHeader, 'is-detailed')
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(detail, 'active');
+
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(evt.currentTarget, 'active');
+    });
+});
+
+/***/ }),
+
 /***/ "./source/scripts/modules/setCatalogHeight.js":
 /*!****************************************************!*\
   !*** ./source/scripts/modules/setCatalogHeight.js ***!
@@ -12576,7 +12674,6 @@ __webpack_require__.r(__webpack_exports__);
 
 let header = document.querySelector('header');
 let catalogSections = document.querySelectorAll('.catalog-section');
-
 let headerHeight = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["getBoundingClientRect"])(header, 'height');
 
 function setCatalogSectionWidth() {
@@ -12596,7 +12693,6 @@ const onResizeCheckHeaderHeight = () => {
 
 window.addEventListener('resize', onResizeCheckHeaderHeight);
 
-
 /***/ }),
 
 /***/ "./source/scripts/modules/swiper.js":
@@ -12612,7 +12708,7 @@ __webpack_require__.r(__webpack_exports__);
 //import { offerChange } from './onSwiperChange.js';
 
 
-swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_core__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Scrollbar"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Thumbs"]]);
+swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"].use([ swiper_core__WEBPACK_IMPORTED_MODULE_0__["EffectFade"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Scrollbar"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Thumbs"]]);
 
 
 let mainSlider = document.querySelectorAll('.main-swiper');
@@ -12623,7 +12719,7 @@ if(mainSlider) {
          slidesPerView: 'auto',
          spaceBetween: 40,
          modules: [swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"]],
-   
+
          pagination: {
             el: ".swiper-pagination",
             type: "progressbar",
@@ -12640,6 +12736,15 @@ if(introSlider) {
       slidesPerView: 1,
       loop: true,
 
+      speed: 800,
+      autoplay: {
+         delay: 5000,
+      },
+
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      virtualTranslate: true,
+      
       pagination: {
          el: ".intro-swiper-pagination",
          clickable: true

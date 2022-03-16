@@ -37,6 +37,16 @@
     color: $color;
 
     box-shadow: 5px 5px 10px rgba(143, 31, 232, 0.2);
+    transition: opacity $main-transition;
+
+    &:hover,
+    &:focus {
+        opacity: .8;
+    }
+
+    &:active {
+        opacity: .6;
+    }
 
     @media(max-width: $md_w) {
         font-size: 22px;

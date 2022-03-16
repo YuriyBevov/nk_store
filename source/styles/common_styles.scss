@@ -85,11 +85,11 @@
 
 .main-scroll {
     &::-webkit-scrollbar {
-        background-color: $gold;
+        background-color: $main-bg;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: $purple;
+        background-color: $gold;
     }
 }
 

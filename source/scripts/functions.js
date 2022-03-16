@@ -69,12 +69,17 @@ function changeTabs(el, contentList) {
 }
 
 function getBoundingClientRect(elem, side) {
-
     if(side === 'height') {
         return elem.getBoundingClientRect().height
     }
 
-    
+    if(side === 'width') {
+        return elem.getBoundingClientRect().width
+    }
+
+    if(side === 'top') {
+        return elem.getBoundingClientRect().top
+    }
 }
 
 export  { 
