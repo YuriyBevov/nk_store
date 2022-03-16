@@ -1,0 +1,36 @@
+.rating {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 10px;
+
+    &__stars {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 20px;
+    }
+
+    &-star {
+        svg {
+            fill: $gray;
+            opacity: 0.4;
+        }
+
+        &.active {
+            svg {
+                fill: $gold;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__count {
+        font-style: 14px;
+        line-height: 1.2;
+        margin-bottom: 4px;
+
+        text-decoration-line: underline;
+
+        color: $gray;
+    }
+}

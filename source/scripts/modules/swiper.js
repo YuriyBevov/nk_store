@@ -50,10 +50,52 @@ const reviewsSlider = document.querySelector('.reviews-swiper');
 if(reviewsSlider) {
    new Swiper(reviewsSlider, {
       slidesPerView: 'auto',
-
+      modules: [Navigation],
       navigation: {
          nextEl: ".reviews-button-next",
          prevEl: ".reviews-button-prev",
       }
    })
+}
+
+const thumbsSliderMain = document.querySelector('.thumbs-swiper');
+
+if(thumbsSliderMain) {
+   let galleryThumbs = new Swiper(thumbsSliderMain, {
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      slidesPerView: 3,
+      watchOverflow: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      spaceBetween: 5,
+      direction: 'horizontal',
+
+      breakpoints: {
+         480: {
+           direction: "vertical",
+         },
+      }
+   });
+
+   new Swiper(".thumbs-swiper-main", {
+      watchOverflow: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      preventInteractionOnTransition: true,
+
+      navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev',
+      },
+
+      effect: 'fade',
+      fadeEffect: {
+         crossFade: true
+      },
+
+      thumbs: {
+         swiper: galleryThumbs
+      },
+   });
 }

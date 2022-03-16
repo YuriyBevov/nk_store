@@ -204,16 +204,6 @@ $product_card_header_height: 280px;
             font-size: 18px;
             width: 100%;
             padding: 5px;
-            transition: opacity $main-transition;
-
-            &:hover,
-            &:focus {
-                opacity: 0.8;
-            }
-
-            &:active {
-                opacity: 0.6;
-            }
         }
     }
 

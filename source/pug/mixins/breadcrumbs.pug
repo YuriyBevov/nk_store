@@ -1,0 +1,12 @@
+mixin breadcrumbs(array)
+
+  .breadcrumbs.wrapper
+    ul.breadcrumbs__list
+      each item in array
+        li.breadcrumbs__item
+          if item.link
+            a(href= item.link)= item.title
+          
+          else
+            span=item.title
+      

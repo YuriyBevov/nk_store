@@ -1,0 +1,42 @@
+.breadcrumbs {
+    @extend .section-margin-bottom;
+
+    @media(max-width: $sm_w) {
+        display: none;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+
+    &__item {
+
+        a {
+            font-size: 14px;
+            line-height: 1.2;
+
+            position: relative;
+            padding-right: 7px;
+            padding-left: 3px;
+            color: $main-black;
+
+            &::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                content: '/';
+            }
+
+            @include focus-color($purple);
+        }
+
+        span {
+            font-size: 14px;
+            line-height: 1.2;
+            padding-left: 3px;
+            color: $blue;
+        }
+    }
+}

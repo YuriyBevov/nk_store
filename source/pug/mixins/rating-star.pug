@@ -1,0 +1,4 @@
+mixin rating-star(isActive)
+  .rating-star(class= isActive ? 'active' : null)
+    svg(width="20" height="20")
+      use(xlink:href="#icon-star")

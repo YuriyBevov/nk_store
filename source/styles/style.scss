@@ -9,6 +9,7 @@
 
 @import "plugins/swiper";
 @import "plugins/nouislider";
+@import "plugins/custom_select";
 
 //--- components
 
@@ -22,17 +23,28 @@
 @import "components/review-card";
 @import "components/product-card";
 @import "components/main-swiper";
+@import "components/breadcrumbs";
+@import "components/thumbs-swiper";
+@import "components/rating";
+@import "components/product-options-picker";
+
 
 // blocks
 @import "common/header";
 
+/* index-page sections */
 @import "sections/index-page/intro";
 @import "sections/index-page/cats";
 @import "sections/index-page/popular";
 @import "sections/index-page/about";
 @import "sections/index-page/reviews";
 @import "sections/index-page/register";
-@import "sections/index-page/history";
+
+/* product-page sections */
+@import "sections/product-page/product-info";
+
+/* common sections */
+@import "sections/common/history";
 
 @import "common/footer";
 

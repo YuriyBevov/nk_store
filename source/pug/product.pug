@@ -1,0 +1,22 @@
+extends layouts/main-layout.pug
+include ./mixins/breadcrumbs
+
+block variables
+  -
+    const title = "интернет магазин"
+    const desc = ""
+    const keywords = ""
+
+block content
+  .product
+    +breadcrumbs([
+        { title: 'Главная', link: 'index.html' },
+        { title: 'Каталог', link: 'catalog.html' },
+        { title: 'Платье для девочки Noble People (Россия)' }
+    ])
+
+    include ./sections/product/product-info
+    include ./sections/common/history
+    
+block modals
+    // include ./modals/info-modal

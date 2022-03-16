@@ -2,11 +2,11 @@
     @extend .section-margin-bottom;
     overflow: hidden;
 
+    padding-bottom: 40px;
     &__wrapper {
         @extend .wrapper;
         
         position: relative;
-        padding-bottom: 40px;
     }
 
     &-swiper {
