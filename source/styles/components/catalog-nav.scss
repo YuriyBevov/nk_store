@@ -26,8 +26,7 @@
             transition: border $main-transition;
         }
 
-        &:hover,
-        &:focus {
+        &:hover{
             span {
                 border-color: $purple;
             }

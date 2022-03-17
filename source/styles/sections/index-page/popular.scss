@@ -7,6 +7,10 @@
         
         position: relative;
         padding-bottom: 40px;
+
+        @media(max-width: $sm_w) {
+            padding: 0 10px;
+        }
     }
 
     &-swiper {

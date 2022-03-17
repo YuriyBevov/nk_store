@@ -62,17 +62,19 @@ const thumbsSliderMain = document.querySelector('.thumbs-swiper');
 
 if(thumbsSliderMain) {
    let galleryThumbs = new Swiper(thumbsSliderMain, {
-      centeredSlides: true,
-      centeredSlidesBounds: true,
-      slidesPerView: 3,
+      //centeredSlides: true,
+      ///centeredSlidesBounds: true,
+      slidesPerView: 4,
       watchOverflow: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
-      spaceBetween: 5,
+      spaceBetween: 0,
       direction: 'horizontal',
 
       breakpoints: {
          480: {
+           spaceBetween: 5,
+           slidesPerView: 3,
            direction: "vertical",
          },
       }

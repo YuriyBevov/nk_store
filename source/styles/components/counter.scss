@@ -1,0 +1,59 @@
+.counter {
+    &__body {
+        @extend .flex-wrap;
+        width: fit-content;
+        min-width: 100px;
+        height: 40px;
+        background-color: rgba(251, 188, 5, 0.8);
+        box-shadow: 5px 5px 10px rgba(143, 31, 232, 0.2);
+        border-radius: 50px;
+
+
+        & > button {
+            @extend .flex-item-center;
+            
+            border: 0;
+            padding: 0;
+            margin: 0;
+            width: 30px;
+            height: 100%;
+            border: 1px solid transparent;
+            background-color: rgba(255, 225, 79, 0.84);
+
+            &.disabled {
+                opacity: 0.4;
+            }
+
+            &:first-child {
+                border-radius: 50px 0 0 50px;
+                justify-content: flex-end;
+            }
+
+            &:last-child {
+                border-radius: 0 50px 50px 0;
+                justify-content: flex-start;
+            }
+
+            svg {
+                fill: $purple;
+            }
+
+            &:active:not(.disabled) {
+                border-color: rgba(251, 188, 5, 0.8);;
+                svg {
+                    fill: $main-black;
+                }
+            }
+        }
+
+        & > span {
+            @extend .flex-item-center;
+            flex-grow: 1;
+            font-family: $f4_reg;
+            font-size: 18px;
+            line-height: 1;
+            padding: 0 10px;
+            color: #58267E;
+        }
+    }
+}

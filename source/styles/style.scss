@@ -27,6 +27,7 @@
 @import "components/thumbs-swiper";
 @import "components/rating";
 @import "components/product-options-picker";
+@import "components/counter";
 
 
 // blocks
@@ -42,6 +43,9 @@
 
 /* product-page sections */
 @import "sections/product-page/product-info";
+
+/* cart-page sections */
+@import "sections/cart-page/cart";
 
 /* common sections */
 @import "sections/common/history";

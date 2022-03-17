@@ -1,0 +1,92 @@
+include ../../mixins/main_btn
+
+section.cart
+  .cart__wrapper
+    .cart__content
+      
+      ul.cart__list
+        li.cart__item
+          img(src="./assets/img/cart_img.png" alt="Название товара" width="140" height="180")
+
+          .cart__item-desc-container
+            h2 Толстовка черная с крупным глянцевым принтом
+
+            ul
+              li
+                span Цвет:
+                span Чёрный
+              li
+                span Размер:
+                span 92
+              li
+                span Артикул:
+                span 1111111111111
+              li
+                span Бренд:
+                span "Noble People"
+              li
+                span Цвет:
+                span Чёрный
+              li
+                span Размер:
+                span 92
+              li
+                span Артикул:
+                span 1111111111111
+              li
+                span Бренд:
+                span "Noble People"
+              li
+                span Цвет:
+                span Чёрный
+              li
+                span Размер:
+                span 92
+              li
+                span Артикул:
+                span 1111111111111
+              li
+                span Бренд:
+                span "Noble People"
+              li
+                span Цвет:
+                span Чёрный
+              li
+                span Размер:
+                span 92
+              li
+                span Артикул:
+                span 1111111111111
+              li
+                span Бренд:
+                span "Noble People"
+          
+          .cart__item-price-container
+            .cart__item-counter
+              include ../../components/counter
+            .cart__item-price
+              span.cart__item-price-old 999 999 руб.
+              span.cart__item-price-current 999 999 руб.
+          
+          button(type="button").cart__item-remove-btn
+            svg(width="24" height="24")
+                use(xlink:href="#icon-close")
+
+
+    .cart__aside
+      .cart__aside-section
+        span Товары:
+        span 999 999 руб.
+      .cart__aside-section
+        span Скидка:
+        span 999 999 руб.
+      .cart__aside-section
+        span Итого:
+        span 1 999 999 руб.
+      
+      .cart__aside-form-container
+        form(action="#") 
+            input(type="text" placeholder="Промокод")
+            button(type="submit") Применить
+        
+        +main_btn('link', 'Перейти к оформлению', '#', 'cart__offer-btn')

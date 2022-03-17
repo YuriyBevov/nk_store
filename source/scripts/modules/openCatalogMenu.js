@@ -5,13 +5,13 @@ let links = document.querySelectorAll('.catalog-nav__link');
 let activeLink = null;
 let activeSection = null;
 
-const onClickCloseCatalogSection = (evt) => {
+function closeCatalogSection(evt) {
     removeClass(activeLink, 'js-active');
     activeLink = null;
 
     removeClass(activeSection, 'js-active');
     activeSection = null;
-    evt.currentTarget.removeEventListener('click', onClickCloseCatalogSection);
+    evt.currentTarget.removeEventListener('click', closeCatalogSection);
     bodyLocker(false);
 }
 
@@ -34,19 +34,19 @@ const onClickOpenCatalogSection = (evt) => {
             addClass(activeSection, 'js-active') : null;
 
             let closeBtn = activeSection.querySelector('.js-close');
-
-            closeBtn.addEventListener('click', onClickCloseCatalogSection);
+            closeBtn.addEventListener('click', closeCatalogSection);
         }
 
         !checkClass(activeLink, 'js-active') ?
         addClass(activeLink, 'js-active') : null;
+    } else {
+        closeCatalogSection(evt);
     }
 }
 
 links.forEach(link => {
     link.addEventListener('click', onClickOpenCatalogSection);
 })
-
 
 /*const onMouseOverShowCatalogSection = (evt) => {
     bodyLocker(true, true);

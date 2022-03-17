@@ -8,4 +8,5 @@ import mobileMenuOpener from './modules/mobileMenuOpener.js';
 import mobileMenuCatalog from './modules/mobileMenuCatalog.js';
 import productCardDetail from './modules/productCardDetail.js';
 import cartAddBtns from './modules/cartAddBtns.js';
+import cartCounter from './modules/cartCounter.js';
 import custom_select from './modules/custom_select.js';

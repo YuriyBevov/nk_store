@@ -13050,7 +13050,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobileMenuCatalog_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_mobileMenuCatalog_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _modules_productCardDetail_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/productCardDetail.js */ "./source/scripts/modules/productCardDetail.js");
 /* harmony import */ var _modules_cartAddBtns_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/cartAddBtns.js */ "./source/scripts/modules/cartAddBtns.js");
-/* harmony import */ var _modules_custom_select_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/custom_select.js */ "./source/scripts/modules/custom_select.js");
+/* harmony import */ var _modules_cartCounter_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/cartCounter.js */ "./source/scripts/modules/cartCounter.js");
+/* harmony import */ var _modules_custom_select_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/custom_select.js */ "./source/scripts/modules/custom_select.js");
+
 
 
 
@@ -13097,6 +13099,70 @@ const onClickToggleCartAdd = (evt) => {
 cartAddBtns.forEach(btn => {
     btn.addEventListener('click', onClickToggleCartAdd);
 })
+
+/***/ }),
+
+/***/ "./source/scripts/modules/cartCounter.js":
+/*!***********************************************!*\
+  !*** ./source/scripts/modules/cartCounter.js ***!
+  \***********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+const counter = document.querySelector('.js-counter');
+const decBtn = document.querySelector('.js-counter-dec');
+const incBtn = document.querySelector('.js-counter-inc');
+
+if(counter) {
+    let currentValue = Number(counter.innerHTML);
+
+    const minValue = 1;
+    const maxValue = 99;
+
+    const setValue = (operationType) => {
+        operationType === 'dec' ?
+        currentValue -= 1 :
+        operationType === 'inc' ? 
+        currentValue += 1 : null;
+
+        counter.innerHTML = currentValue;
+    }
+
+    const onClickDecValue = () => {
+        if (currentValue === maxValue) {
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(incBtn, 'disabled');
+            setValue('dec');
+        }
+        if(currentValue > (minValue + 1) && currentValue < maxValue ) {
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["checkClass"])(decBtn, 'disabled') ?
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(decBtn, 'disabled') : null;
+            setValue('dec');
+        } else if(currentValue === 2) {
+            setValue('dec');
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(decBtn, 'disabled');
+        }
+    }
+
+    const onClickIncValue = () => {
+        if(currentValue === 1) {
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(decBtn, 'disabled');
+            setValue('inc');
+        } else if ( currentValue > minValue && currentValue < (maxValue - 1) ) {
+            setValue('inc');
+        } else if (currentValue === (maxValue - 1) ) {
+            setValue('inc');
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(incBtn, 'disabled');
+        }
+    }
+
+    decBtn.addEventListener('click', onClickDecValue);
+    incBtn.addEventListener('click', onClickIncValue);
+}
 
 /***/ }),
 
@@ -13229,13 +13295,13 @@ let links = document.querySelectorAll('.catalog-nav__link');
 let activeLink = null;
 let activeSection = null;
 
-const onClickCloseCatalogSection = (evt) => {
+function closeCatalogSection(evt) {
     Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(activeLink, 'js-active');
     activeLink = null;
 
     Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(activeSection, 'js-active');
     activeSection = null;
-    evt.currentTarget.removeEventListener('click', onClickCloseCatalogSection);
+    evt.currentTarget.removeEventListener('click', closeCatalogSection);
     Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(false);
 }
 
@@ -13258,19 +13324,19 @@ const onClickOpenCatalogSection = (evt) => {
             Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(activeSection, 'js-active') : null;
 
             let closeBtn = activeSection.querySelector('.js-close');
-
-            closeBtn.addEventListener('click', onClickCloseCatalogSection);
+            closeBtn.addEventListener('click', closeCatalogSection);
         }
 
         !Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["checkClass"])(activeLink, 'js-active') ?
         Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(activeLink, 'js-active') : null;
+    } else {
+        closeCatalogSection(evt);
     }
 }
 
 links.forEach(link => {
     link.addEventListener('click', onClickOpenCatalogSection);
 })
-
 
 /*const onMouseOverShowCatalogSection = (evt) => {
     bodyLocker(true, true);
@@ -13472,17 +13538,19 @@ const thumbsSliderMain = document.querySelector('.thumbs-swiper');
 
 if(thumbsSliderMain) {
    let galleryThumbs = new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](thumbsSliderMain, {
-      centeredSlides: true,
-      centeredSlidesBounds: true,
-      slidesPerView: 3,
+      //centeredSlides: true,
+      ///centeredSlidesBounds: true,
+      slidesPerView: 4,
       watchOverflow: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
-      spaceBetween: 5,
+      spaceBetween: 0,
       direction: 'horizontal',
 
       breakpoints: {
          480: {
+           spaceBetween: 5,
+           slidesPerView: 3,
            direction: "vertical",
          },
       }
