@@ -21,7 +21,7 @@ $border-radius: 16px;
         border-radius: $border-radius;
 
         @media(max-width: 960px) {
-            padding: 10px;
+            padding: 20px;
         }
 
         @media(max-width: $md_w) {
@@ -31,14 +31,11 @@ $border-radius: 16px;
     }
 
     &__item {
-        @extend .flex-wrap;
-        align-items: center;
         position: relative;
-        padding: 30px 0;
+        padding-bottom: 30px;
 
-        @media(max-width: 960px) {
-            padding: 20px 0;
-            align-items: flex-end;
+        @media(max-width: 400px) {
+            padding-top: 25px
         }
 
         &:not(:last-child) {
@@ -47,21 +44,13 @@ $border-radius: 16px;
 
         &-remove-btn{
             position: absolute;
-            top: 24px;
-            right: 0;
+            top: -12px;
+            right: -12px;
             @extend .flex-item-center;
             border: 0;
             background-color: transparent;
             padding: 0;
             margin: 0;
-
-            @media(max-width: $lg_w) {
-                top: 19px;
-            }
-
-            @media(max-width: 960px) {
-                top: 15px;
-            }
 
             svg {
                 transition: fill $main-transition;
@@ -75,164 +64,125 @@ $border-radius: 16px;
             }
         }
 
-        img {
-            width: 120px;
-            height: 160px;
-            border: 1px solid $gold;
-            object-fit: cover;
-            margin-right: 40px;
+        h2 {
+            font-family: $f3_reg;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 0.7;
+            margin-bottom: 30px;
+            text-shadow: 0 0 1px black;
+            padding-right: 40px;
 
-            @media(max-width: 960px) {
-                margin-right: 100px;
+            @media(max-width: $lg_w) {
+                font-size: 26px;
+                margin-bottom: 20px;
             }
 
-            @media(max-width: $md_w) {
-                margin-right: 30px;
+            @media(max-width: $sm_w) {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            @media(max-width: 400px) {
+                font-size: 22px;
+                padding-right: 0;
             }
         }
 
-        &-desc-container {
+        &-container {
+            @extend .flex-wrap;
+        }
+
+        &-subtitle {
+            display: inline-block;
+            font-family: $f3_reg;
+            font-size: 24px;
+            color: $black;
+            
+            text-shadow: 0 0 1px $red;
+            border-bottom: 1px solid $gold;
+            margin-bottom: 25px;
+        }
+
+        &-info-container {
+            @extend .flex-wrap;
+            align-items: center;
             width: 100%;
-            max-width: 360px;
-            margin-right: 20px;
+            margin-bottom: 30px;
 
-            @media(max-width: $lg_w) {
-                margin-right: 0;
-                padding-top: 20px;
-                max-width: 100%;
-                order: 2;
-            }
-
-            h2 {
-                font-family: $f3_reg;
-                font-size: 30px;
-                font-weight: 400;
-                line-height: 0.7;
-                margin-bottom: 30px;
-                text-shadow: 0 0 1px black;
-
-                @media(max-width: $lg_w) {
-                    padding-right: 20px;
-                }
-
-                @media(max-width: $sm_w) {
-                    font-size: 24px;
-                    margin-bottom: 20px;
-                }
-            }
-
-            ul {
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                max-height: 120px;
-                max-width: 85%;
-                overflow: hidden;
-                overflow-y: auto;
-                padding-right: 40px;
-
-                @media(max-width: $lg_w) {
-                    max-width: 100%;
-                }
+            img {
+                width: 180px;
+                height: 240px;
+                object-fit: cover;
+                margin-right: 40px;
 
                 @media(max-width: 960px) {
-                    flex-direction: row;
-                    flex-wrap: wrap;
+                    margin-right: 10px;
                 }
 
-                li {
-                    display: flex;
-                    flex-wrap: wrap;
-                    padding: 5px 0;
-
-                    @media(max-width: 960px) {
-                        width: 50%;
-                        min-width: 220px;
-                        padding-right: 15px;
-                    }
-
-                    span {
-                        width: calc(100% - 100px);
-                        
-                        font-size: 16px;
-                        font-family: $f4_reg;
-                        color: $main-black;
-                    }
-
-                    span:first-child {
-                        font-family: $f3_reg;
-                        width: 100px;
-                        font-size: 20px;
-                        color: $black;
-                        
-                        text-shadow: 0 0 1px $red;
-                    }
+                @media(max-width: 400px) {
+                    margin-bottom: 20px;
                 }
-            }
-
-        }
-
-        &-price-container {
-            @extend .flex-wrap;
-            flex-grow: 1;
-
-            @media(max-width: 1280px) {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            @media(max-width: $lg_w) {
-                flex-direction: row;
-                order: 1;
-            }
-
-            @media(max-width: 960px) {
-                flex-direction: column;
-            }
-
-            @media(max-width: $md_w) {
-                flex-direction: row;
-            }
-
-            @media(max-width: $sm_w) {
-                flex-direction: column;
-            }
-         }
-
-        &-counter {
-            margin-right: 40px;
-            
-            @media(max-width: 1280px) {
-                margin-right: 0;
-                order: 2;
-            }
-
-            @media(max-width: $lg_w) {
-                order: 1;
-                margin-left: 0;
-                margin-right: 40px;
-            }
-
-            @media(max-width: 960px) {
-                margin-right: 0;
-                order: 2;
-            }
-
-            @media(max-width: $md_w) {
-                margin-right: 30px;
-                order: 1;
-            }
-
-            @media(max-width: $sm_w) {
-                margin-right: 0;
-                order: 2;
             }
         }
 
         &-price {
+            &-container {
+                @extend .flex-wrap;
+                align-items: center;
+                flex-grow: 1;
+
+                .counter {
+                    margin: 0 auto;
+                }
+
+                @media(max-width: 960px) {
+                    flex-direction: column;
+
+                    .counter {
+                        margin: 0;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                @media(max-width: $md_w) {
+                    flex-direction: row;
+
+                    .counter {
+                        margin: 0 auto;
+                    }
+                }
+
+                @media(max-width: 600px) {
+                    flex-direction: column;
+
+                    .counter {
+                        margin: 0;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                @media(max-width: 400px) {
+                    align-items: flex-start;
+                }
+            }
+            
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            margin-right: auto;
+
+            @media(max-width: 960px) {
+                margin: 0;
+            }
+
+            @media(max-width: $md_w) {
+                margin: 0 auto;
+            }
+
+            @media(max-width: 600px) {
+                margin: 0;
+            }
 
             &-old {
                 @extend .product-info__price-old;
@@ -246,21 +196,88 @@ $border-radius: 16px;
                 margin-right: 0;
             }
 
-            @media(max-width: 1280px) {
-                order: 1;
-                margin-bottom: 25px;
-            }
+            @media(max-width: 400px) {
+                flex-direction: row;
 
-            @media(max-width: $lg_w) {
-                order: 2;
-            }
+                &-old {
+                    order: 2;
+                }
 
-            @media(max-width: 960px) {
-                order: 1;
+                &-current {
+                    order: 1;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        &-desc {
+            &-container {
+                margin-bottom: 10px;
+
+                display: flex;
+                flex-direction: column;
+
+                & > p {
+                    font-size: 16px;
+                    color: $main-black;
+
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+
+                    @media(max-width: 600px) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        &-chars {
+            &-container {
+                ul {
+                    margin-bottom: 10px;
+
+                    li {
+                        @extend .flex-wrap;
+                        align-items: center;
+                        padding: 5px 0;
+                        padding-right: 20px;
+
+                        & > span {
+                            width: calc(100% - 100px);
+                            
+                            font-size: 16px;
+                            line-height: 1;
+                            font-family: $f4_reg;
+                            color: $main-black;
+
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        span:first-child {
+                            font-family: $f3_reg;
+                            width: 100px;
+                            font-size: 20px;
+                            line-height: 1.2;
+                            color: $black;
+                            
+                            text-shadow: 0 0 1px $red;
+                        }
+                    }
+                }
+
+                a {
+                    font-size: 14px;
+                    color: $main-black;
+                    text-decoration: underline;
+                }
             }
         }
     }
 
+    // все хорошо
     &__offer-btn {
         @include main_btn($white, $purple);
         width: 100%;
@@ -312,7 +329,7 @@ $border-radius: 16px;
                 width: 220px;
             }
 
-            @media(max-width: 600px) {
+            @media(max-width: 520px) {
                 width: 100%;
 
                 &:not(:first-child) {
