@@ -1,0 +1,18 @@
+section.catalog
+  .catalog__wrapper
+    .catalog__aside
+      include ../../components/catalog-filter
+    .catalog__content
+      .catalog__sort
+        select(id="catalog_sort").custom-select
+            option(value="expensive" selected) По возрастанию цены
+            option(value="cheap") По уменьшению цены
+            option(value="else") Еще что то
+        a(href="#") Показать фильтр
+
+      ul.catalog__list
+        each item in [1,2,3,4,5,6,7,8,9,10]
+          li.catalog__item
+            include ../../components/product-card
+    
+      include ../../components/pagination

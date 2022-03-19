@@ -29,6 +29,8 @@
 @import "components/product-options-picker";
 @import "components/counter";
 @import "components/favourite-card";
+@import "components/catalog-filter";
+@import "components/pagination";
 
 
 // blocks
@@ -47,6 +49,9 @@
 
 /* cart-page sections */
 @import "sections/cart-page/cart";
+
+/* cart-page sections */
+@import "sections/catalog-page/catalog";
 
 /* favourite-page sections */
 @import "sections/favourite-page/favourite";

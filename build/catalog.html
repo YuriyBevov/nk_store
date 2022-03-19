@@ -314,145 +314,32 @@
       </div>
     </header>
     <main>
-      <div class="product">
+      <div class="catalog">
         <div class="breadcrumbs wrapper">
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item"><a href="index.html">Главная</a>
             </li>
-            <li class="breadcrumbs__item"><a href="catalog.html">Каталог</a>
-            </li>
-            <li class="breadcrumbs__item"><span>Платье для девочки Noble People (Россия)</span>
+            <li class="breadcrumbs__item"><span>Каталог</span>
             </li>
           </ul>
         </div>
-        <section class="product-info">
-          <div class="product-info__wrapper">
-            <div class="product-info__side">
-              <div class="product-info__slider-container">
-                <div class="swiper thumbs-swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100"></div>
-                  </div>
-                </div>
-                <div class="swiper thumbs-swiper-main">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                    <div class="swiper-slide"><img src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400"></div>
-                  </div>
-                  <div class="swiper-button-next thumbs-swiper-button-next"></div>
-                  <div class="swiper-button-prev thumbs-swiper-button-prev"></div>
-                </div>
+        <section class="catalog">
+          <div class="catalog__wrapper">
+            <div class="catalog__aside">
+              <div class="filter">
+                <p>filter</p>
               </div>
             </div>
-            <div class="product-info__content">
-              <h1>Платье для девочки Noble People (Россия)</h1>
-              <div class="rating">
-                <div class="rating__stars">
-                                <div class="rating-star active">
-                                  <svg width="20" height="20">
-                                    <use xlink:href="#icon-star"></use>
-                                  </svg>
-                                </div>
-                                <div class="rating-star active">
-                                  <svg width="20" height="20">
-                                    <use xlink:href="#icon-star"></use>
-                                  </svg>
-                                </div>
-                                <div class="rating-star active">
-                                  <svg width="20" height="20">
-                                    <use xlink:href="#icon-star"></use>
-                                  </svg>
-                                </div>
-                                <div class="rating-star active">
-                                  <svg width="20" height="20">
-                                    <use xlink:href="#icon-star"></use>
-                                  </svg>
-                                </div>
-                                <div class="rating-star">
-                                  <svg width="20" height="20">
-                                    <use xlink:href="#icon-star"></use>
-                                  </svg>
-                                </div>
-                </div>
-                <div class="rating__count"><span>189 754 отзывов</span></div>
+            <div class="catalog__content">
+              <div class="catalog__sort">
+                <select class="custom-select" id="catalog_sort">
+                  <option value="expensive" selected="">По возрастанию цены</option>
+                  <option value="cheap">По уменьшению цены</option>
+                  <option value="else">Еще что то</option>
+                </select><a href="#">Показать фильтр</a>
               </div>
-              <div class="product-info__price-container"><span class="product-info__price-current">999 999 руб.</span><span class="product-info__price-old">999 999 руб.</span></div>
-              <div class="product-info__status-container">
-                <!-- span.product-info__status-available-to-order Под заказ-->
-                <!-- span.product-info__status-available-not Нет в наличии--><span class="product-info__status-available">В наличии</span><span class="product-info__status-rest">Осталось 3шт.</span>
-              </div>
-              <div class="product-info__options-container">
-                <div class="product-options-picker">
-                  <div class="product-options-picker__container">
-                    <div class="product-options-picker__field"><span>Размер:</span>
-                      <select class="custom-select" id="product-size">
-                        <option value="80" selected="">80</option>
-                        <option value="84">84</option>
-                        <option value="88">88</option>
-                        <option value="92">92</option>
-                        <option value="84">96</option>
-                        <option value="88">100</option>
-                        <option value="92">104</option>
-                      </select>
-                    </div>
-                    <div class="product-options-picker__field"><span>Цвет:</span>
-                      <select class="custom-select" id="product-color">
-                        <option value="white" selected="">Белый</option>
-                        <option value="black">Черный</option>
-                        <option value="blue">Синий</option>
-                        <option value="red">Красный</option>
-                        <option value="green">Зеленый</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="product-options-picker__size-table"><a href="#">Таблица размеров </a></div>
-                </div>
-              </div>
-              <div class="product-info__btn-container"><a class="product-info__cart-add-btn js-cart-add-btn" href="#">
-                          <svg width="24" height="24">
-                            <use xlink:href="#icon-cart"></use>
-                          </svg><span>В корзину</span></a><a class="product-info__cart-buy-btn" href="#"><span>Купить в один клик</span></a>
-              </div>
-              <div class="product-info__description-container">
-                <h2>Описание товар</h2>
-                <p>Платье с пышной фатиновой юбкой-пачкой только на первый взгляд кажется исключительно тематическим. На самом деле его можно гармонично вписать в любой уличный образ, если дополнить пиджаком оверсайз или джинсовой курткой.</p>
-                <p>Платье с пышной фатиновой юбкой-пачкой только на первый взгляд кажется исключительно тематическим. На самом деле его можно гармонично вписать в любой уличный образ, если дополнить пиджаком оверсайз или джинсовой курткой.</p>
-              </div>
-              <div class="product-info__chars-container">
-                <h2>Характеристики</h2>
-                <ul>
-                  <li><span>Бренд:</span><span>Noble People</span></li>
-                  <li><span>Коллекция:</span><span>ВЕСНА/ЛЕТО 2021-2022</span></li>
-                  <li><span>Название коллекции:</span><span>Праздничный наряд</span></li>
-                  <li><span>Возраст:</span><span>12-15 лет</span></li>
-                  <li><span>Пол:</span><span>Женский</span></li>
-                  <li><span>Состав:</span><span>65% хлопок, 35% полиэстер</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="history">
-          <div class="history__wrapper">
-            <h2 class="section-colored-title">Недавно просмотренные</h2>
-            <div class="swiper main-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
+              <ul class="catalog__list">
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -489,8 +376,8 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -527,8 +414,8 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -565,8 +452,8 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -603,8 +490,8 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -641,8 +528,8 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -679,8 +566,8 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -717,8 +604,8 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -755,8 +642,8 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="catalog__item">
                   <div class="product-card">
                     <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
                       <div class="product-card__badges">
@@ -793,9 +680,47 @@
                       </ul>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="swiper-pagination main-swiper-pagination"></div>
+                </li>
+                <li class="catalog__item">
+                  <div class="product-card">
+                    <div class="product-card__header"><img src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                      <div class="product-card__badges">
+                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                          <svg width="35" height="35">
+                                            <use xlink:href="#icon-heart"></use>
+                                          </svg></a><a class="product-card__zoom-btn" href="#">
+                        <svg width="25" height="25">
+                          <use xlink:href="#icon-search"></use>
+                        </svg></a>
+                    </div>
+                    <div class="product-card__content">
+                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="product-card__description">
+                        <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
+                        <div class="product-card__description-price"><span>999 999 руб.</span></div>
+                      </div>
+                    </div>
+                    <div class="product-card__footer"><a class="product-card__cart-add-btn js-cart-add-btn" href="#">
+                                          <svg width="24" height="24">
+                                            <use xlink:href="#icon-cart"></use>
+                                          </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
+                    </div>
+                    <div class="product-card__detail">
+                      <ul>
+                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="pagination"><a class="pagination__btn" href="#">1</a><span class="pagination__ellypsis pagination__ellypsis--start">...</span><a class="pagination__btn" href="#">2</a><a class="pagination__btn active" href="#">3</a><a class="pagination__btn" href="#">4</a><a class="pagination__btn" href="#">5</a><span class="pagination__ellypsis pagination__ellypsis--end">...</span><a class="pagination__btn" href="#">256</a></div>
             </div>
           </div>
         </section>
