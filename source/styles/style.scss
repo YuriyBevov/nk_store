@@ -28,6 +28,7 @@
 @import "components/rating";
 @import "components/product-options-picker";
 @import "components/counter";
+@import "components/favourite-card";
 
 
 // blocks
@@ -46,6 +47,9 @@
 
 /* cart-page sections */
 @import "sections/cart-page/cart";
+
+/* favourite-page sections */
+@import "sections/favourite-page/favourite";
 
 /* common sections */
 @import "sections/common/history";

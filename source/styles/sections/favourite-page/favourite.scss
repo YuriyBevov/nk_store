@@ -1,0 +1,33 @@
+.favourite {
+    @extend .section-margin-bottom;
+
+    &__wrapper {
+        @extend .wrapper;
+    }
+
+    &__list {
+        @extend .flex-wrap;
+    }
+
+    &__item {
+        width: calc(50% - 10px);
+        height: fit-content;
+        &:not(:nth-child(even)) {
+            margin-right: 20px;
+        }
+        margin-bottom: 20px;
+        background: rgba(255, 255, 255, 0.09);
+        box-shadow: 2px 4px 10px rgba(165, 142, 24, 0.52);
+        border-radius: 20px;
+
+        padding: 20px;
+
+        @media(max-width: $md_w) {
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+}

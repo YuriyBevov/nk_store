@@ -13114,55 +13114,71 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
 
 
-const counter = document.querySelector('.js-counter');
-const decBtn = document.querySelector('.js-counter-dec');
-const incBtn = document.querySelector('.js-counter-inc');
+const decBtns = document.querySelectorAll('.js-counter-dec');
+const incBtns = document.querySelectorAll('.js-counter-inc');
 
-if(counter) {
-    let currentValue = Number(counter.innerHTML);
-
+if(decBtns && incBtns) {
     const minValue = 1;
     const maxValue = 99;
 
-    const setValue = (operationType) => {
+    const setValue = (operationType, value, counter) => {
         operationType === 'dec' ?
-        currentValue -= 1 :
+        value -= 1 :
         operationType === 'inc' ? 
-        currentValue += 1 : null;
+        value += 1 : null;
 
-        counter.innerHTML = currentValue;
+        counter.innerHTML = value;
     }
 
-    const onClickDecValue = () => {
-        if (currentValue === maxValue) {
-            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(incBtn, 'disabled');
-            setValue('dec');
+    const onClickDecValue = (evt) => {
+
+        let decBtn = evt.currentTarget;
+        let counter =  decBtn.parentNode.querySelector('.js-counter');
+        let currentCounterValue = Number(counter.innerHTML);
+
+        if (currentCounterValue === maxValue) {
+            let disabledIncBtn = decBtn.parentNode.querySelector('.js-counter-inc');
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(disabledIncBtn, 'disabled');
+            setValue('dec',  currentCounterValue, counter);
         }
-        if(currentValue > (minValue + 1) && currentValue < maxValue ) {
+        if(currentCounterValue > (minValue + 1) && currentCounterValue < maxValue ) {
             Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["checkClass"])(decBtn, 'disabled') ?
             Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(decBtn, 'disabled') : null;
-            setValue('dec');
-        } else if(currentValue === 2) {
-            setValue('dec');
+            setValue('dec', currentCounterValue, counter);
+        } else if(currentCounterValue === 2) {
+            setValue('dec',  currentCounterValue, counter);
             Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(decBtn, 'disabled');
         }
     }
 
-    const onClickIncValue = () => {
-        if(currentValue === 1) {
-            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(decBtn, 'disabled');
-            setValue('inc');
-        } else if ( currentValue > minValue && currentValue < (maxValue - 1) ) {
-            setValue('inc');
-        } else if (currentValue === (maxValue - 1) ) {
-            setValue('inc');
+    const onClickIncValue = (evt) => {
+        let incBtn = evt.currentTarget;
+        let counter =  incBtn.parentNode.querySelector('.js-counter');
+        let currentCounterValue = Number(counter.innerHTML);
+
+        if(currentCounterValue === 1) {
+            let disabledDecBtn = incBtn.parentNode.querySelector('.js-counter-dec');
+            Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(disabledDecBtn, 'disabled');
+            setValue('inc', currentCounterValue, counter);
+        } else if ( currentCounterValue > minValue && currentCounterValue < (maxValue - 1) ) {
+            setValue('inc', currentCounterValue, counter);
+        } else if (currentCounterValue === (maxValue - 1) ) {
+            setValue('inc', currentCounterValue, counter);
             Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(incBtn, 'disabled');
         }
     }
 
-    decBtn.addEventListener('click', onClickDecValue);
-    incBtn.addEventListener('click', onClickIncValue);
+    
+    decBtns.forEach(btn => {
+        btn.addEventListener('click', onClickDecValue);
+    })
+
+    incBtns.forEach(btn => {
+        btn.addEventListener('click', onClickIncValue);
+    })
 }
+
+
 
 /***/ }),
 
