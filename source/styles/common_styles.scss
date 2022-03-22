@@ -29,8 +29,16 @@
     }
 }
 
+.color-box {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: auto;
+    border: 1px solid $gray;
+}
+
 .section-colored-title {
-    font-family: $f1_med;
+    font-weight: 600;
     font-size: 48px;
     line-height: 1.2;
     text-align: center;
@@ -122,4 +130,39 @@
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+.main-checkbox {
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    label.checkbox-label {
+        position: relative;
+        cursor: pointer;
+        padding-left: 24px;
+        font-size: 14px;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            content: '';
+
+            width: 16px;
+            height: 16px;
+
+            border: 1px solid $gold;
+            border-radius: 4px;
+            background-color: transparent;
+        }
+    }
+
+    input[type="checkbox"]:checked + label.checkbox-label::before {
+        background-image: url('../assets/img/checkbox-arr.svg');
+        background-size: 12px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }

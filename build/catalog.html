@@ -24,7 +24,10 @@
 <clipPath id="clip0_676_3185">
 <rect width="25" height="26" fill="white"></rect>
 </clipPath>
-</defs><symbol id="icon-box" viewBox="0 0 30 30">
+</defs><symbol id="icon-arrow" viewBox="0 0 20 20">
+<path d="M17.3438 6.32812L10 13.6719" stroke="#58267E" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+<path d="M10 13.6719L2.65625 6.32812" stroke="#58267E" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+</symbol><symbol id="icon-box" viewBox="0 0 30 30">
 <path d="M24.0762 10.9336C24.0762 10.9277 24.0762 10.9219 24.0703 10.9219C24.0703 10.9102 24.0645 10.9043 24.0645 10.8926C24.0645 10.8867 24.0586 10.875 24.0586 10.8691C24.0586 10.8633 24.0527 10.8574 24.0527 10.8516C24.041 10.8223 24.0293 10.7988 24.0117 10.7754L20.2031 5.17969C20.1211 5.05664 19.9863 4.98633 19.8398 4.98633H16.1133H13.8926H10.166C10.0195 4.98633 9.88477 5.05664 9.80273 5.17969L5.99414 10.7754C5.97656 10.7988 5.96484 10.8281 5.95312 10.8516C5.95312 10.8574 5.94727 10.8633 5.94727 10.8691C5.94141 10.875 5.94141 10.8867 5.94141 10.8926C5.94141 10.9043 5.93555 10.9102 5.93555 10.9219C5.93555 10.9277 5.93555 10.9336 5.92969 10.9336C5.92383 10.9629 5.91797 10.9922 5.91797 11.0215V24.5742C5.91797 24.8145 6.11719 25.0137 6.35742 25.0137H23.6484C23.8887 25.0137 24.0879 24.8145 24.0879 24.5742V11.0215C24.082 10.9922 24.082 10.9629 24.0762 10.9336ZM22.8105 10.582H17.1328L16.5996 5.86523H19.5996L22.8105 10.582ZM13.6934 11.4609H16.3008V14.6836L15.252 13.9453C15.1758 13.8926 15.0879 13.8633 15 13.8633C14.9121 13.8633 14.8242 13.8926 14.748 13.9453L13.6992 14.6836V11.4609H13.6934ZM15.7148 5.86523L16.248 10.582H13.7461L14.2793 5.86523H15.7148ZM10.4004 5.86523H13.4004L12.8672 10.582H7.18945L10.4004 5.86523ZM23.2031 24.1348H6.79688V11.4609H12.8203V15.5273C12.8203 15.6914 12.9141 15.8438 13.0547 15.9199C13.2012 15.9961 13.377 15.9844 13.5117 15.8906L15 14.8418L16.4883 15.8906C16.5645 15.9434 16.6523 15.9727 16.7402 15.9727C16.8105 15.9727 16.8809 15.9551 16.9453 15.9258C17.0918 15.8496 17.1797 15.6973 17.1797 15.5332V11.4668H23.2031V24.1348Z" fill="black"></path>
 <path d="M11.7773 19.3594H8.66016C8.41992 19.3594 8.2207 19.5586 8.2207 19.7988C8.2207 20.0391 8.41992 20.2383 8.66016 20.2383H11.7773C12.0176 20.2383 12.2168 20.0391 12.2168 19.7988C12.2168 19.5586 12.0176 19.3594 11.7773 19.3594Z" fill="black"></path>
 <path d="M10.2187 21.2051H8.66016C8.41992 21.2051 8.2207 21.4043 8.2207 21.6445C8.2207 21.8848 8.41992 22.084 8.66016 22.084H10.2187C10.459 22.084 10.6582 21.8848 10.6582 21.6445C10.6582 21.4043 10.459 21.2051 10.2187 21.2051Z" fill="black"></path>
@@ -327,7 +330,210 @@
           <div class="catalog__wrapper">
             <div class="catalog__aside">
               <div class="filter">
-                <p>filter</p>
+                <div class="filter__fields">
+                  <div class="filter__fields-header"><span>Фильтр</span><a class="filter__clear" href="#">Сбросить фильтры</a>
+                    <button class="js-close-filter-btn" type="button" aria-hidden="Закрыть фильтр">
+                      <svg width="24" height="24">
+                        <use xlink:href="#icon-close"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <form action="#">
+                    <div class="filter__field">
+                                    <button class="filter__field-btn js-filter-btn is-active" type="button">
+                                      <svg width="16" height="16">
+                                        <use xlink:href="#icon-arrow"></use>
+                                      </svg><span>Категории товаров</span>
+                                    </button>
+                      <ul class="filter__field-container js-filter-dropdown">
+                        <li>
+                                        <input type="checkbox" id="clothes" checked="">
+                                        <label class="checkbox-label" for="clothes">Одежда</label><span class="filter__field-count">1999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="shoes" checked="">
+                                        <label class="checkbox-label" for="shoes">Обувь</label><span class="filter__field-count">1999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="toys" checked="">
+                                        <label class="checkbox-label" for="toys">Игрушки</label><span class="filter__field-count">9999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="babies" checked="">
+                                        <label class="checkbox-label" for="babies">Товары для малышей</label><span class="filter__field-count">1999</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="filter__field"> 
+                                    <button class="filter__field-btn js-filter-btn" type="button">
+                                      <svg width="16" height="16">
+                                        <use xlink:href="#icon-arrow"></use>
+                                      </svg><span>Пол</span>
+                                    </button>
+                      <ul class="filter__field-container js-filter-dropdown js-collapsed"> 
+                        <li>
+                                        <input type="checkbox" id="boy" checked="">
+                                        <label class="checkbox-label" for="boy">Мужской</label><span class="filter__field-count">1999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="girl" checked="">
+                                        <label class="checkbox-label" for="girl">Женский</label><span class="filter__field-count">9999</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="filter__field"> 
+                                    <button class="filter__field-btn js-filter-btn" type="button">
+                                      <svg width="16" height="16">
+                                        <use xlink:href="#icon-arrow"></use>
+                                      </svg><span>Состав</span>
+                                    </button>
+                      <ul class="filter__field-container js-filter-dropdown js-collapsed">
+                        <li>
+                                        <input type="checkbox" id="synthetics" checked="">
+                                        <label class="checkbox-label" for="synthetics">Синтетика</label><span class="filter__field-count">1999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="cotton" checked="">
+                                        <label class="checkbox-label" for="cotton">Хлопок</label><span class="filter__field-count">1999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="velvet" checked="">
+                                        <label class="checkbox-label" for="velvet">Бархат</label><span class="filter__field-count">9</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="satin " checked="">
+                                        <label class="checkbox-label" for="satin ">Алтас</label><span class="filter__field-count">156</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="velveteen" checked="">
+                                        <label class="checkbox-label" for="velveteen">Вельвет</label><span class="filter__field-count">11</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="velour " checked="">
+                                        <label class="checkbox-label" for="velour ">Велюр</label><span class="filter__field-count">99</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="viscose " checked="">
+                                        <label class="checkbox-label" for="viscose ">Вискоза</label><span class="filter__field-count">1999</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="filter__field"> 
+                                    <button class="filter__field-btn js-filter-btn" type="button">
+                                      <svg width="16" height="16">
+                                        <use xlink:href="#icon-arrow"></use>
+                                      </svg><span>Бренды</span>
+                                    </button>
+                      <ul class="filter__field-container js-filter-dropdown js-collapsed">
+                        <li>
+                                        <input type="checkbox" id="1TOY" checked="">
+                                        <label class="checkbox-label" for="1TOY">1TOY</label><span class="filter__field-count">1999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="ARKADE" checked="">
+                                        <label class="checkbox-label" for="ARKADE">ARKADE</label><span class="filter__field-count">1999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="Arau" checked="">
+                                        <label class="checkbox-label" for="Arau">Arau</label><span class="filter__field-count">9</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="BT21 " checked="">
+                                        <label class="checkbox-label" for="BT21 ">BT21</label><span class="filter__field-count">156</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="BabyEinstein" checked="">
+                                        <label class="checkbox-label" for="BabyEinstein">Baby Einstein</label><span class="filter__field-count">11</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="Ben-10 " checked="">
+                                        <label class="checkbox-label" for="Ben-10 ">Ben-10</label><span class="filter__field-count">99</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="Bio-Oil " checked="">
+                                        <label class="checkbox-label" for="Bio-Oil ">Bio-Oil</label><span class="filter__field-count">1999</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="filter__field"> 
+                                    <button class="filter__field-btn js-filter-btn" type="button">
+                                      <svg width="16" height="16">
+                                        <use xlink:href="#icon-arrow"></use>
+                                      </svg><span>Цвет</span>
+                                    </button>
+                      <ul class="filter__field-container js-filter-dropdown js-collapsed">
+                        <li>
+                                        <input type="checkbox" id="red" checked="">
+                                        <label class="checkbox-label" for="red">Фиолетовый</label>
+                          <div class="color-box" style="background-color: purple"></div><span class="filter__field-count">99</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="black" checked="">
+                                        <label class="checkbox-label" for="black">Черный</label>
+                          <div class="color-box" style="background-color: black"></div><span class="filter__field-count">199</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="white" checked="">
+                                        <label class="checkbox-label" for="white">Белый</label>
+                          <div class="color-box" style="background-color: white"></div><span class="filter__field-count">1199</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="filter__field">
+                                    <button class="filter__field-btn js-filter-btn" type="button">
+                                      <svg width="16" height="16">
+                                        <use xlink:href="#icon-arrow"></use>
+                                      </svg><span>Размер</span>
+                                    </button>
+                      <div class="filter__field-container filter__field-select-container js-filter-dropdown js-collapsed">
+                        <select class="custom-select" id="product-size">
+                          <option value="80" selected="">80</option>
+                          <option value="84">84</option>
+                          <option value="88">88</option>
+                          <option value="92">92</option>
+                          <option value="84">96</option>
+                          <option value="88">100</option>
+                          <option value="92">104</option>
+                        </select><a class="filter__field-sizes-btn js-filter-sizes-btn" href="#"><span>Таблица размеров</span></a>
+                      </div>
+                    </div>
+                    <div class="filter__field">
+                                    <button class="filter__field-btn js-filter-btn" type="button">
+                                      <svg width="16" height="16">
+                                        <use xlink:href="#icon-arrow"></use>
+                                      </svg><span>Цена</span>
+                                    </button>
+                      <div class="filter__field-container js-filter-dropdown js-collapsed">
+                        <div class="filter__range">
+                          <div class="range"></div>
+                          <label class="filter__range-label" for="priceFrom">От: 
+                            <input type="number" placeholder="0" id="priceFrom" min="0" max="500000" step="100">
+                          </label>
+                          <label class="filter__range-label" for="priceTo">До: 
+                            <input type="number" placeholder="50000" min="0" max="50000" id="priceTo" step="100">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__field">
+                                    <button class="filter__field-btn js-filter-btn" type="button">
+                                      <svg width="16" height="16">
+                                        <use xlink:href="#icon-arrow"></use>
+                                      </svg><span>Дополнительно</span>
+                                    </button>
+                      <ul class="filter__field-container js-filter-dropdown js-collapsed">
+                        <li>
+                                        <input type="checkbox" id="sales" checked="">
+                                        <label class="checkbox-label" for="sales">Cо скидкой</label><span class="filter__field-count">19999</span>
+                        </li>
+                        <li>
+                                        <input type="checkbox" id="available" checked="">
+                                        <label class="checkbox-label" for="available">В наличии</label><span class="filter__field-count">111 999</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
             <div class="catalog__content">
@@ -336,7 +542,7 @@
                   <option value="expensive" selected="">По возрастанию цены</option>
                   <option value="cheap">По уменьшению цены</option>
                   <option value="else">Еще что то</option>
-                </select><a href="#">Показать фильтр</a>
+                </select><a class="js-open-filter-btn" href="#">Показать фильтр</a>
               </div>
               <ul class="catalog__list">
                 <li class="catalog__item">

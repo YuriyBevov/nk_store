@@ -23,13 +23,35 @@
     }
 }
 
+@mixin outlined_btn($color, $bg-color, $border-color) {
+    display: flex;
+    position: relative;
+    font-weight: 600;
+    
+    padding: 5px;
+    padding-right: 30px;
+    width: 100%;
+
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    background-color: $bg-color;
+    color: $color;
+
+    svg {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+    }
+}
+
 @mixin main_btn($color, $bg-color) {
     @extend .flex-item-center;
 
     border-radius: 16px;
     width: fit-content;
     height: fit-content;
-    font-family: $f4_reg;
+    font-family: $font_lobster;
     font-size: 26px;
     line-height: 1.2;
     padding: 10px 20px;

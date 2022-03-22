@@ -10,12 +10,73 @@
     }
 
     &__aside {
-        outline: 1px solid red;
         width: 260px;
         margin-right: auto;
 
         @media(max-width: 960px) {
             display: none;
+
+            &.js-opened {
+                display: block;
+                position: fixed;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 10000;
+                background-color: rgba(0,0,0,0.5);
+                height: 100vh;
+                width: 100vw;
+                filter: drop-shadow(0 4px 10px rgba(0,0,0,.56));
+
+                .filter {
+                    width: 280px;
+                    height: 100%;
+                    overflow: hidden;
+                    overflow-y: auto;
+                    background-color: $main-bg;
+                    
+                    transform: translateX(-280px);
+                    animation: showFilter 0.3s linear forwards;
+                }
+
+                .filter__fields {
+                    padding: 10px;
+                }
+
+                .filter__fields-header {
+                    position: sticky;
+                    top: 0;
+                    left: 0;
+                    padding: 15px 0;
+                    padding-top: 30px;
+                    background-color: $main-bg;
+                    z-index: 102;
+                    border-bottom: 1px solid $gold;
+
+                    .js-close-filter-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        border: 0;
+                        background-color: transparent;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+
+                @keyframes showFilter {
+                    0% {
+                        transform: translateX(-280px);
+                    }
+
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+            }
         }
     }
 

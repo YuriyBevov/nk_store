@@ -27,7 +27,8 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  font-family: $f1_reg, sans-serif;
+  font-family: $font_main, sans-serif;
+  font-weight: 400;
   overflow-x: hidden;
   background-color: $main-bg;
 

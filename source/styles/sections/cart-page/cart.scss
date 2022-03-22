@@ -65,7 +65,7 @@ $border-radius: 16px;
         }
 
         h2 {
-            font-family: $f3_reg;
+            font-family: $font_heinrich;
             font-size: 30px;
             font-weight: 400;
             line-height: 0.7;
@@ -95,7 +95,7 @@ $border-radius: 16px;
 
         &-subtitle {
             display: inline-block;
-            font-family: $f3_reg;
+            font-family: $font_heinrich;
             font-size: 24px;
             color: $black;
             
@@ -247,7 +247,7 @@ $border-radius: 16px;
                             
                             font-size: 16px;
                             line-height: 1;
-                            font-family: $f4_reg;
+                            font-family: $font_lobster;
                             color: $main-black;
 
                             white-space: nowrap;
@@ -256,7 +256,7 @@ $border-radius: 16px;
                         }
 
                         span:first-child {
-                            font-family: $f3_reg;
+                            font-family: $font_heinrich;
                             width: 100px;
                             font-size: 20px;
                             line-height: 1.2;
@@ -337,7 +337,7 @@ $border-radius: 16px;
             }
 
             span {
-                font-family: $f3_reg;
+                font-family: $font_heinrich;
                 font-size: 22px;
                 line-height: 1.2;
                 width: calc(100% - 80px);
@@ -402,7 +402,8 @@ $border-radius: 16px;
                 @include main_btn(rgba(255, 255, 255, 0.86), rgba(88, 38, 126, 0.84));
                 border: 0;
                 padding: 10px;
-                font-family: $f1_reg;
+                font-family: $font_main;
+                font-weight: 400;
                 font-size: 14px;
                 border-radius: 10px;
                 width: 130px;

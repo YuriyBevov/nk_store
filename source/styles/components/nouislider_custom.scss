@@ -1,0 +1,31 @@
+.range {
+    width: calc(100% - 16px);
+    height: 5px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    border: 0;
+    background: $gray;
+
+    .noUi-connect {
+        border: 0;
+        background-color: $purple;
+    }
+
+    .noUi-handle {
+        width: 18px;
+        height: 18px;
+        top: -7px;
+        right: -8px;
+        box-shadow: none;
+        border: 4px solid $purple;
+        border-radius: 50%;
+        cursor: pointer;
+        
+        background-color: $main-bg;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}

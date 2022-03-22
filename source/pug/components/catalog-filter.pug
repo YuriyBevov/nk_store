@@ -1,2 +1,151 @@
+include ../mixins/main_btn
+include ../mixins/main_checkbox
+
 .filter
-  p filter
+  .filter__fields
+    .filter__fields-header
+      span Фильтр
+      a(href="#").filter__clear Сбросить фильтры
+      button(type="button" aria-hidden="Закрыть фильтр").js-close-filter-btn
+        svg(width="24" height="24")
+          use(xlink:href="#icon-close")
+    
+    form(action="#")
+      .filter__field
+        +main_btn('button', 'Категории товаров', null, 'filter__field-btn js-filter-btn is-active', "icon-arrow", 16, 16 )
+
+        ul.filter__field-container.js-filter-dropdown
+          li
+            +main_checkbox('clothes', 'Одежда')
+            span.filter__field-count 1999
+          li
+            +main_checkbox('shoes', 'Обувь')
+            span.filter__field-count 1999
+          li
+            +main_checkbox('toys', 'Игрушки')
+            span.filter__field-count 9999
+          li
+            +main_checkbox('babies', 'Товары для малышей')
+            span.filter__field-count 1999
+
+      .filter__field 
+        +main_btn('button', 'Пол', null, 'filter__field-btn js-filter-btn', "icon-arrow", 16, 16 )
+
+        ul.filter__field-container.js-filter-dropdown.js-collapsed 
+          li
+            +main_checkbox('boy', 'Мужской')
+            span.filter__field-count 1999
+          li
+            +main_checkbox('girl', 'Женский')
+            span.filter__field-count 9999
+      
+      .filter__field 
+        +main_btn('button', 'Состав', null, 'filter__field-btn js-filter-btn', "icon-arrow", 16, 16 )
+
+        ul.filter__field-container.js-filter-dropdown.js-collapsed
+          li
+            +main_checkbox('synthetics', 'Синтетика')
+            span.filter__field-count 1999
+          li
+            +main_checkbox('cotton', 'Хлопок')
+            span.filter__field-count 1999
+          li
+            +main_checkbox('velvet', 'Бархат')
+            span.filter__field-count 9
+          li
+            +main_checkbox('satin ', 'Алтас')
+            span.filter__field-count 156
+          li
+            +main_checkbox('velveteen', 'Вельвет')
+            span.filter__field-count 11
+          li
+            +main_checkbox('velour ', 'Велюр')
+            span.filter__field-count 99
+          li
+            +main_checkbox('viscose ', 'Вискоза')
+            span.filter__field-count 1999
+        
+      .filter__field 
+        +main_btn('button', 'Бренды', null, 'filter__field-btn js-filter-btn', "icon-arrow", 16, 16 )
+
+        ul.filter__field-container.js-filter-dropdown.js-collapsed
+          li
+            +main_checkbox('1TOY', '1TOY')
+            span.filter__field-count 1999
+          li
+            +main_checkbox('ARKADE', 'ARKADE')
+            span.filter__field-count 1999
+          li
+            +main_checkbox('Arau', 'Arau')
+            span.filter__field-count 9
+          li
+            +main_checkbox('BT21 ', 'BT21')
+            span.filter__field-count 156
+          li
+            +main_checkbox('BabyEinstein', 'Baby Einstein')
+            span.filter__field-count 11
+          li
+            +main_checkbox('Ben-10 ', 'Ben-10')
+            span.filter__field-count 99
+          li
+            +main_checkbox('Bio-Oil ', 'Bio-Oil')
+            span.filter__field-count 1999
+        
+      .filter__field 
+        +main_btn('button', 'Цвет', null, 'filter__field-btn js-filter-btn', "icon-arrow", 16, 16 )
+
+        ul.filter__field-container.js-filter-dropdown.js-collapsed
+          li
+            +main_checkbox('red', 'Фиолетовый')
+            .color-box(style="background-color: purple")
+            span.filter__field-count 99
+          li
+            +main_checkbox('black', 'Черный')
+            .color-box(style="background-color: black")
+            span.filter__field-count 199
+          li
+            +main_checkbox('white', 'Белый')
+            .color-box(style="background-color: white")
+            span.filter__field-count 1199
+      
+
+      .filter__field
+        +main_btn('button', 'Размер', null, 'filter__field-btn js-filter-btn', "icon-arrow", 16, 16 )
+
+        .filter__field-container.filter__field-select-container.js-filter-dropdown.js-collapsed
+          select(id="product-size").custom-select
+            option(value="80" selected) 80
+            option(value="84") 84
+            option(value="88") 88
+            option(value="92") 92
+            option(value="84") 96
+            option(value="88") 100
+            option(value="92") 104
+
+          +main_btn('link', 'Таблица размеров', '#', 'filter__field-sizes-btn js-filter-sizes-btn')
+        
+      .filter__field
+        +main_btn('button', 'Цена', null, 'filter__field-btn js-filter-btn', "icon-arrow", 16, 16 )
+
+        .filter__field-container.js-filter-dropdown.js-collapsed
+          .filter__range
+            .range
+
+            label(for="priceFrom").filter__range-label От: 
+              input(type="number" placeholder="0" id="priceFrom" min="0" max="500000" step="100")
+
+            label(for="priceTo").filter__range-label До: 
+              input(type="number" placeholder="50000" min="0" max="50000" id="priceTo" step="100")
+      
+      .filter__field
+        +main_btn('button', 'Дополнительно', null, 'filter__field-btn js-filter-btn', "icon-arrow", 16, 16 )
+
+        ul.filter__field-container.js-filter-dropdown.js-collapsed
+          li
+            +main_checkbox('sales', 'Cо скидкой')
+            span.filter__field-count 19999
+          li
+            +main_checkbox('available', 'В наличии')
+            span.filter__field-count 111 999
+
+      

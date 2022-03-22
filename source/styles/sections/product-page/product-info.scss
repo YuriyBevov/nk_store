@@ -158,7 +158,7 @@
 
     /* price */
     &__price-current {
-        font-family: $f4_reg;
+        font-family: $font_lobster;
         font-size: 32px;
         line-height: 1;
         margin-right: 20px;
@@ -167,7 +167,7 @@
     }
 
     &__price-old {
-        font-family: $f4_reg;
+        font-family: $font_lobster;
         font-size: 22px default;
         line-height: 1.2;
         text-decoration: line-through;

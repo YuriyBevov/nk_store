@@ -5,10 +5,10 @@ const rangeSliders = document.querySelectorAll('.range');
 if(rangeSliders) {
     rangeSliders.forEach(range => {
 
-        let filterSection = range.parentNode.parentNode;
+        let filterSection = range.parentNode;
 
-        const rangeFrom = filterSection.querySelector('input[type="number"]:first-of-type');
-        const rangeTo = filterSection.querySelector('input[type="number"]:last-of-type');
+        const rangeFrom = filterSection.querySelector('#priceFrom');
+        const rangeTo = filterSection.querySelector('#priceTo');
 
         let min = Number(rangeFrom.getAttribute('min'));
         let max = Number(rangeTo.getAttribute('max'));
