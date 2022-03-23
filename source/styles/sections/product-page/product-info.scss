@@ -45,13 +45,13 @@
     }
 
     h1 {
-        font-family: 'Lobster-Regular';
         font-size: 26px;
+        font-weight: 500;
         line-height: 1.2;
         font-weight: 400;
         margin-bottom: 15px;
 
-        color: $main-black;
+        color: $black;
 
         @media(max-width: 960px) {
             font-size: 24px;
