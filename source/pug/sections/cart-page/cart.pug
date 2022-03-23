@@ -8,91 +8,61 @@ section.cart
           h2 Толстовка черная с крупным глянцевым принтом
 
           .cart__item-container
-                        
-            .cart__item-info-container
-              img(src="./assets/img/cart_img.png" alt="Название товара" width="180" height="240")
+            img(src="./assets/img/cart_img.png" alt="Название товара" width="180" height="240")
+
+            .cart__item-content
+              ul.cart__item-chars
+                li
+                  span Бренд:
+                  a(href="#")  Noble People Noble People Noble People Noble People
+                li
+                  span Размер:
+                  span 92
+                li
+                  span Цвет:
+                  span Фиолетово-красный
               
-              
-              .cart__item-price-container
+              .cart__item-count
                 include ../../components/counter
 
                 .cart__item-price
                   span.cart__item-price-old 999 999 руб.
                   span.cart__item-price-current 999 999 руб.
-              
-            
-            .cart__item-desc-container
-              span.cart__item-subtitle Описание:
 
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam est eius eos amet. Quae, sit et. Aliquid quaerat, culpa nesciunt saepe nulla nemo dolorum, reprehenderit rerum eius id aut soluta.
-              p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error ullam, reprehenderit laboriosam tenetur nemo suscipit perferendis repellat eaque maxime doloribus, unde illum iure nulla quisquam dicta veritatis corrupti qui. Quos?
-
-            .cart__item-chars-container
-              span.cart__item-subtitle Хар-ки товара:
-
-              ul
-                li
-                  span Бренд:
-                  span "Noble People Noble People"
-              
-                li
-                  span Размер:
-                  span 92
-                
-                li
-                  span Цвет:
-                  span Фиолетово-красный
-              
-              a(href="#") Смотреть все 
-            
           button(type="button").cart__item-remove-btn
             svg(width="24" height="24")
                 use(xlink:href="#icon-close")
-        
+
         li.cart__item
           h2 Толстовка черная с крупным глянцевым принтом
 
           .cart__item-container
-                        
-            .cart__item-info-container
-              img(src="./assets/img/cart_img.png" alt="Название товара" width="180" height="240")
+            img(src="./assets/img/cart_img.png" alt="Название товара" width="180" height="240")
+
+            .cart__item-content
+              ul.cart__item-chars
+                li
+                  span Бренд:
+                  a(href="#")  Noble People Noble People Noble People Noble People
+                li
+                  span Размер:
+                  span 92
+                li
+                  span Цвет:
+                  span Фиолетово-красный
               
-              
-              .cart__item-price-container
+              .cart__item-count
                 include ../../components/counter
 
                 .cart__item-price
                   span.cart__item-price-old 999 999 руб.
                   span.cart__item-price-current 999 999 руб.
-              
-            
-            .cart__item-desc-container
-              span.cart__item-subtitle Описание:
 
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam est eius eos amet. Quae, sit et. Aliquid quaerat, culpa nesciunt saepe nulla nemo dolorum, reprehenderit rerum eius id aut soluta.
-              p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error ullam, reprehenderit laboriosam tenetur nemo suscipit perferendis repellat eaque maxime doloribus, unde illum iure nulla quisquam dicta veritatis corrupti qui. Quos?
-
-            .cart__item-chars-container
-              span.cart__item-subtitle Хар-ки товара:
-
-              ul
-                li
-                  span Бренд:
-                  span "Noble People Noble People"
-              
-                li
-                  span Размер:
-                  span 92
-                
-                li
-                  span Цвет:
-                  span Фиолетово-красный
-              
-              a(href="#") Смотреть все 
-            
           button(type="button").cart__item-remove-btn
             svg(width="24" height="24")
                 use(xlink:href="#icon-close")
+        
+        
       
       a(href="#").cart__clear-btn Очистить корзину
 
