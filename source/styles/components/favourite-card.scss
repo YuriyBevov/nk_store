@@ -15,14 +15,14 @@
         border: 1px solid $gold;
 
         @media(max-width: 960px) {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     }
 
     &__header {
         @extend .flex-wrap;
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
 
         @media(max-width: 960px) {
             flex-direction: column;
@@ -60,7 +60,7 @@
         color: $main-black;
 
         @media(max-width: 960px) {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         @media(max-width: $md_w) {
@@ -68,34 +68,33 @@
         }
 
         @media(max-width: $sm_w) {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     }
 
     &__title {
-        font-family: $font_heinrich;
-        font-size: 30px;
+        font-size: 22px;
         font-weight: 400;
-        line-height: .7;
+        line-height: 1.2;
         margin-bottom: 10px;
         text-shadow: 0 0 1px #000;
         padding-right: 10px;
 
         @media(max-width: $lg_w) {
-            font-size: 28px;
+            font-size: 20px;
         }
 
         @media(max-width: $md_w) {
-            font-size: 24px;
+            font-size: 18px;
         }
 
         @media(max-width: $sm_w) {
-            margin-bottom: 22px;
+            margin-bottom: 10px;
         }
     }
 
     &__options-container {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     &__status-container {
@@ -107,7 +106,7 @@
     &__info-container {
         display: flex;
         flex-direction: column;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     &__info-field {
@@ -136,6 +135,16 @@
 
     &__price-container {
         @extend .product-info__price-container;
+        align-items: baseline !important;
+    }
+
+    &__price-title {
+        width: 100%;
+        font-family: $font_lobster;
+        font-style: 18px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+        color: $purple;
     }
 
     &__price-current {
@@ -153,6 +162,7 @@
     &__btn-container {
         @extend .product-info__btn-container;
 
+        margin-bottom: 0 !important;
         a {
             width: calc(50% - 10px);
             min-width: 185px;
