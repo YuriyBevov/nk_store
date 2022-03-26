@@ -8,16 +8,22 @@ section.product-info
           .swiper-wrapper
             each item in [1, 2, 3, 4, 5, 6, 7, 8, 9]
               .swiper-slide
-                img(src="./assets/img/product-info1_thumb.png" alt="Фото товара" width="120" height="100")
-
+                img(src="./assets/img/product-info1.png" alt="Фото товара" width="120" height="100")
+              .swiper-slide
+                img(src="./assets/img/cat3.png" alt="Фото товара" width="120" height="100")
+        
         .swiper.thumbs-swiper-main
           .swiper-wrapper
             each item in [1, 2, 3, 4, 5, 6, 7, 8, 9]
               .swiper-slide
-                img(src="./assets/img/product-info1.png" alt="Фото товара" width="400" height="400")
+                .zoomist(data-zoomist-src="./assets/img/product-info2.png")
+                //img( src="./assets/img/product-info2.png" alt="Фото товара" width="600" height="800")
+              .swiper-slide
+                .zoomist(data-zoomist-src="./assets/img/cat3.png")
+                //img( src="./assets/img/cat3.png" alt="Фото товара" width="600" height="800")
 
-          .swiper-button-next.thumbs-swiper-button-next
-          .swiper-button-prev.thumbs-swiper-button-prev
+          .swiper-button-next.thumbs-swiper-button-next.thumbs-swiper-button
+          .swiper-button-prev.thumbs-swiper-button-prev.thumbs-swiper-button
 
 
     .product-info__content

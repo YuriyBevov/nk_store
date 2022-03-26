@@ -4809,6 +4809,204 @@ var scroll = shortcut('scroll');
 
 /***/ }),
 
+/***/ "./node_modules/smooth-zoom/dist/zoom.esm.js":
+/*!***************************************************!*\
+  !*** ./node_modules/smooth-zoom/dist/zoom.esm.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Zoom; });
+/*
+ *
+ *  Source of the code below
+ *  https://stackoverflow.com/a/2541680
+ *
+ */
+function getAverageRGB(img, width, height) {
+    const blockSize = 20;
+    const rgb = { r: 0, g: 0, b: 0 };
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const optimizedWidth = Math.sqrt(width);
+    const optimizedHeight = Math.sqrt(height);
+    if (!ctx) {
+        return rgb;
+    }
+    canvas.width = optimizedWidth;
+    canvas.height = optimizedHeight;
+    try {
+        ctx.drawImage(img, 0, 0, optimizedWidth, optimizedHeight);
+        const imageData = ctx.getImageData(0, 0, optimizedWidth, optimizedHeight);
+        const { data } = imageData;
+        const { length } = data;
+        const count = length / blockSize;
+        for (let i = 0; i < length; i += blockSize) {
+            rgb.r += data[i];
+            rgb.g += data[i + 1];
+            rgb.b += data[i + 2];
+        }
+        rgb.r = Math.floor(rgb.r / count);
+        rgb.g = Math.floor(rgb.g / count);
+        rgb.b = Math.floor(rgb.b / count);
+    }
+    catch (_a) {
+        return rgb;
+    }
+    return rgb;
+}
+
+function Zoom(target, { background, useMaximumSize = true, onTransitionEnd } = {}) {
+    const zoom = (image) => {
+        const src = image.currentSrc || image.src;
+        const { srcset, naturalWidth } = image;
+        const { offsetWidth: screenWidth, clientHeight: screenHeight } = document.documentElement;
+        const { width, height, left, top } = image.getBoundingClientRect();
+        const wrapX = screenWidth / 2 - left - width / 2;
+        const wrapY = -top + (screenHeight - height) / 2;
+        const maxScale = Math.min(screenWidth / width, screenHeight / height);
+        const sizes = srcset.match(/ ([0-9]+)w/gm) || [];
+        const maxWidth = useMaximumSize
+            ? Math.max(naturalWidth, ...sizes
+                .map((x) => +x.trim().replace("w", ""))
+                .filter((x) => !Number.isNaN(x) && naturalWidth < x))
+            : naturalWidth;
+        const imageScale = maxWidth / width;
+        const scale = Math.min(maxScale, imageScale);
+        const bg = document.createElement("div");
+        const imageClone = document.createElement("img");
+        const removeImage = () => {
+            bg.classList.remove("zoom-bg--reveal");
+            imageClone.style.transform = "";
+            imageClone.addEventListener("transitionend", () => {
+                bg.remove();
+                image.classList.remove("zoom-original--hidden");
+                imageClone.remove();
+            }, { once: true });
+            bg.removeEventListener("click", removeImage);
+            imageClone.removeEventListener("click", removeImage);
+            window.removeEventListener("scroll", removeImage);
+            window.removeEventListener("resize", removeImage);
+        };
+        bg.classList.add("zoom-bg");
+        if (background) {
+            if (background === "auto") {
+                const { r, g, b } = getAverageRGB(image, width, height);
+                bg.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.95)`;
+            }
+            else {
+                bg.style.background = background;
+            }
+        }
+        imageClone.classList.add("zoom-img");
+        imageClone.src = src;
+        imageClone.width = width;
+        imageClone.height = height;
+        bg.addEventListener("click", removeImage, { once: true });
+        imageClone.addEventListener("click", removeImage, { once: true });
+        window.addEventListener("scroll", removeImage, {
+            once: true,
+            passive: true,
+        });
+        window.addEventListener("resize", removeImage, {
+            once: true,
+            passive: true,
+        });
+        imageClone.style.top = `${top + window.scrollY}px`;
+        imageClone.style.left = `${left}px`;
+        imageClone.style.width = `${width}px`;
+        imageClone.style.height = `${height}px`;
+        imageClone.addEventListener("transitionend", () => {
+            onTransitionEnd === null || onTransitionEnd === void 0 ? void 0 : onTransitionEnd(imageClone);
+        }, { once: true });
+        document.body.append(bg, imageClone);
+        // Hide original image
+        image.classList.add("zoom-original--hidden");
+        // For transition
+        window.requestAnimationFrame(() => {
+            imageClone.style.transform = `matrix(${scale}, 0, 0, ${scale}, ${wrapX}, ${wrapY})`;
+            bg.classList.add("zoom-bg--reveal");
+        });
+    };
+    const handleClick = (event) => {
+        zoom(event.target);
+    };
+    const attach = (target) => {
+        if (!target) {
+            return;
+        }
+        if (typeof target === "string") {
+            document.querySelectorAll(target).forEach(addZoomEvent);
+            // Add cursor style for target
+            const style = document.createElement("style");
+            const { head } = document;
+            style.appendChild(document.createTextNode(`${target}{cursor:zoom-in}`));
+            head.appendChild(style);
+            return;
+        }
+        if (target instanceof HTMLElement) {
+            addZoomEvent(target);
+            return;
+        }
+        target.forEach(addZoomEvent);
+    };
+    const addZoomEvent = (element) => {
+        var _a;
+        if (!(element instanceof HTMLElement)) {
+            return;
+        }
+        if (element.tagName === "IMG") {
+            element.addEventListener("click", handleClick);
+            return;
+        }
+        (_a = element.querySelector("img")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", handleClick);
+    };
+    target && attach(target);
+    return {
+        zoom,
+        attach,
+    };
+}
+
+function styleInject(css, ref) {
+  if (ref === void 0) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') {
+    return;
+  }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = ".zoom-bg,.zoom-img{cursor:zoom-out;z-index:90000}.zoom-img{display:block;position:absolute;transition:transform .3s ease-in-out}.zoom-bg{background-color:rgba(0,0,0,.95);height:100vh;left:0;opacity:0;position:fixed;top:0;transition:opacity .3s ease-in-out;width:100vw}.zoom-bg.zoom-bg--reveal{opacity:1}.zoom-original--hidden{visibility:hidden}";
+styleInject(css_248z);
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/ssr-window/ssr-window.esm.js":
 /*!***************************************************!*\
   !*** ./node_modules/ssr-window/ssr-window.esm.js ***!
@@ -15306,6 +15504,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filterDropdown_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/filterDropdown.js */ "./source/scripts/modules/filterDropdown.js");
 /* harmony import */ var _modules_filterDropdown_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_filterDropdown_js__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _modules_openFilter_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/openFilter.js */ "./source/scripts/modules/openFilter.js");
+/* harmony import */ var smooth_zoom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! smooth-zoom */ "./node_modules/smooth-zoom/dist/zoom.esm.js");
 
 
 
@@ -15322,6 +15521,62 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+Object(smooth_zoom__WEBPACK_IMPORTED_MODULE_13__["default"])(".zoomable");
+
+/*import Zoomist from 'zoomist';
+
+new Zoomist(".zoomist");
+
+
+//import zoomist from './modules/zoomist.js';
+
+//console.log(zoomist)
+/**/
+
+/*import { Fancybox, Panzoom, Carousel } from "@fancyapps/ui";
+
+
+let zoomed = document.querySelectorAll(".panzoom");
+
+zoomed.forEach(img => {
+    new Panzoom(img, {
+        panOnlyZoomed: true,
+        maxScale: 5
+    });
+})
+
+const myCarousel = new Carousel(document.querySelector(".carousel"), {
+    // Options
+  });
+
+Fancybox.bind("[data-fancybox]", {
+    //animated: false,
+    l10n: {
+        CLOSE: "Закрыть",
+        NEXT: "Вперед",
+        PREV: "Назад",
+        ERROR: "Что то пошло не так, попробуйте снова...",
+        IMAGE_ERROR: "Изображение не найдено",
+        TOGGLE_FULLSCREEN: "Полноэкранный режим",
+        TOGGLE_ZOOM: "Увеличить изображение"
+    },
+
+    Carousel: {
+        slidesPerPage: 1,
+        on: {
+          change: (that) => {
+            // Sync Carousel slide
+            myCarousel.slideTo(myCarousel.findPageForSlide(that.page), {
+              friction: 0,
+              
+            });
+          },
+        },
+      },
+  });*/
+
+  
 
 /***/ }),
 
@@ -15800,7 +16055,9 @@ const onClickByOverlayCloseFilter = (evt) => {
     }
 }
 
-btn.addEventListener('click', onClickShowFilter);
+if(btn) {
+    btn.addEventListener('click', onClickShowFilter);
+}
 
 /***/ }),
 
@@ -15883,7 +16140,7 @@ __webpack_require__.r(__webpack_exports__);
 //import { offerChange } from './onSwiperChange.js';
 
 
-swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"].use([ swiper_core__WEBPACK_IMPORTED_MODULE_0__["EffectFade"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Scrollbar"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Thumbs"]]);
+swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"].use([ swiper_core__WEBPACK_IMPORTED_MODULE_0__["EffectFade"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Scrollbar"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Thumbs"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Zoom"]]);
 
 
 let mainSlider = document.querySelectorAll('.main-swiper');
@@ -15942,8 +16199,42 @@ if(reviewsSlider) {
 
 const thumbsSliderMain = document.querySelector('.thumbs-swiper');
 
+let zoomed = document.querySelectorAll('.zoomist');
+
+let zoomedArray = [];
+
+if(zoomed) {
+   zoomed.forEach(element => {
+      let zoomer = new Zoomist(element, {
+         //height: '100%',
+         slider: true,
+         zoomer: true,
+         maxRatio: 4,
+         bounds: true,
+         fill: 'fill',
+         height: 400,
+         zoomRatio: 0.2,
+         on: {
+            ready() {
+            console.log('Zoomist ready!')
+            }
+         }
+      });
+
+      zoomedArray.push(zoomer);
+
+      let btns = document.querySelectorAll('.thumbs-swiper-button');
+
+      btns.forEach(btn => {
+         btn.addEventListener('click', function() {
+            zoomer.reset();
+         })
+      })
+   });
+}
+
 if(thumbsSliderMain) {
-   let galleryThumbs = new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](thumbsSliderMain, {
+   let sliderThumbs = new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](thumbsSliderMain, {
       //centeredSlides: true,
       ///centeredSlidesBounds: true,
       slidesPerView: 4,
@@ -15959,14 +16250,21 @@ if(thumbsSliderMain) {
            slidesPerView: 3,
            direction: "vertical",
          },
+      },
+
+      on: {
+         slideChange: function() {
+            console.log('change', zoomedArray);
+         }
       }
    });
 
-   new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](".thumbs-swiper-main", {
+   let slider = new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](".thumbs-swiper-main", {
       watchOverflow: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
       preventInteractionOnTransition: true,
+      allowTouchMove: false,
 
       navigation: {
          nextEl: '.swiper-button-next',
@@ -15979,8 +16277,18 @@ if(thumbsSliderMain) {
       },
 
       thumbs: {
-         swiper: galleryThumbs
+         swiper: sliderThumbs
       },
+
+      on: {
+
+         slideChange: function() {
+            console.log('change', zoomedArray);
+            zoomedArray.forEach(el => {
+               el.reset();
+            })
+         }
+      }
    });
 }
 

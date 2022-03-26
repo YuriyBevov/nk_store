@@ -1,7 +1,7 @@
 //import { offerChange } from './onSwiperChange.js';
 
-import SwiperCore, { EffectFade, Autoplay, Scrollbar, Navigation, Pagination, Thumbs } from 'swiper/core';
-SwiperCore.use([ EffectFade, Autoplay, Scrollbar, Navigation, Pagination, Thumbs]);
+import SwiperCore, { EffectFade, Autoplay, Scrollbar, Navigation, Pagination, Thumbs, Zoom } from 'swiper/core';
+SwiperCore.use([ EffectFade, Autoplay, Scrollbar, Navigation, Pagination, Thumbs, Zoom]);
 import Swiper from 'swiper'
 
 let mainSlider = document.querySelectorAll('.main-swiper');
@@ -60,8 +60,42 @@ if(reviewsSlider) {
 
 const thumbsSliderMain = document.querySelector('.thumbs-swiper');
 
+let zoomed = document.querySelectorAll('.zoomist');
+
+let zoomedArray = [];
+
+if(zoomed) {
+   zoomed.forEach(element => {
+      let zoomer = new Zoomist(element, {
+         //height: '100%',
+         slider: true,
+         zoomer: true,
+         maxRatio: 4,
+         bounds: true,
+         fill: 'fill',
+         height: 400,
+         zoomRatio: 0.2,
+         on: {
+            ready() {
+            console.log('Zoomist ready!')
+            }
+         }
+      });
+
+      zoomedArray.push(zoomer);
+
+      let btns = document.querySelectorAll('.thumbs-swiper-button');
+
+      btns.forEach(btn => {
+         btn.addEventListener('click', function() {
+            zoomer.reset();
+         })
+      })
+   });
+}
+
 if(thumbsSliderMain) {
-   let galleryThumbs = new Swiper(thumbsSliderMain, {
+   let sliderThumbs = new Swiper(thumbsSliderMain, {
       //centeredSlides: true,
       ///centeredSlidesBounds: true,
       slidesPerView: 4,
@@ -77,14 +111,21 @@ if(thumbsSliderMain) {
            slidesPerView: 3,
            direction: "vertical",
          },
+      },
+
+      on: {
+         slideChange: function() {
+            console.log('change', zoomedArray);
+         }
       }
    });
 
-   new Swiper(".thumbs-swiper-main", {
+   let slider = new Swiper(".thumbs-swiper-main", {
       watchOverflow: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
       preventInteractionOnTransition: true,
+      allowTouchMove: false,
 
       navigation: {
          nextEl: '.swiper-button-next',
@@ -97,7 +138,17 @@ if(thumbsSliderMain) {
       },
 
       thumbs: {
-         swiper: galleryThumbs
+         swiper: sliderThumbs
       },
+
+      on: {
+
+         slideChange: function() {
+            console.log('change', zoomedArray);
+            zoomedArray.forEach(el => {
+               el.reset();
+            })
+         }
+      }
    });
 }

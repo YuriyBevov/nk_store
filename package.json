@@ -33,7 +33,9 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-webp": "^4.0.1",
     "posthtml-include": "^1.7.1",
-    "webpack": "^5.38.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.70.0",
     "webpack-stream": "^5.2.1"
   },
   "name": "nk",
@@ -47,9 +49,12 @@
   "license": "ISC",
   "homepage": "",
   "dependencies": {
+    "@fancyapps/ui": "^4.0.26",
     "custom-select": "^1.1.15",
     "nouislider": "^15.5.1",
-    "swiper": "^6.7.5"
+    "smooth-zoom": "^1.1.4",
+    "swiper": "^6.7.5",
+    "zoomist": "^1.1.0"
   },
   "description": ""
 }

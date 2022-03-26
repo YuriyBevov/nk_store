@@ -1,3 +1,12 @@
+.zoom-img {
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.zoomist-container {
+    height: 100%;
+}
+
 .product-info {
     @extend .section-margin-bottom;
 
@@ -15,6 +24,7 @@
     &__side {
         position: sticky;
         top: 200px;
+        z-index: 10;
 
         display: flex;
         width: 50%;
@@ -63,6 +73,10 @@
         width: 100%;
         display: flex;
         overflow: hidden;
+
+        /*.carousel {
+            width: 100%;
+        } */
     }
 
     &__slider-container {

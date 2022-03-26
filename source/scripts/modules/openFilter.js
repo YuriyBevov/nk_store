@@ -30,4 +30,6 @@ const onClickByOverlayCloseFilter = (evt) => {
     }
 }
 
-btn.addEventListener('click', onClickShowFilter);
+if(btn) {
+    btn.addEventListener('click', onClickShowFilter);
+}

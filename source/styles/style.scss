@@ -10,6 +10,7 @@
 @import "plugins/swiper";
 @import "plugins/nouislider";
 @import "plugins/custom_select";
+@import "plugins/zoomist";
 
 //--- components
 
@@ -32,6 +33,7 @@
 @import "components/catalog-filter";
 @import "components/pagination";
 @import "components/nouislider_custom";
+@import "components/fancybox_custom";
 
 // blocks
 @import "common/header";
