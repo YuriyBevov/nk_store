@@ -68,9 +68,9 @@ function changeTabs(tabClass, contentClass) {
 }
 
 class Accordeon {
-    constructor( cls, options = {} ) {
+    constructor( sel, options = {} ) {
         this.isCollapse = options.isCollapse ? options.isCollapse : false;
-        this.accordeon = document.querySelector(cls);
+        this.accordeon = typeof(sel) === 'object' ? sel : document.querySelector(sel); // могу передавать как класс элемента, так и сам элемент
         this.heads = this.accordeon.querySelectorAll('.accordeon-head');
         this.bodyes = this.accordeon.querySelectorAll('.accordeon-body');
     }
