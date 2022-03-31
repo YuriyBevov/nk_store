@@ -38,6 +38,11 @@ const PATHS = {
     dest: `${BUILD_PATH}`,
   },
 
+  vendors: {
+    src: `${SOURCE_PATH}scripts/vendors/*.js`,
+    output: `${BUILD_PATH}js/vendors/`,
+  },
+
   vue: {
     srcWatch: `${SOURCE_PATH}scripts/**/**/*.vue`
   }

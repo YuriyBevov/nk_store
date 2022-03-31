@@ -15379,7 +15379,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************!*\
   !*** ./source/scripts/functions.js ***!
   \*************************************/
-/*! exports provided: limitStr, addClass, removeClass, checkClass, toggleClass, bodyLocker, changeTabs, getBoundingClientRect */
+/*! exports provided: limitStr, addClass, removeClass, checkClass, toggleClass, bodyLocker, changeTabs, getBoundingClientRect, Accordeon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15392,6 +15392,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bodyLocker", function() { return bodyLocker; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeTabs", function() { return changeTabs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBoundingClientRect", function() { return getBoundingClientRect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Accordeon", function() { return Accordeon; });
 function limitStr( str, n ) {
     if ( str.length > n ) {
         return str.slice(0, n) + '...';
@@ -15429,20 +15430,20 @@ function bodyLocker(bool, addPadding = false) {
     }
 }
 
-function changeTabs(el, contentList) {
-    let tabs = document.querySelectorAll(el);
-    let content = document.querySelectorAll(contentList);
+function changeTabs(tabClass, contentClass) {
+    let tabs = document.querySelectorAll(tabClass);
+    let content = document.querySelectorAll(contentClass);
 
     if(tabs) {
         const onClickChangeTab = (evt) => {
-            let data = evt.currentTarget.getAttribute('data-tab-opener');
-            
+            let data = evt.currentTarget.getAttribute('data-tab');
+
             if(content) {
                 content.forEach(c => {
                     c.classList.contains('active') ?
                     c.classList.remove('active') : null;
 
-                    c.getAttribute('data-tab') === data ?
+                    c.getAttribute('data-tab-content') === data ?
                     c.classList.add('active') : null;
                 });
             }
@@ -15453,13 +15454,38 @@ function changeTabs(el, contentList) {
             });
 
             evt.currentTarget.classList.add('active');
-
         }
 
         tabs.forEach(tab => {
             tab.addEventListener('click', onClickChangeTab);
         });
     }
+}
+
+class Accordeon {
+    constructor( cls, options = {} ) {
+        this.isCollapse = options.isCollapse ? options.isCollapse : false;
+        this.accordeon = document.querySelector(cls);
+        this.heads = this.accordeon.querySelectorAll('.accordeon-head');
+        this.bodyes = this.accordeon.querySelectorAll('.accordeon-body');
+    }
+ 
+    init() {
+        this.heads.forEach(head => {
+            head.addEventListener('click', (evt) => {
+                console.log(this.isCollapse)
+                if(this.isCollapse) {
+                    this.bodyes.forEach(b => {
+                        b.classList.contains('js-opened') ?
+                        b.classList.remove('js-opened') : null;
+                    })
+                }
+                let active = evt.currentTarget;
+                active.classList.toggle('js-active');
+                active.nextElementSibling.classList.toggle('js-opened');
+            });
+        })
+    };
 }
 
 function getBoundingClientRect(elem, side) {
@@ -15504,7 +15530,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filterDropdown_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/filterDropdown.js */ "./source/scripts/modules/filterDropdown.js");
 /* harmony import */ var _modules_filterDropdown_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_filterDropdown_js__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _modules_openFilter_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/openFilter.js */ "./source/scripts/modules/openFilter.js");
-/* harmony import */ var smooth_zoom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! smooth-zoom */ "./node_modules/smooth-zoom/dist/zoom.esm.js");
+/* harmony import */ var _modules_tabs_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/tabs.js */ "./source/scripts/modules/tabs.js");
+/* harmony import */ var _modules_accordeon_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/accordeon.js */ "./source/scripts/modules/accordeon.js");
+/* harmony import */ var smooth_zoom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! smooth-zoom */ "./node_modules/smooth-zoom/dist/zoom.esm.js");
 
 
 
@@ -15522,61 +15550,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(smooth_zoom__WEBPACK_IMPORTED_MODULE_13__["default"])(".zoomable");
-
-/*import Zoomist from 'zoomist';
-
-new Zoomist(".zoomist");
 
 
-//import zoomist from './modules/zoomist.js';
-
-//console.log(zoomist)
-/**/
-
-/*import { Fancybox, Panzoom, Carousel } from "@fancyapps/ui";
+Object(smooth_zoom__WEBPACK_IMPORTED_MODULE_15__["default"])(".zoomable");
 
 
-let zoomed = document.querySelectorAll(".panzoom");
 
-zoomed.forEach(img => {
-    new Panzoom(img, {
-        panOnlyZoomed: true,
-        maxScale: 5
-    });
-})
 
-const myCarousel = new Carousel(document.querySelector(".carousel"), {
-    // Options
-  });
+/***/ }),
 
-Fancybox.bind("[data-fancybox]", {
-    //animated: false,
-    l10n: {
-        CLOSE: "Закрыть",
-        NEXT: "Вперед",
-        PREV: "Назад",
-        ERROR: "Что то пошло не так, попробуйте снова...",
-        IMAGE_ERROR: "Изображение не найдено",
-        TOGGLE_FULLSCREEN: "Полноэкранный режим",
-        TOGGLE_ZOOM: "Увеличить изображение"
-    },
+/***/ "./source/scripts/modules/accordeon.js":
+/*!*********************************************!*\
+  !*** ./source/scripts/modules/accordeon.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-    Carousel: {
-        slidesPerPage: 1,
-        on: {
-          change: (that) => {
-            // Sync Carousel slide
-            myCarousel.slideTo(myCarousel.findPageForSlide(that.page), {
-              friction: 0,
-              
-            });
-          },
-        },
-      },
-  });*/
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
 
-  
+
+// Использование:
+new _functions_js__WEBPACK_IMPORTED_MODULE_0__["Accordeon"]('.offer-history__accordeon').init();
 
 /***/ }),
 
@@ -16080,12 +16076,9 @@ btns.forEach( (btn,i) => {
     btn.addEventListener('click', (evt) => {
         evt.preventDefault();
         let activeCard = productCards[i];
-        let detail = activeCard.querySelector('.product-card__detail');
-        let productCardHeader = activeCard.querySelector('.product-card__header');
+        let flipCard = activeCard.querySelector('.flip-card');
 
-        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(productCardHeader, 'is-detailed')
-        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(detail, 'active');
-
+        Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(flipCard, 'is-fliped')
         Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])(evt.currentTarget, 'active');
     });
 });
@@ -16291,6 +16284,41 @@ if(thumbsSliderMain) {
       }
    });
 }
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/tabs.js":
+/*!****************************************!*\
+  !*** ./source/scripts/modules/tabs.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+
+
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    const tabSlider = document.querySelector('.tabs-slider');
+
+    if(tabSlider) {
+        
+        new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](tabSlider, {
+            //freeMode: true,
+            slidesPerView: 'auto',
+            slideToClickedSlide: true,
+            spaceBetween: 10
+        })
+    }
+
+    Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["changeTabs"])('.tab', '.tab-content-box')
+});
+
 
 
 /***/ })

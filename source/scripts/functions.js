@@ -35,20 +35,20 @@ function bodyLocker(bool, addPadding = false) {
     }
 }
 
-function changeTabs(el, contentList) {
-    let tabs = document.querySelectorAll(el);
-    let content = document.querySelectorAll(contentList);
+function changeTabs(tabClass, contentClass) {
+    let tabs = document.querySelectorAll(tabClass);
+    let content = document.querySelectorAll(contentClass);
 
     if(tabs) {
         const onClickChangeTab = (evt) => {
-            let data = evt.currentTarget.getAttribute('data-tab-opener');
-            
+            let data = evt.currentTarget.getAttribute('data-tab');
+
             if(content) {
                 content.forEach(c => {
                     c.classList.contains('active') ?
                     c.classList.remove('active') : null;
 
-                    c.getAttribute('data-tab') === data ?
+                    c.getAttribute('data-tab-content') === data ?
                     c.classList.add('active') : null;
                 });
             }
@@ -59,13 +59,38 @@ function changeTabs(el, contentList) {
             });
 
             evt.currentTarget.classList.add('active');
-
         }
 
         tabs.forEach(tab => {
             tab.addEventListener('click', onClickChangeTab);
         });
     }
+}
+
+class Accordeon {
+    constructor( cls, options = {} ) {
+        this.isCollapse = options.isCollapse ? options.isCollapse : false;
+        this.accordeon = document.querySelector(cls);
+        this.heads = this.accordeon.querySelectorAll('.accordeon-head');
+        this.bodyes = this.accordeon.querySelectorAll('.accordeon-body');
+    }
+ 
+    init() {
+        this.heads.forEach(head => {
+            head.addEventListener('click', (evt) => {
+                console.log(this.isCollapse)
+                if(this.isCollapse) {
+                    this.bodyes.forEach(b => {
+                        b.classList.contains('js-opened') ?
+                        b.classList.remove('js-opened') : null;
+                    })
+                }
+                let active = evt.currentTarget;
+                active.classList.toggle('js-active');
+                active.nextElementSibling.classList.toggle('js-opened');
+            });
+        })
+    };
 }
 
 function getBoundingClientRect(elem, side) {
@@ -85,5 +110,5 @@ function getBoundingClientRect(elem, side) {
 export  { 
     limitStr, addClass, removeClass, 
     checkClass, toggleClass, bodyLocker, 
-    changeTabs, getBoundingClientRect 
+    changeTabs, getBoundingClientRect, Accordeon
 }

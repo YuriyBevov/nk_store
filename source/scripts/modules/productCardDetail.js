@@ -7,12 +7,9 @@ btns.forEach( (btn,i) => {
     btn.addEventListener('click', (evt) => {
         evt.preventDefault();
         let activeCard = productCards[i];
-        let detail = activeCard.querySelector('.product-card__detail');
-        let productCardHeader = activeCard.querySelector('.product-card__header');
+        let flipCard = activeCard.querySelector('.flip-card');
 
-        toggleClass(productCardHeader, 'is-detailed')
-        toggleClass(detail, 'active');
-
+        toggleClass(flipCard, 'is-fliped')
         toggleClass(evt.currentTarget, 'active');
     });
 });

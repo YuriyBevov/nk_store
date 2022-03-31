@@ -1,0 +1,9 @@
+.profile {
+    .user-profile {
+        @extend .section-margin-bottom;
+
+        &__wrapper {
+            @extend .wrapper;
+        }
+    }
+}

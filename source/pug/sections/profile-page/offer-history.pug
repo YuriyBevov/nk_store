@@ -1,0 +1,78 @@
+-
+  const tabsArray = [
+    {
+        title: 'Все',
+        dataTab: 1,
+        isActive: true
+    },
+
+    {
+        title: 'В обработке',
+        dataTab: 2
+    },
+
+    {
+        title: 'Подтверждённые',
+        dataTab: 3
+    },
+
+    {
+        title: 'Завершенные',
+        dataTab: 4
+    },
+
+    {
+        title: 'Отмененные',
+        dataTab: 5
+    },
+  ]
+
+section.offer-history
+  .offer-history__wrapper 
+    .tabs.offer-history__tabs(class= cls ? cls : null)
+      .tabs__container
+        .swiper.tabs-slider.offer-history__tabs-slider
+          .swiper-wrapper
+            each tab in tabsArray
+              .swiper-slide.tab.offer-history__tab(class= tab.isActive ? 'active' : null role="button" data-tab= tab.dataTab)= tab.title
+          
+        .tabs-content.offer-history__tabs-content
+          .tab-content-box.offer-history__tab-content-box(data-tab-content="1").active
+            .offer-history__field.accordeon.offer-history__accordeon
+              .accordeon-field
+                .accordeon-head
+                  span.status.status-inwork В обработке
+                  span.offer № 246612DE
+                  span.date 25.11.2020
+                  span.time 18:38
+                  span.price 999999 руб.
+
+                  svg(width="16" height="16")
+                    use(xlink:href="#icon-arrow")
+
+                .offer-history__data.accordeon-body
+                  p товары
+
+              .accordeon-field
+                .accordeon-head
+                  span.status.status-submit Подтвержден
+                  span.offer № 246612DE
+                  span.date 25.11.2020
+                  span.time 18:38
+                  span.price 999999 руб.
+
+                  svg(width="16" height="16")
+                    use(xlink:href="#icon-arrow")
+
+                .offer-history__data.accordeon-body
+                  p товары
+              
+          .tab-content-box.offer-history__tab-content-box(data-tab-content="2")
+            p Tab 2
+          .tab-content-box.offer-history__tab-content-box(data-tab-content="3")
+            p Tab 3
+          .tab-content-box.offer-history__tab-content-box(data-tab-content="4")
+            p Tab 4
+          .tab-content-box.offer-history__tab-content-box(data-tab-content="5")
+            p Tab 5
+            

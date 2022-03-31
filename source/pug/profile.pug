@@ -8,14 +8,14 @@ block variables
     const keywords = ""
 
 block content
-  .product
+  .profile
     +breadcrumbs([
         { title: 'Главная', link: 'index.html' },
-        { title: 'Каталог', link: 'catalog.html' },
-        { title: 'Платье для девочки Noble People (Россия)' }
+        { title: 'Личный кабинет' }
     ])
 
-    include ./sections/product-page/product-info
+    include ./sections/profile-page/user-profile
+    include ./sections/profile-page/offer-history
     include ./sections/common/history
     
 block modals

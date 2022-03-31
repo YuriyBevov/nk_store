@@ -1,0 +1,72 @@
+.profile {
+    .offer-history {
+        @extend .section-margin-bottom;
+
+        &__wrapper {
+            @extend .wrapper;
+        }
+
+        &__tabs-slider {
+            margin-bottom: 30px;
+        }
+
+        &__tabs-content {
+            //background-color: $white;
+        }
+
+        &__tab {
+            border: 1px solid $blue;
+            padding: 5px 10px;
+            color: $main-black;
+            transition: border $main-transition;
+
+            &.active {
+                border-color: $purple;
+            }
+        }
+
+        &__field {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        &__accordeon {
+            .accordeon-head {
+                border-bottom: 1px solid $gray;
+
+                span {
+                    font-size: 14px;
+                    line-height: 1.2;
+                    padding: 10px;
+                    width: 120px;
+                    text-align: center;
+                    color: $main-black;
+            
+                    &.status {
+                        text-align: left;
+                        &-inwork {
+                            color: #00a1ff;
+                        }
+            
+                        &-done {
+                            color: #15cf74;
+                        }
+            
+                        &-submit {
+                            color: #ffa500;
+                        }
+            
+                        &-cancelled {
+                            color: #f44653;
+                        }
+                    }
+            
+                    &.price {
+                        color: $purple;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.tabs {
+    .tab {
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .tabs-slider {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .tab-content-box {
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+    }
+}

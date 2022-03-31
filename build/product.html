@@ -8,10 +8,7 @@
     <meta name="keywords" content="">
     <title>интернет магазин</title>
     <link rel="stylesheet" href="./css/styles.min.css">
-    <!--link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css")-->
-    <!--link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/panzoom.css") -->
-    <link rel="stylesheet" src="https://cdn.jsdelivr.net/gh/cotton123236/zoomist@latest/dist/zoomist.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/cotton123236/zoomist@latest/dist/zoomist.min.js"></script>
+    <script src="./js/vendors/zoomist.min.js"></script>
   </head>
   <body>
     <div style="display:none"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
@@ -106,7 +103,7 @@
                         </svg>
                   </button>
                 </div>
-              </form><a class="header__user-login" href="registration.html">
+              </form><a class="header__user-login" href="profile.html">
                     <svg width="24" height="24">
                       <use xlink:href="#icon-user"></use>
                     </svg><span>Личный кабинет</span></a><a class="header__user-favourite" href="favourite.html">
@@ -533,30 +530,37 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -566,45 +570,42 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -614,45 +615,42 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -662,45 +660,42 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -710,45 +705,42 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -758,45 +750,42 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -806,45 +795,42 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -854,45 +840,42 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -902,45 +885,42 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="product-card">
-                    <div class="product-card__header">
-                      <!--a(data-fancybox data-src="./assets/img/cat3.png" width="220" height="280").product-card__header-zoom<img src="./assets/img/cat3.png" alt="Фото товара" width="220" height="280"/>
-                      --><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
-                      <!--<div id="myPanzoom" class="panzoom">
-                      <div class="panzoom__viewport">
-                        img.panzoom__content(src="./assets/img/cat3.png" alt="")
+                    <div class="product-card__header flip-card">
+                      <div class="flip-card__wrapper">
+                        <div class="flip-card__front"><img class="zoomable" src="./assets/img/cat3.png" alt="Товар" width="220" height="280">
+                          <div class="product-card__badges">
+                                              <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
+                                              <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
+                          </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
+                                              <svg width="35" height="35">
+                                                <use xlink:href="#icon-heart"></use>
+                                              </svg></a>
+                        </div>
+                        <div class="flip-card__back">
+                          <ul>
+                            <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
+                            <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                            <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
+                            <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
+                            <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
+                            <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
+                          </ul>
+                        </div>
                       </div>
-                      -->
-                      <!--</div>-->
-                      <div class="product-card__badges">
-                                          <div class="badge product-card__badge product-card__badge--new"><span>Новинка !</span></div>
-                                          <div class="badge product-card__badge product-card__badge--sale"><span>Sale</span></div>
-                      </div><a class="product-card__favourite-add-btn favourite-add-btn" href="#">
-                                          <svg width="35" height="35">
-                                            <use xlink:href="#icon-heart"></use>
-                                          </svg></a>
-                      <!--a(href="#").product-card__zoom-btn
-                      svg(width="25" height="25")
-                        use(xlink:href="#icon-search")
-                      
-                      -->
                     </div>
                     <div class="product-card__content">
-                      <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2>
+                      <div class="tooltip">
+                        <h2 class="product-card__title">Комбинезон жёлтый утеплённый осенний суперпуховый</h2><span class="tooltip__text">Комбинезон жёлтый утеплённый осенний суперпуховый</span>
+                      </div>
                       <div class="product-card__description">
                         <div class="product-card__description-chars"><a class="js-show-detail" href="#">Хар-ки товара</a><a href="product.html">Подробно</a></div>
                         <div class="product-card__description-price"><span>999 999 руб.</span></div>
@@ -950,16 +930,6 @@
                                           <svg width="24" height="24">
                                             <use xlink:href="#icon-cart"></use>
                                           </svg><span>В корзину</span></a><a class="product-card__buy-btn" href="#"><span>Купить в 1 клик</span></a>
-                    </div>
-                    <div class="product-card__detail">
-                      <ul>
-                        <li><span class="product-card__detail-title">Наим-е товара:</span><span class="product-card__detail-desc">Комбинезон желтый утеплённый</span></li>
-                        <li><span class="product-card__detail-title">Артикул:</span><span class="product-card__detail-desc">001№012-469К</span></li>
-                        <li><span class="product-card__detail-title">Страна пр-ль:</span><span class="product-card__detail-desc">Россия</span></li>
-                        <li><span class="product-card__detail-title">Пол: </span><span class="product-card__detail-desc">Девочка</span></li>
-                        <li><span class="product-card__detail-title">Состав:</span><span class="product-card__detail-desc">Хлопок-92%, Эластан-8%, Эластан-8%</span></li>
-                        <li><span class="product-card__detail-title">Сезон:</span><span class="product-card__detail-desc">Весна, Осень, Зима</span></li>
-                      </ul>
                     </div>
                   </div>
                 </div>

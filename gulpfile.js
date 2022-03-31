@@ -50,6 +50,11 @@ const fonts = () => {
   .pipe(gulp.dest(PATHS.fonts.output));
 }
 
+const vendors = () => {
+  return gulp.src([PATHS.vendors.src])
+  .pipe(gulp.dest(PATHS.vendors.output));
+}
+
 const html = () => {
   return gulp.src([PATHS.html.src])
     .pipe(plumber())
@@ -68,6 +73,7 @@ const styles = () => {
     .pipe(sourcemap.init())
     .pipe(css())
     .pipe(postcss([ autoprefixer() ]))
+    .pipe(gulp.dest(PATHS.styles.dest))
     .pipe(csso())
     .pipe(rename(PATHS.styles.outputFileName))
     .pipe(sourcemap.write("."))
@@ -132,7 +138,7 @@ const sprite = () => {
     .pipe(gulp.dest(PATHS.images.spriteDest));
 }
 
-const build = gulp.series(clean, fonts, sprite, html, styles, js, images);
+const build = gulp.series(clean, fonts, sprite, html, styles, js, vendors, images);
 const start = gulp.series(build, server);
 const convertToWebp = gulp.series(toWebp, start);
 

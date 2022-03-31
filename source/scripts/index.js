@@ -13,60 +13,10 @@ import custom_select from './modules/custom_select.js';
 import nouislider from './modules/nouislider.js';
 import filterDropdown from './modules/filterDropdown.js';
 import openFilter from './modules/openFilter.js';
+import tabs from './modules/tabs.js';
+import './modules/accordeon.js';
 import Zoom from "smooth-zoom";
 
 Zoom(".zoomable");
 
-/*import Zoomist from 'zoomist';
 
-new Zoomist(".zoomist");
-
-
-//import zoomist from './modules/zoomist.js';
-
-//console.log(zoomist)
-/**/
-
-/*import { Fancybox, Panzoom, Carousel } from "@fancyapps/ui";
-
-
-let zoomed = document.querySelectorAll(".panzoom");
-
-zoomed.forEach(img => {
-    new Panzoom(img, {
-        panOnlyZoomed: true,
-        maxScale: 5
-    });
-})
-
-const myCarousel = new Carousel(document.querySelector(".carousel"), {
-    // Options
-  });
-
-Fancybox.bind("[data-fancybox]", {
-    //animated: false,
-    l10n: {
-        CLOSE: "Закрыть",
-        NEXT: "Вперед",
-        PREV: "Назад",
-        ERROR: "Что то пошло не так, попробуйте снова...",
-        IMAGE_ERROR: "Изображение не найдено",
-        TOGGLE_FULLSCREEN: "Полноэкранный режим",
-        TOGGLE_ZOOM: "Увеличить изображение"
-    },
-
-    Carousel: {
-        slidesPerPage: 1,
-        on: {
-          change: (that) => {
-            // Sync Carousel slide
-            myCarousel.slideTo(myCarousel.findPageForSlide(that.page), {
-              friction: 0,
-              
-            });
-          },
-        },
-      },
-  });*/
-
-  
