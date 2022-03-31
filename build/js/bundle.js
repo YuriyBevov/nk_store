@@ -15531,8 +15531,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filterDropdown_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_filterDropdown_js__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _modules_openFilter_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/openFilter.js */ "./source/scripts/modules/openFilter.js");
 /* harmony import */ var _modules_tabs_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/tabs.js */ "./source/scripts/modules/tabs.js");
-/* harmony import */ var _modules_accordeon_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/accordeon.js */ "./source/scripts/modules/accordeon.js");
-/* harmony import */ var smooth_zoom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! smooth-zoom */ "./node_modules/smooth-zoom/dist/zoom.esm.js");
+/* harmony import */ var smooth_zoom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! smooth-zoom */ "./node_modules/smooth-zoom/dist/zoom.esm.js");
 
 
 
@@ -15549,30 +15548,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//import './modules/accordeon.js';
+
+
+Object(smooth_zoom__WEBPACK_IMPORTED_MODULE_14__["default"])(".zoomable");
 
 
 
-Object(smooth_zoom__WEBPACK_IMPORTED_MODULE_15__["default"])(".zoomable");
-
-
-
-
-/***/ }),
-
-/***/ "./source/scripts/modules/accordeon.js":
-/*!*********************************************!*\
-  !*** ./source/scripts/modules/accordeon.js ***!
-  \*********************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
-
-
-// Использование:
-new _functions_js__WEBPACK_IMPORTED_MODULE_0__["Accordeon"]('.offer-history__accordeon').init();
 
 /***/ }),
 

@@ -14,7 +14,7 @@ import nouislider from './modules/nouislider.js';
 import filterDropdown from './modules/filterDropdown.js';
 import openFilter from './modules/openFilter.js';
 import tabs from './modules/tabs.js';
-import './modules/accordeon.js';
+//import './modules/accordeon.js';
 import Zoom from "smooth-zoom";
 
 Zoom(".zoomable");
