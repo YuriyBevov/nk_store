@@ -29,6 +29,18 @@
     }
 }
 
+.section-pt-mobile {
+    @media(max-width: $sm_w) {
+        padding-top: 20px;
+    }
+}
+
+.text-nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .color-box {
     width: 25px;
     height: 25px;

@@ -10,10 +10,6 @@
             margin-bottom: 30px;
         }
 
-        &__tabs-content {
-            //background-color: $white;
-        }
-
         &__tab {
             border: 1px solid $blue;
             padding: 5px 10px;
@@ -31,18 +27,21 @@
         }
 
         &__accordeon {
-            .accordeon-head {
+            .accordeon-field {
                 border-bottom: 1px solid $gray;
+            }
 
+            .accordeon-head {
                 span {
                     font-size: 14px;
                     line-height: 1.2;
                     padding: 10px;
                     width: 120px;
-                    text-align: center;
                     color: $main-black;
+                    @extend .text-nowrap;
             
                     &.status {
+                        width: 140px;
                         text-align: left;
                         &-inwork {
                             color: #00a1ff;
@@ -60,12 +59,51 @@
                             color: #f44653;
                         }
                     }
-            
+
                     &.price {
-                        color: $purple;
-                        text-align: right;
+                        margin-right: 30px;
                     }
                 }
+            }
+
+            .accordeon-body {
+                .accordeon-body-field {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+    
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        object-fit: contain;
+                        margin-right: 30px;
+                    }
+    
+                    a {
+                        font-size: 12px;
+                        line-height: 1.2;
+                        font-weight: 400;
+                        color: $main-black;
+                        width: 240px;
+                        padding: 0 10px;
+                        padding-right: 15px;
+    
+                        @include focus-color($purple);
+                    }
+    
+                    span {
+                        width: 120px;
+                        font-size: 14px;
+                        padding: 10px;
+                        color: $main-black;
+                        @extend .text-nowrap;
+
+                        &:last-child {
+                            margin-right: 20px;
+                        }
+                    }
+                }
+                
             }
         }
     }

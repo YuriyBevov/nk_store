@@ -78,7 +78,6 @@ class Accordeon {
     init() {
         this.heads.forEach(head => {
             head.addEventListener('click', (evt) => {
-                console.log(this.isCollapse)
                 if(this.isCollapse) {
                     this.bodyes.forEach(b => {
                         b.classList.contains('js-opened') ?
