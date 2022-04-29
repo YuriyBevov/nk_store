@@ -39,6 +39,11 @@
 @import "components/tabs";
 @import "components/accordeon";
 
+//--- modals
+
+@import "components/modal_common";
+@import "components/review-modal";
+
 // blocks
 @import "common/header";
 
@@ -65,6 +70,9 @@
 /* profile-page sections */
 @import "sections/profile-page/user-profile";
 @import "sections/profile-page/offer-history";
+
+/* cart-page sections */
+@import "sections/user-page/user";
 
 /* common sections */
 @import "sections/common/history";

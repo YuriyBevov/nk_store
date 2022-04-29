@@ -1,4 +1,4 @@
-const path = require('path');
+/*const path = require('path');
 
 module.exports = {
   mode: 'development', // сменив на production и запустив gulp build сделает минификацию js
@@ -9,20 +9,21 @@ module.exports = {
   module: {
     rules: [{
         test: /\.js$/,
+        exclude: /node_modules/,
         include: path.resolve(__dirname, 'source/js/scripts'),
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
           }
         }
       }
     ]
-  },
-  devServer: {
+  },*/
+  /*devServer: {
     contentBase: path.join(__dirname, 'build'),
     compress: true,
     port: 9000
   },
-  plugins: []
-};
+  plugins: []*/
+//};

@@ -16,3 +16,5 @@ import './modules/openFilter.js';
 import './modules/tabs.js';
 import './modules/accordeon.js';
 import './modules/zoom.js';
+import './modules/birthPicker.js';
+import './modules/modalOpener.js';

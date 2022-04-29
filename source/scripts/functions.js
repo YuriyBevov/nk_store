@@ -42,7 +42,6 @@ function changeTabs(tabClass, contentClass) {
     if(tabs) {
         const onClickChangeTab = (evt) => {
             let data = evt.currentTarget.getAttribute('data-tab');
-
             if(content) {
                 content.forEach(c => {
                     c.classList.contains('active') ?
@@ -67,31 +66,6 @@ function changeTabs(tabClass, contentClass) {
     }
 }
 
-class Accordeon {
-    constructor( sel, options = {} ) {
-        this.isCollapse = options.isCollapse ? options.isCollapse : false;
-        this.accordeon = typeof(sel) === 'object' ? sel : document.querySelector(sel); // могу передавать как класс элемента, так и сам элемент
-        this.heads = this.accordeon.querySelectorAll('.accordeon-head');
-        this.bodyes = this.accordeon.querySelectorAll('.accordeon-body');
-    }
- 
-    init() {
-        this.heads.forEach(head => {
-            head.addEventListener('click', (evt) => {
-                if(this.isCollapse) {
-                    this.bodyes.forEach(b => {
-                        b.classList.contains('js-opened') ?
-                        b.classList.remove('js-opened') : null;
-                    })
-                }
-                let active = evt.currentTarget;
-                active.classList.toggle('js-active');
-                active.nextElementSibling.classList.toggle('js-opened');
-            });
-        })
-    };
-}
-
 function getBoundingClientRect(elem, side) {
     if(side === 'height') {
         return elem.getBoundingClientRect().height
@@ -109,5 +83,5 @@ function getBoundingClientRect(elem, side) {
 export  { 
     limitStr, addClass, removeClass, 
     checkClass, toggleClass, bodyLocker, 
-    changeTabs, getBoundingClientRect, Accordeon
+    changeTabs, getBoundingClientRect
 }

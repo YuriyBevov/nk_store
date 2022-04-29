@@ -7,6 +7,7 @@
         }
 
         &__tabs-slider {
+            position: relative;
             margin-bottom: 30px;
         }
 
@@ -24,6 +25,73 @@
         &__field {
             width: 100%;
             max-width: 800px;
+            padding-left: 32px;
+            @media(max-width: $sm_w) {
+                padding-left: 0;
+            }
+        }
+
+        &__desc-box {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 10px;
+            padding-left: 0;
+            width: 50%;
+            max-width: 140px;
+
+            .field-name {
+                display: inline-block;
+                font-size: 10px;
+                margin-bottom: 3px;
+                color: $gray;
+            }
+
+            .field-desc {
+                font-size: 12px;
+                line-height: 1.2;
+                
+                color: $main-black;
+                @extend .text-nowrap;
+
+                &.price,
+                &.total-price {
+                    color: $purple;
+                }
+
+                &.count,
+                &.item-price {
+                    color: $blue;
+                }
+
+                &.status {
+                    width: 100%;
+                    text-align: left;
+
+                    &-inwork {
+                        color: #00a1ff;
+                    }
+        
+                    &-done {
+                        color: #15cf74;
+                    }
+        
+                    &-submit {
+                        color: #ffa500;
+                    }
+        
+                    &-cancelled {
+                        color: #f44653;
+                    }
+                }
+            }
+
+            .review-btn {
+                font-size: 14px;
+                line-height: 1.2;
+                text-decoration: underline;
+                margin-top: auto;
+                padding-right: 0 !important;
+            }
         }
 
         &__accordeon {
@@ -32,74 +100,35 @@
             }
 
             .accordeon-head {
-                span {
-                    font-size: 14px;
-                    line-height: 1.2;
-                    padding: 10px;
-                    width: 120px;
-                    color: $main-black;
-                    @extend .text-nowrap;
-            
-                    &.status {
-                        width: 140px;
-                        text-align: left;
-                        &-inwork {
-                            color: #00a1ff;
-                        }
-            
-                        &-done {
-                            color: #15cf74;
-                        }
-            
-                        &-submit {
-                            color: #ffa500;
-                        }
-            
-                        &-cancelled {
-                            color: #f44653;
-                        }
-                    }
-
-                    &.price {
-                        margin-right: 30px;
-                    }
-                }
+                flex-wrap: wrap;
+                padding-right: 32px;
             }
 
             .accordeon-body {
                 .accordeon-body-field {
                     display: flex;
-                    align-items: center;
-                    padding: 10px;
-    
-                    img {
-                        width: 100px;
-                        height: 100px;
-                        object-fit: contain;
-                        margin-right: 30px;
-                    }
-    
-                    a {
-                        font-size: 12px;
-                        line-height: 1.2;
-                        font-weight: 400;
-                        color: $main-black;
-                        width: 240px;
-                        padding: 0 10px;
-                        padding-right: 15px;
-    
-                        @include focus-color($purple);
-                    }
-    
-                    span {
-                        width: 120px;
-                        font-size: 14px;
-                        padding: 10px;
-                        color: $main-black;
-                        @extend .text-nowrap;
+                    padding: 10px 0;
 
-                        &:last-child {
-                            margin-right: 20px;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        object-fit: contain;
+                        margin-right: 10px;
+                    }
+
+                    &-desc {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        a {
+                            font-size: 12px;
+                            line-height: 1.2;
+                            font-weight: 400;
+                            color: $main-black;
+                            width: 100%;
+                            padding-right: 15px;
+        
+                            @include focus-color($purple);
                         }
                     }
                 }

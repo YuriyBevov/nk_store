@@ -1,0 +1,41 @@
+.user {
+    .user {
+        &__wrapper {
+            @extend .wrapper;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__avatar {
+            width: 100px;
+            
+            img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        &__data {
+            width: calc(100% - 100px);
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .user__birth-controls {
+                display: flex;
+                align-items: center;
+            }
+            
+            fieldset {
+                @extend .fieldset-default;
+            }
+        }
+
+        &__psw {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

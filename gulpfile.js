@@ -12,6 +12,7 @@ const plumber = require("gulp-plumber");
 const del = require("del");
 const rename = require("gulp-rename");
 const sourcemap = require("gulp-sourcemaps");
+const notify = require('gulp-notify');
 
 // PUG
 
@@ -33,7 +34,8 @@ const webp = require("gulp-webp");
 
 // JS
 
-const webpack = require("webpack-stream");
+//const webpack = require("webpack-stream");
+const webpackStream = require('webpack-stream');
 
 // SERVER
 
@@ -85,7 +87,7 @@ const imagemin = require('gulp-imagemin');
  
 const images = () => (
     gulp.src(PATHS.images.src)
-    .pipe(imagemin([
+    /*.pipe(imagemin([
       imagemin.mozjpeg({quality: 75, progressive: true}),
       imagemin.optipng({optimizationLevel: 3}),
       imagemin.svgo({
@@ -94,7 +96,7 @@ const images = () => (
               {cleanupIDs: false}
           ]
       })
-    ]))
+    ]))*/
     .pipe(gulp.dest(PATHS.images.dest))
 );
 
@@ -104,11 +106,50 @@ const toWebp = () => {
     .pipe(gulp.dest(PATHS.images.webpDest));
 }
 
-const js = () => {
+/*const js = () => {
   return gulp.src([PATHS.scripts.inputFileName])
     .pipe(webpack( require('./webpack.config.js') ))
     .pipe(gulp.dest(BUILD_PATH));
-};
+};*/
+
+const js = () => {
+  return gulp.src(PATHS.scripts.source)
+    .pipe(plumber(
+        notify.onError({
+            title: "JS",
+            message: "Error: <%= error.message %>"
+        })
+    ))
+    .pipe(webpackStream({
+        mode: 'development',
+        output: {
+            filename: './js/bundle.js',
+        },
+        module: {
+            rules: [{
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', {
+                                targets: "defaults"
+                            }]
+                        ]
+                    }
+                }
+            }]
+        },
+        devtool: 'source-map'
+    }))
+    .on('error', function (err) {
+        console.error('WEBPACK ERROR', err);
+        this.emit('end');
+    })
+    .pipe(gulp.dest(PATHS.scripts.dest))
+    .pipe(browserSync.stream());
+}
 
 const server = () => {
   browserSync.init({

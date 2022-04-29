@@ -6,6 +6,7 @@
 
     .tabs-slider {
         width: 100%;
+        padding: 0 32px;
         overflow: hidden;
     }
 
@@ -15,5 +16,41 @@
         &.active {
             display: flex;
         }
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+    }
+
+    .swiper-button-disabled {
+        display: none;
+
+        @media(max-width: $sm_w) {
+            display: block;
+        }
+    }
+
+    &-button-next,
+    &-button-prev {
+        height: 100%;
+        width: 32px;
+        margin: 0;
+        top: 0;
+        background-color: $blue;
+        background-image: url('../assets/img/arrow.svg');
+        background-size: 18px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &-button-prev {
+        left: -1px;
+        transform: rotate(90deg);
+    }
+
+    &-button-next {
+        right: -1px;
+        transform: rotate(-90deg);
     }
 }

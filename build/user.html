@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>интернет магазин</title>
+    <link rel="stylesheet" href="./css/styles.min.css">
+    <script src="./js/vendors/zoomist.min.js"></script>
+  </head>
+  <body>
+    <div style="display:none"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+<filter id="filter0_d_676_3185" x="-1" y="1" width="27" height="27" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+<feOffset dy="1"></feOffset>
+<feGaussianBlur stdDeviation="0.5"></feGaussianBlur>
+<feComposite in2="hardAlpha" operator="out"></feComposite>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"></feColorMatrix>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_676_3185"></feBlend>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_676_3185" result="shape"></feBlend>
+</filter>
+<clipPath id="clip0_676_3185">
+<rect width="25" height="26" fill="white"></rect>
+</clipPath>
+</defs><symbol id="icon-arrow" viewBox="0 0 20 20">
+<path d="M17.3438 6.32812L10 13.6719" stroke="#58267E" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+<path d="M10 13.6719L2.65625 6.32812" stroke="#58267E" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+</symbol><symbol id="icon-box" viewBox="0 0 30 30">
+<path d="M24.0762 10.9336C24.0762 10.9277 24.0762 10.9219 24.0703 10.9219C24.0703 10.9102 24.0645 10.9043 24.0645 10.8926C24.0645 10.8867 24.0586 10.875 24.0586 10.8691C24.0586 10.8633 24.0527 10.8574 24.0527 10.8516C24.041 10.8223 24.0293 10.7988 24.0117 10.7754L20.2031 5.17969C20.1211 5.05664 19.9863 4.98633 19.8398 4.98633H16.1133H13.8926H10.166C10.0195 4.98633 9.88477 5.05664 9.80273 5.17969L5.99414 10.7754C5.97656 10.7988 5.96484 10.8281 5.95312 10.8516C5.95312 10.8574 5.94727 10.8633 5.94727 10.8691C5.94141 10.875 5.94141 10.8867 5.94141 10.8926C5.94141 10.9043 5.93555 10.9102 5.93555 10.9219C5.93555 10.9277 5.93555 10.9336 5.92969 10.9336C5.92383 10.9629 5.91797 10.9922 5.91797 11.0215V24.5742C5.91797 24.8145 6.11719 25.0137 6.35742 25.0137H23.6484C23.8887 25.0137 24.0879 24.8145 24.0879 24.5742V11.0215C24.082 10.9922 24.082 10.9629 24.0762 10.9336ZM22.8105 10.582H17.1328L16.5996 5.86523H19.5996L22.8105 10.582ZM13.6934 11.4609H16.3008V14.6836L15.252 13.9453C15.1758 13.8926 15.0879 13.8633 15 13.8633C14.9121 13.8633 14.8242 13.8926 14.748 13.9453L13.6992 14.6836V11.4609H13.6934ZM15.7148 5.86523L16.248 10.582H13.7461L14.2793 5.86523H15.7148ZM10.4004 5.86523H13.4004L12.8672 10.582H7.18945L10.4004 5.86523ZM23.2031 24.1348H6.79688V11.4609H12.8203V15.5273C12.8203 15.6914 12.9141 15.8438 13.0547 15.9199C13.2012 15.9961 13.377 15.9844 13.5117 15.8906L15 14.8418L16.4883 15.8906C16.5645 15.9434 16.6523 15.9727 16.7402 15.9727C16.8105 15.9727 16.8809 15.9551 16.9453 15.9258C17.0918 15.8496 17.1797 15.6973 17.1797 15.5332V11.4668H23.2031V24.1348Z" fill="black"></path>
+<path d="M11.7773 19.3594H8.66016C8.41992 19.3594 8.2207 19.5586 8.2207 19.7988C8.2207 20.0391 8.41992 20.2383 8.66016 20.2383H11.7773C12.0176 20.2383 12.2168 20.0391 12.2168 19.7988C12.2168 19.5586 12.0176 19.3594 11.7773 19.3594Z" fill="black"></path>
+<path d="M10.2187 21.2051H8.66016C8.41992 21.2051 8.2207 21.4043 8.2207 21.6445C8.2207 21.8848 8.41992 22.084 8.66016 22.084H10.2187C10.459 22.084 10.6582 21.8848 10.6582 21.6445C10.6582 21.4043 10.459 21.2051 10.2187 21.2051Z" fill="black"></path>
+</symbol><symbol id="icon-burger" viewBox="0 0 25 26">
+<g clip-path="url(#clip0_676_3185)">
+<g filter="url(#filter0_d_676_3185)">
+<circle cx="12.5" cy="13.5" r="12.5" fill="#D6C155" fill-opacity="0.1" shape-rendering="crispEdges"></circle>
+<circle cx="12.5" cy="13.5" r="12" stroke="#58267E" stroke-opacity="0.8" shape-rendering="crispEdges"></circle>
+</g>
+<path d="M18.7416 9.37399C18.5692 9.32649 18.3598 9.30273 18.1137 9.30273H6.88628C6.64015 9.30273 6.43082 9.32649 6.25845 9.37399C6.08609 9.42149 6 9.47915 6 9.54702V10.0356C6 10.1035 6.08609 10.1612 6.25845 10.2086C6.43082 10.2561 6.64015 10.2799 6.88628 10.2799H18.1136C18.3598 10.2799 18.5691 10.2561 18.7415 10.2086C18.9138 10.1612 19 10.1035 19 10.0356V9.54702C19 9.47915 18.914 9.42146 18.7416 9.37399Z" fill="#58267E" fill-opacity="0.8"></path>
+<path d="M18.7416 13.374C18.5692 13.3265 18.3598 13.3027 18.1137 13.3027H6.88628C6.64015 13.3027 6.43082 13.3265 6.25845 13.374C6.08609 13.4215 6 13.4791 6 13.547V14.0356C6 14.1035 6.08609 14.1612 6.25845 14.2086C6.43082 14.2561 6.64015 14.2799 6.88628 14.2799H18.1136C18.3598 14.2799 18.5691 14.2561 18.7415 14.2086C18.9138 14.1612 19 14.1035 19 14.0356V13.547C19 13.4791 18.914 13.4215 18.7416 13.374Z" fill="#58267E" fill-opacity="0.8"></path>
+<path d="M18.7416 17.374C18.5692 17.3265 18.3598 17.3027 18.1137 17.3027H6.88628C6.64015 17.3027 6.43082 17.3265 6.25845 17.374C6.08609 17.4215 6 17.4791 6 17.547V18.0356C6 18.1035 6.08609 18.1612 6.25845 18.2086C6.43082 18.2561 6.64015 18.2799 6.88628 18.2799H18.1136C18.3598 18.2799 18.5691 18.2561 18.7415 18.2086C18.9138 18.1612 19 18.1035 19 18.0356V17.547C19 17.4791 18.914 17.4215 18.7416 17.374Z" fill="#58267E" fill-opacity="0.8"></path>
+</g>
+
+</symbol><symbol id="icon-cart" viewBox="0 0 24 24"><g><rect fill="none" height="24" width="24"></rect><path d="M18,6h-2c0-2.21-1.79-4-4-4S8,3.79,8,6H6C4.9,6,4,6.9,4,8v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8C20,6.9,19.1,6,18,6z M12,4c1.1,0,2,0.9,2,2h-4C10,4.9,10.9,4,12,4z M18,20H6V8h2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V8h4v2c0,0.55,0.45,1,1,1s1-0.45,1-1V8 h2V20z"></path></g></symbol><symbol id="icon-check" viewBox="0 0 12 12">
+<path d="M1 7L4 10L11 3" stroke="#A58E18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</symbol><symbol id="icon-close" viewBox="0 0 40 40">
+<path d="M20.9426 20.0586L31.7702 9.23102C32.0142 8.98695 32.0142 8.59125 31.7702 8.34719C31.526 8.10312 31.1304 8.10312 30.8862 8.34719L20.0587 19.1747L9.23107 8.34711C8.98701 8.10305 8.59131 8.10305 8.34725 8.34711C8.10311 8.59117 8.10311 8.98687 8.34725 9.23094L19.1748 20.0586L8.34717 30.8862C8.10303 31.1303 8.10303 31.5259 8.34717 31.7701C8.4692 31.8921 8.62912 31.9531 8.78912 31.9531C8.94912 31.9531 9.10904 31.8921 9.23107 31.7701L20.0587 20.9425L30.8862 31.7701C31.0084 31.8921 31.1682 31.9531 31.3282 31.9531C31.4882 31.9531 31.6481 31.8921 31.7702 31.7701C32.0142 31.5259 32.0142 31.1303 31.7702 30.8862L20.9426 20.0586Z"></path>
+</symbol><symbol id="icon-delivery" viewBox="0 0 30 30">
+<path d="M15.48 12C15.35 12.004 15.225 12.058 15.133 12.152L12.495 14.782L10.87 13.162C10.415 12.688 9.68 13.42 10.155 13.874L12.138 15.852C12.335 16.049 12.655 16.049 12.853 15.852L15.848 12.865C16.178 12.545 15.935 12 15.481 12H15.48ZM0.5 16H3.5C3.777 16 4 16.223 4 16.5C4 16.777 3.777 17 3.5 17H0.5C0.223 17 0 16.777 0 16.5C0 16.223 0.223 16 0.5 16ZM0.5 12H3.5C3.777 12 4 12.223 4 12.5C4 12.777 3.777 13 3.5 13H0.5C0.223 13 0 12.777 0 12.5C0 12.223 0.223 12 0.5 12ZM0.5 8H3.5C3.777 8 4 8.223 4 8.5C4 8.777 3.777 9 3.5 9H0.5C0.223 9 0 8.777 0 8.5C0 8.223 0.223 8 0.5 8ZM24.5 19C23.125 19 22 20.125 22 21.5C22 22.875 23.125 24 24.5 24C25.875 24 27 22.875 27 21.5C27 20.125 25.875 19 24.5 19ZM24.5 20C25.334 20 26 20.666 26 21.5C26 22.334 25.334 23 24.5 23C23.666 23 23 22.334 23 21.5C23 20.666 23.666 20 24.5 20ZM11.5 19C10.125 19 9 20.125 9 21.5C9 22.875 10.125 24 11.5 24C12.875 24 14 22.875 14 21.5C14 20.125 12.875 19 11.5 19ZM11.5 20C12.334 20 13 20.666 13 21.5C13 22.334 12.334 23 11.5 23C10.666 23 10 22.334 10 21.5C10 20.666 10.666 20 11.5 20ZM6.5 6C5.678 6 5 6.678 5 7.5V18.5C5 19.322 5.678 20 6.5 20H8.5C9.176 20.01 9.176 18.99 8.5 19H6.5C6.214 19 6 18.786 6 18.5V7.5C6 7.214 6.214 7 6.5 7H19.5C19.786 7 20 7.214 20 7.5V19H14.5C13.84 19 13.852 20.01 14.5 20H21.5C22.16 20 22.154 19 21.5 19H21V10H25.227L29 15.896V18.5C29 18.786 28.786 19 28.5 19H27.5C26.846 19 26.846 20 27.5 20H28.5C29.322 20 30 19.322 30 18.5V15.75C30 15.655 29.973 15.56 29.922 15.48L25.922 9.23C25.83 9.087 25.672 9 25.5 9H21V7.5C21 6.678 20.322 6 19.5 6H6.5Z" fill="black"></path>
+</symbol><symbol id="icon-fb" viewBox="0 0 13 24">
+<path d="M8.52356 15.5043C8.52319 14.5092 9.32974 13.7024 10.3248 13.7024C11.2145 13.7024 11.971 13.0527 12.1054 12.1732L12.1862 11.644C12.3565 10.5297 11.4941 9.52565 10.367 9.52565C9.35058 9.52565 8.52662 8.70169 8.52662 7.68528V6.81681C8.52662 5.67448 9.08477 4.56006 10.8671 4.56006C11.8648 4.56006 12.6736 3.75127 12.6736 2.75356V2.63853C12.6736 1.69656 11.9912 0.884119 11.0527 0.802381C10.5227 0.756216 9.99104 0.729366 9.45871 0.721924C6.17871 0.721924 4.03545 2.72192 4.03545 6.34425V7.70519C4.03545 8.7106 3.2204 9.52565 2.21499 9.52565C1.20958 9.52565 0.394531 10.3407 0.394531 11.3461V11.8801C0.394531 12.8865 1.21041 13.7024 2.21685 13.7024C3.22329 13.7024 4.03918 14.5183 4.03918 15.5247V21.554C4.03918 22.7929 5.04354 23.7973 6.28248 23.7973C7.52175 23.7973 8.52625 22.7924 8.52579 21.5531L8.52356 15.5043Z"></path>
+</symbol><symbol id="icon-heart" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"></path></symbol><symbol id="icon-info" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></symbol><symbol id="icon-insta" viewBox="0 0 22 22">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9989 0.860352C13.7524 0.860352 14.0984 0.871515 15.1794 0.921747C16.0206 0.937842 16.853 1.09701 17.6408 1.39244C18.3141 1.65347 18.9255 2.05201 19.4362 2.56263C19.9468 3.07325 20.3453 3.68473 20.6064 4.35803C20.9012 5.14408 21.0603 5.97449 21.0771 6.81384C21.1273 7.89477 21.1384 8.24082 21.1384 10.9943C21.1384 13.7478 21.1273 14.0938 21.0771 15.1748C21.061 16.016 20.9018 16.8484 20.6064 17.6362C20.3453 18.3095 19.9468 18.9209 19.4362 19.4316C18.9255 19.9422 18.3141 20.3407 17.6408 20.6017C16.8551 20.8985 16.0246 21.0595 15.185 21.078C14.104 21.1283 13.758 21.1394 11.0045 21.1394C8.251 21.1394 7.90496 21.1283 6.82403 21.078C5.9828 21.0619 5.15044 20.9028 4.36263 20.6073C3.68933 20.3463 3.07785 19.9478 2.56724 19.4371C2.05662 18.9265 1.65808 18.315 1.39705 17.6417C1.10034 16.856 0.93928 16.0256 0.920768 15.1859C0.870535 14.105 0.859375 13.759 0.859375 11.0055C0.859375 8.25198 0.870535 7.90593 0.920768 6.825C0.936863 5.98377 1.09604 5.15142 1.39147 4.36361C1.65184 3.68928 2.05009 3.07671 2.56075 2.5651C3.0714 2.05349 3.68321 1.65409 4.35705 1.39244C5.1431 1.09764 5.97351 0.938473 6.81286 0.921747C7.89938 0.871515 8.24542 0.860352 10.9989 0.860352ZM15.0919 2.74686C14.024 2.69849 13.7022 2.68733 10.9989 2.68733C8.29566 2.68733 7.97007 2.69849 6.90589 2.74686C6.26189 2.75346 5.62379 2.8705 5.01937 3.09291C4.58133 3.26179 4.18351 3.52055 3.85155 3.85252C3.51958 4.18449 3.26082 4.58231 3.09193 5.02035C2.86931 5.62348 2.75164 6.26028 2.74403 6.90314C2.69566 7.97105 2.68449 8.29291 2.68449 10.9962C2.68449 13.6994 2.69566 14.025 2.74403 15.0892C2.75079 15.7345 2.86847 16.3739 3.09193 16.9794C3.26082 17.4175 3.51958 17.8153 3.85155 18.1473C4.18351 18.4792 4.58133 18.738 5.01937 18.9069C5.6225 19.1295 6.25931 19.2472 6.90217 19.2548C7.97008 19.3031 8.29194 19.3143 10.9952 19.3143C13.6984 19.3143 14.024 19.3031 15.0882 19.2548C15.7336 19.248 16.373 19.1303 16.9784 18.9069C17.4165 18.738 17.8143 18.4792 18.1463 18.1473C18.4782 17.8153 18.737 17.4175 18.9059 16.9794C19.1285 16.3763 19.2462 15.7395 19.2538 15.0966C19.3022 14.0287 19.3133 13.7069 19.3133 11.0036C19.3133 8.30035 19.3022 7.97477 19.2538 6.91058C19.247 6.26522 19.1293 5.62583 18.9059 5.02035C18.737 4.58231 18.4782 4.18449 18.1463 3.85252C17.8143 3.52055 17.4165 3.26179 16.9784 3.09291C16.3752 2.87092 15.7384 2.75388 15.0957 2.74686H15.0919ZM10.9989 14.3804C11.6675 14.3804 12.3211 14.1821 12.877 13.8106C13.4329 13.4392 13.8662 12.9112 14.1221 12.2935C14.3779 11.6758 14.4449 10.9961 14.3144 10.3404C14.184 9.68464 13.862 9.0823 13.3893 8.60954C12.9165 8.13677 12.3142 7.81481 11.6584 7.68438C11.0027 7.55394 10.323 7.62088 9.70526 7.87674C9.08756 8.1326 8.55961 8.56589 8.18816 9.1218C7.81671 9.67771 7.61844 10.3313 7.61844 10.9999C7.61894 11.8963 7.97525 12.7558 8.6091 13.3897C9.24296 14.0235 10.1025 14.3799 10.9989 14.3804ZM10.9989 5.79244C12.0292 5.79244 13.0364 6.09796 13.893 6.67037C14.7497 7.24278 15.4174 8.05636 15.8117 9.00823C16.206 9.96011 16.3091 11.0075 16.1081 12.018C15.9071 13.0285 15.411 13.9567 14.6824 14.6853C13.9539 15.4138 13.0257 15.91 12.0152 16.111C11.0047 16.312 9.95727 16.2088 9.00539 15.8145C8.05352 15.4202 7.23994 14.7525 6.66753 13.8959C6.09513 13.0392 5.78961 12.032 5.78961 11.0017C5.78961 9.62015 6.33845 8.29515 7.31538 7.31821C8.29231 6.34128 9.61732 5.79244 10.9989 5.79244ZM17.6277 5.58779C17.6277 5.82844 17.5564 6.06369 17.4227 6.26378C17.289 6.46387 17.099 6.61983 16.8766 6.71192C16.6543 6.80401 16.4097 6.82811 16.1736 6.78116C15.9376 6.73421 15.7208 6.61833 15.5506 6.44816C15.3805 6.278 15.2646 6.06119 15.2176 5.82517C15.1707 5.58914 15.1948 5.3445 15.2869 5.12217C15.379 4.89983 15.5349 4.70981 15.735 4.57611C15.9351 4.44241 16.1704 4.37105 16.411 4.37105C16.7337 4.37105 17.0432 4.49924 17.2714 4.72743C17.4996 4.95561 17.6277 5.26509 17.6277 5.58779Z"></path>
+</symbol><symbol id="icon-map" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 4c1.93 0 5 1.4 5 5.15 0 2.16-1.72 4.67-5 7.32-3.28-2.65-5-5.17-5-7.32C7 5.4 10.07 4 12 4m0-2C8.73 2 5 4.46 5 9.15c0 3.12 2.33 6.41 7 9.85 4.67-3.44 7-6.73 7-9.85C19 4.46 15.27 2 12 2z"></path><path d="M12 7c-1.1 0-2 .9-2 2s.9 2 2 2a2 2 0 1 0 0-4zM5 20h14v2H5v-2z"></path></symbol><symbol id="icon-minus" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M19 13H5v-2h14v2z"></path></symbol><symbol id="icon-phone" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"></path></symbol><symbol id="icon-plus" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></symbol><symbol id="icon-search" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></symbol><symbol id="icon-slider-arr" viewBox="0 0 32 44">
+<path d="M0.5 0.125H9.25L31.125 22L9.25 43.875H0.5L22.375 22L0.5 0.125Z" fill="#58267E"></path>
+</symbol><symbol id="icon-star" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></symbol><symbol id="icon-tg" viewBox="0 0 23 19">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.1765 8.65578C7.99231 6.12182 11.8701 4.45112 13.81 3.64368C19.3505 1.34043 20.5077 0.940426 21.2519 0.925542C21.5278 0.920178 21.7985 1.00152 22.0258 1.1581C22.1853 1.29563 22.287 1.48834 22.3105 1.69764C22.3505 1.95793 22.3618 2.22185 22.3439 2.48461C22.0444 5.6474 20.7439 13.2921 20.0835 16.8251C19.8044 18.3135 19.2537 18.8214 18.7198 18.8716C17.5625 18.9776 16.6732 18.1051 15.557 17.3702C13.8007 16.2186 12.8091 15.5097 11.1049 14.3786C9.13464 13.0762 10.4128 12.3674 11.5346 11.2028C11.8286 10.8976 16.93 6.25392 17.0305 5.83345C17.0437 5.77136 17.0422 5.70703 17.026 5.64563C17.0099 5.58424 16.9795 5.52749 16.9374 5.47996C16.8764 5.44179 16.8072 5.41839 16.7355 5.41161C16.6638 5.40483 16.5915 5.41485 16.5244 5.44089C16.3495 5.47934 13.5452 7.33299 8.11139 11.0018C7.31511 11.5488 6.59387 11.8155 5.94767 11.8018C5.23511 11.7851 3.8658 11.3981 2.84626 11.0576C1.59789 10.6521 0.613712 10.4381 0.691851 9.75531C0.737743 9.3981 1.23262 9.03159 2.1765 8.65578Z"></path>
+</symbol><symbol id="icon-user" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.51.88 4.93 1.78C15.57 19.36 13.86 20 12 20s-3.57-.64-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"></path></symbol><symbol id="icon-whatsapp" viewBox="0 0 21 21">
+<path d="M0.214844 20.9537L1.6195 15.8263C0.532806 13.9393 0.0989463 11.7466 0.385186 9.588C0.671425 7.4294 1.66176 5.42552 3.20269 3.88702C4.74362 2.34851 6.74906 1.36131 8.9081 1.07847C11.0671 0.795622 13.2592 1.23293 15.1444 2.32259C17.0297 3.41225 18.5028 5.09341 19.3354 7.10543C20.168 9.11745 20.3136 11.3479 19.7496 13.4511C19.1856 15.5543 17.9436 17.4127 16.216 18.7382C14.4885 20.0637 12.3719 20.7823 10.1944 20.7825C8.54264 20.7816 6.91742 20.3671 5.46694 19.577L0.214844 20.9537ZM5.70321 17.7909L6.00462 17.977C7.27201 18.7275 8.7177 19.124 10.1907 19.1249C12.0147 19.1252 13.7871 18.5194 15.2293 17.4026C16.6715 16.2859 17.7016 14.7215 18.1578 12.9554C18.614 11.1893 18.4703 9.32173 17.7494 7.64622C17.0284 5.97071 15.7711 4.5823 14.1751 3.69926C12.579 2.81622 10.7348 2.48862 8.9323 2.76798C7.12978 3.04734 5.47122 3.9178 4.21735 5.24253C2.96348 6.56725 2.1854 8.27111 2.00545 10.0862C1.8255 11.9014 2.25387 13.7249 3.22322 15.27L3.40927 15.5807L2.57764 18.6151L5.70321 17.7909Z"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1773 13.2402C15.1159 13.136 14.9503 13.0746 14.7029 12.9518C14.4554 12.829 13.2405 12.2299 13.0136 12.1462C12.7866 12.0625 12.6229 12.0234 12.4554 12.2709C12.288 12.5183 11.8173 13.0746 11.674 13.2402C11.5308 13.4057 11.3838 13.4262 11.1382 13.3016C10.413 13.0103 9.74389 12.5955 9.16054 12.0755C8.62 11.5755 8.15666 10.9981 7.78565 10.362C7.64054 10.1146 7.76891 9.98993 7.89356 9.85783C8.01822 9.72574 8.14101 9.5676 8.26566 9.42434C8.36795 9.29955 8.45133 9.16039 8.5131 9.01132C8.54567 8.94297 8.56083 8.86763 8.55726 8.79201C8.55369 8.71638 8.53149 8.64281 8.49263 8.57783C8.43123 8.45504 7.93449 7.2383 7.72984 6.74341C7.52519 6.24853 7.32612 6.32667 7.1717 6.31737C7.01728 6.30806 6.86287 6.31737 6.69915 6.31737C6.572 6.31947 6.44669 6.3482 6.33133 6.40172C6.21596 6.45523 6.1131 6.53234 6.02938 6.62806C5.75192 6.89114 5.53185 7.20874 5.38297 7.56092C5.23409 7.9131 5.15964 8.29225 5.16427 8.67458C5.16427 9.89132 6.04985 11.0671 6.1745 11.2327C6.29915 11.3983 7.91776 13.895 10.3978 14.9648C10.8582 15.1635 11.3289 15.3374 11.808 15.4857C12.3124 15.6389 12.8455 15.6727 13.3652 15.5843C13.8396 15.5136 14.8275 14.9853 15.0396 14.4085C15.2517 13.8318 15.2387 13.3425 15.1773 13.2402Z"></path>
+</symbol></svg>
+    </div>
+    <header class="header">
+      <div class="crawl-line">
+        <div class="cmn__wrapper crawl-line__wrapper">
+          <p class="cmn__text">Работаем в штатном режиме!</p>
+        </div>
+      </div>
+      <div class="header__content">
+        <div class="header__wrapper">
+          <div class="header__logo"><img src="./assets/img/main-logo.png" alt="Лого" width="150" height="80"></div>
+          <div class="header__contacts">
+            <div class="header__city">
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon-map"></use>
+                  </svg><span>г. Москва</span>
+            </div>
+            <div class="header__phones">
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon-phone"></use>
+                  </svg><a href="tel:+79062723744">+7(906)272-37-44</a>
+            </div>
+          </div>
+          <div class="header__menu">
+            <nav class="header__nav">
+              <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="about.html">О нас</a></li>
+                <li class="header__nav-item"><a href="contacts.html">Контакты</a></li>
+                <li class="header__nav-item"><a href="delivery.html">Доставка</a></li>
+                <li class="header__nav-item"><a href="#">Условия оплаты и возврата</a></li>
+                <li class="header__nav-item"><a href="#">Политика конфиденциальности</a></li>
+              </ul>
+            </nav>
+            <div class="header__user">
+              <form action="#">
+                <div class="search-field">
+                  <input type="text" id="header_search" placeholder="Поиск по сайту">
+                  <button type="submit">
+                        <svg width="24" height="24">
+                          <use xlink:href="#icon-search"></use>
+                        </svg>
+                  </button>
+                </div>
+              </form><a class="header__user-login" href="profile.html">
+                    <svg width="24" height="24">
+                      <use xlink:href="#icon-user"></use>
+                    </svg><span>Личный кабинет</span></a><a class="header__user-favourite" href="favourite.html">
+                    <svg width="24" height="24">
+                      <use xlink:href="#icon-heart"></use>
+                    </svg><span>Избранное</span></a><a class="header__user-cart" href="cart.html">
+                    <svg width="24" height="24">
+                      <use xlink:href="#icon-cart"></use>
+                    </svg><span>Корзина</span></a>
+            </div>
+            <div class="burger js-mobile-menu-opener">
+              <div class="burger__line burger__line-top"></div>
+              <div class="burger__line burger__line-middle"></div>
+              <div class="burger__line burger__line-bottom"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__catalog">
+        <nav class="catalog-nav">
+          <div class="catalog-nav__wrapper">
+            <ul class="catalog-nav__list">
+              <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span>Новинки</span></a>
+                        <div class="catalog-section">
+                          <div class="catalog-section__wrapper">
+                            <ul class="catalog-section__list">
+                              <li class="catalog-section__item"><a href="catalog.html">Верхняя одежда</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пиджаки и жакеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Жилеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитеры и кардиганы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитшоты и худи</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Блузки и рубашки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Футболки и лонгсливы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Костюмы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Платья и сарафаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Комбенизоны и боди</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Джинсы и штаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Юбки и шорты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Колготки и носки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пижамы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Нижнее белье</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Украшения</a></li>
+                            </ul>
+                            <div class="catalog-section__side">
+                              <button class="catalog-section__close js-close" type="button">
+                                <svg width="40" height="40">
+                                  <use xlink:href="#icon-close"></use>
+                                </svg>
+                              </button><a href="catalog.html">Смотреть все категории</a><img src="./assets/img/catalog-section_banner1.png" alt="Баннер" width="350" height="580">
+                            </div>
+                          </div>
+                        </div>
+              </li>
+              <li class="catalog-nav__item"><a class="catalog-nav__link" href="catalog.html"><span>Товары для малышей</span></a>
+                        <div class="catalog-section">
+                          <div class="catalog-section__wrapper">
+                            <ul class="catalog-section__list">
+                              <li class="catalog-section__item"><a href="catalog.html">Верхняя одежда</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пиджаки и жакеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Жилеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитеры и кардиганы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитшоты и худи</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Блузки и рубашки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Футболки и лонгсливы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Костюмы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Платья и сарафаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Комбенизоны и боди</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Джинсы и штаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Юбки и шорты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Колготки и носки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пижамы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Нижнее белье</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Украшения</a></li>
+                            </ul>
+                            <div class="catalog-section__side">
+                              <button class="catalog-section__close js-close" type="button">
+                                <svg width="40" height="40">
+                                  <use xlink:href="#icon-close"></use>
+                                </svg>
+                              </button><a href="catalog.html">Смотреть все категории</a><img src="./assets/img/catalog-section_banner2.png" alt="Баннер" width="350" height="580">
+                            </div>
+                          </div>
+                        </div>
+              </li>
+              <li class="catalog-nav__item"><a class="catalog-nav__link" href="catalog.html"><span>Мальчики</span></a>
+                        <div class="catalog-section">
+                          <div class="catalog-section__wrapper">
+                            <ul class="catalog-section__list">
+                              <li class="catalog-section__item"><a href="catalog.html">Верхняя одежда</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пиджаки и жакеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Жилеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитеры и кардиганы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитшоты и худи</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Блузки и рубашки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Футболки и лонгсливы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Костюмы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Платья и сарафаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Комбенизоны и боди</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Джинсы и штаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Юбки и шорты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Колготки и носки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пижамы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Нижнее белье</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Украшения</a></li>
+                            </ul>
+                            <div class="catalog-section__side">
+                              <button class="catalog-section__close js-close" type="button">
+                                <svg width="40" height="40">
+                                  <use xlink:href="#icon-close"></use>
+                                </svg>
+                              </button><a href="catalog.html">Смотреть все категории</a><img src="./assets/img/catalog-section_banner3.png" alt="Баннер" width="350" height="580">
+                            </div>
+                          </div>
+                        </div>
+              </li>
+              <li class="catalog-nav__item"><a class="catalog-nav__link" href="catalog.html"><span>Девочки</span></a>
+                        <div class="catalog-section">
+                          <div class="catalog-section__wrapper">
+                            <ul class="catalog-section__list">
+                              <li class="catalog-section__item"><a href="catalog.html">Верхняя одежда</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пиджаки и жакеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Жилеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитеры и кардиганы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитшоты и худи</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Блузки и рубашки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Футболки и лонгсливы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Костюмы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Платья и сарафаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Комбенизоны и боди</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Джинсы и штаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Юбки и шорты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Колготки и носки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пижамы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Нижнее белье</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Украшения</a></li>
+                            </ul>
+                            <div class="catalog-section__side">
+                              <button class="catalog-section__close js-close" type="button">
+                                <svg width="40" height="40">
+                                  <use xlink:href="#icon-close"></use>
+                                </svg>
+                              </button><a href="catalog.html">Смотреть все категории</a><img src="./assets/img/catalog-section_banner1.png" alt="Баннер" width="350" height="580">
+                            </div>
+                          </div>
+                        </div>
+              </li>
+              <li class="catalog-nav__item"><a class="catalog-nav__link" href="catalog.html"><span>Обувь</span></a>
+                        <div class="catalog-section">
+                          <div class="catalog-section__wrapper">
+                            <ul class="catalog-section__list">
+                              <li class="catalog-section__item"><a href="catalog.html">Верхняя одежда</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пиджаки и жакеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Жилеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитеры и кардиганы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитшоты и худи</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Блузки и рубашки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Футболки и лонгсливы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Костюмы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Платья и сарафаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Комбенизоны и боди</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Джинсы и штаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Юбки и шорты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Колготки и носки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пижамы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Нижнее белье</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Украшения</a></li>
+                            </ul>
+                            <div class="catalog-section__side">
+                              <button class="catalog-section__close js-close" type="button">
+                                <svg width="40" height="40">
+                                  <use xlink:href="#icon-close"></use>
+                                </svg>
+                              </button><a href="catalog.html">Смотреть все категории</a><img src="./assets/img/catalog-section_banner3.png" alt="Баннер" width="350" height="580">
+                            </div>
+                          </div>
+                        </div>
+              </li>
+              <li class="catalog-nav__item"><a class="catalog-nav__link" href="catalog.html"><span>Игрушки</span></a>
+                        <div class="catalog-section">
+                          <div class="catalog-section__wrapper">
+                            <ul class="catalog-section__list">
+                              <li class="catalog-section__item"><a href="catalog.html">Верхняя одежда</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пиджаки и жакеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Жилеты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитеры и кардиганы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Свитшоты и худи</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Блузки и рубашки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Футболки и лонгсливы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Костюмы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Платья и сарафаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Комбенизоны и боди</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Джинсы и штаны</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Юбки и шорты</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Колготки и носки</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Пижамы</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Нижнее белье</a></li>
+                              <li class="catalog-section__item"><a href="catalog.html">Украшения</a></li>
+                            </ul>
+                            <div class="catalog-section__side">
+                              <button class="catalog-section__close js-close" type="button">
+                                <svg width="40" height="40">
+                                  <use xlink:href="#icon-close"></use>
+                                </svg>
+                              </button><a href="catalog.html">Смотреть все категории</a><img src="./assets/img/catalog-section_banner1.png" alt="Баннер" width="350" height="580">
+                            </div>
+                          </div>
+                        </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="user">
+        <div class="breadcrumbs wrapper">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="index.html">Главная</a>
+            </li>
+            <li class="breadcrumbs__item"><a href="profile.html">Личный кабинет</a>
+            </li>
+            <li class="breadcrumbs__item"><span>Личные данные</span>
+            </li>
+          </ul>
+        </div>
+        <section class="user">
+          <div class="user__wrapper">
+            <div class="user__avatar"><img src="./assets/img/cat5.png" alt="Аватар" width="80" height="80"><a href="#">Изменить</a></div>
+            <div class="user__data">
+              <form action="#">
+                <label for="user_name">Имя</label>
+                <input type="text" placeholder="Константин" id="user_name">
+                <label for="user_surname">Фамилия</label>
+                <input type="text" placeholder="Константинов" id="user_surname">
+                <label for="user_mail">Email</label>
+                <input type="text" placeholder="test@yandex.ru" id="user_mail">
+                <label for="user_phone">Телефон</label>
+                <input type="text" placeholder="+7(921)123-45-67" id="user_phone">
+                <label for="user_city">Город</label>
+                <input type="text" placeholder="Санкт-Петербург" id="user_city">
+                <fieldset class="user__birth-field"><span>Дата рождения</span>
+                  <div class="user__birth-controls">
+                    <select class="custom-select-birth" id="user_bday"></select>
+                    <select class="custom-select-birth" id="user_bmonth">
+                      <option value="Январь" selected="">Январь</option>
+                      <option value="Февраль">Февраль</option>
+                      <option value="Март">Март</option>
+                      <option value="Апрель">Апрель</option>
+                      <option value="Май">Май</option>
+                      <option value="Июнь">Июнь</option>
+                      <option value="Июль">Июль</option>
+                      <option value="Август">Август</option>
+                      <option value="Сентябрь">Сентябрь</option>
+                      <option value="Октябрь">Октябрь</option>
+                      <option value="Ноябрь">Ноябрь</option>
+                      <option value="Декабрь">Декабрь</option>
+                    </select>
+                    <select class="custom-select-birth" id="user_byear"></select>
+                  </div>
+                </fieldset>
+                <fieldset class="user__psw">
+                  <label for="user_current-psw">Текущий пароль</label>
+                  <input type="password" id="user_current-psw" placeholder="Текущий пароль">
+                  <label for="user_new-psw">Новый пароль</label>
+                  <input type="password" id="user_new-psw" placeholder="Новый пароль">
+                  <label for="user_confirm-psw">Повторите введенный пароль</label>
+                  <input type="password" id="user_confirm-psw" placeholder="Повторите введенный пароль"><span class="user__form-error wrong-psw">* Неверный пароль</span><span class="user__form-error wrong-confirm">* Введенные пароли не совпадают</span>
+                </fieldset>
+                <div class="user__form-action">
+                  <button type="button">Изменить пароль</button>
+                  <button type="submit">Сохранить изменения</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__top">
+          <div class="footer__logo"><img src="./assets/img/main-logo.png" alt="Лого" width="150" height="80"></div>
+          <ul class="footer__nav">
+            <li class="footer__nav-item"><a class="footer__nav-link" href="about.html">О нас</a></li>
+            <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">Контакты</a></li>
+            <li class="footer__nav-item"><a class="footer__nav-link" href="delivery.html">Доставка и оплата</a></li>
+          </ul>
+          <div class="footer__social"><span>Мы в соцсетях:</span>
+            <ul class="social-list">
+              <li class="social-item"><a href="#" aria-label="whatspapp">
+                  <svg width="20" height="20">
+                    <use xlink:href="#icon-whatsapp"></use>
+                  </svg></a></li>
+              <li class="social-item"><a href="#" aria-label="telegram">
+                  <svg width="22" height="18">
+                    <use xlink:href="#icon-tg"></use>
+                  </svg></a></li>
+              <li class="social-item"><a href="#" aria-label="instagram">
+                  <svg width="20" height="20">
+                    <use xlink:href="#icon-insta"></use>
+                  </svg></a></li>
+              <li class="social-item"><a href="#" aria-label="facebook">
+                  <svg width="12" height="23">
+                    <use xlink:href="#icon-fb"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <ul class="footer__bottom-menu">
+            <li class="footer__bottom-menu-item"><a href="#">Сертификаты на продукцию </a></li>
+            <li class="footer__bottom-menu-item"><a href="#">Условия оплаты и возврата </a></li>
+            <li class="footer__bottom-menu-item"><a href="#">Реквизиты компании</a></li>
+            <li class="footer__bottom-menu-item"><a href="#">Публичная оферта</a></li>
+            <li class="footer__bottom-menu-item"><a href="#">Политика об обработке и защите персональных данных</a></li>
+          </ul>
+          <div class="footer__bottom-dev">
+            <p>Разработка сайта: <a href="mailto:yuriybevov@gmail.com">yuriybevov@gmail.com </a>      </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="mobile-menu">
+      <div class="mobile-menu__wrapper">
+        <ul class="mobile-menu__user">
+          <li class="mobile-menu__user-item"><a class="mobile-menu__user-link mobile-menu__user-link--user" href="#">
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon-user"></use>
+                  </svg><span>Личный кабинет</span></a></li>
+          <li class="mobile-menu__user-item">   <a class="mobile-menu__user-link mobile-menu__user-link--favourite" href="#">
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon-heart"></use>
+                  </svg><span>Избранное</span></a></li>
+          <li class="mobile-menu__user-item">   <a class="mobile-menu__user-link mobile-menu__user-link--cart" href="#">
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon-cart"></use>
+                  </svg><span>Корзина</span></a></li>
+        </ul>
+        <form class="mobile-menu__search" action="#">
+          <div class="search-field">
+            <input type="text" id="header_search" placeholder="Поиск по сайту">
+            <button type="submit">
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon-search"></use>
+                  </svg>
+            </button>
+          </div>
+        </form>
+        <ul class="mobile-menu__catalog">
+          <li class="mobile-menu__catalog-item"><span>Новинки</span>
+                <ul>
+                  <li><a href="catalog.html">Верхняя одежда</a></li>
+                  <li><a href="catalog.html">Пиджаки и жакеты</a></li>
+                  <li><a href="catalog.html">Жилеты</a></li>
+                  <li><a href="catalog.html">Свитеры и кардиганы</a></li>
+                  <li><a href="catalog.html">Свитшоты и худи</a></li>
+                  <li><a href="catalog.html">Блузки и рубашки</a></li>
+                  <li><a href="catalog.html">Футболки и лонгсливы</a></li>
+                  <li><a href="catalog.html">Костюмы</a></li>
+                  <li><a href="catalog.html">Платья и сарафаны</a></li>
+                  <li><a href="catalog.html">Комбенизоны и боди</a></li>
+                  <li><a href="catalog.html">Джинсы и штаны</a></li>
+                  <li><a href="catalog.html">Юбки и шорты</a></li>
+                  <li><a href="catalog.html">Колготки и носки</a></li>
+                  <li><a href="catalog.html">Пижамы</a></li>
+                  <li><a href="catalog.html">Нижнее белье</a></li>
+                  <li><a href="catalog.html">Украшения</a></li>
+                </ul>
+          </li>
+          <li class="mobile-menu__catalog-item"><span>Товары для малышей</span>
+                <ul>
+                  <li><a href="catalog.html">Верхняя одежда</a></li>
+                  <li><a href="catalog.html">Пиджаки и жакеты</a></li>
+                  <li><a href="catalog.html">Жилеты</a></li>
+                  <li><a href="catalog.html">Свитеры и кардиганы</a></li>
+                  <li><a href="catalog.html">Свитшоты и худи</a></li>
+                  <li><a href="catalog.html">Блузки и рубашки</a></li>
+                  <li><a href="catalog.html">Футболки и лонгсливы</a></li>
+                  <li><a href="catalog.html">Костюмы</a></li>
+                  <li><a href="catalog.html">Платья и сарафаны</a></li>
+                  <li><a href="catalog.html">Комбенизоны и боди</a></li>
+                  <li><a href="catalog.html">Джинсы и штаны</a></li>
+                  <li><a href="catalog.html">Юбки и шорты</a></li>
+                  <li><a href="catalog.html">Колготки и носки</a></li>
+                  <li><a href="catalog.html">Пижамы</a></li>
+                  <li><a href="catalog.html">Нижнее белье</a></li>
+                  <li><a href="catalog.html">Украшения</a></li>
+                </ul>
+          </li>
+          <li class="mobile-menu__catalog-item"><span>Мальчики</span>
+                <ul>
+                  <li><a href="catalog.html">Верхняя одежда</a></li>
+                  <li><a href="catalog.html">Пиджаки и жакеты</a></li>
+                  <li><a href="catalog.html">Жилеты</a></li>
+                  <li><a href="catalog.html">Свитеры и кардиганы</a></li>
+                  <li><a href="catalog.html">Свитшоты и худи</a></li>
+                  <li><a href="catalog.html">Блузки и рубашки</a></li>
+                  <li><a href="catalog.html">Футболки и лонгсливы</a></li>
+                  <li><a href="catalog.html">Костюмы</a></li>
+                  <li><a href="catalog.html">Платья и сарафаны</a></li>
+                  <li><a href="catalog.html">Комбенизоны и боди</a></li>
+                  <li><a href="catalog.html">Джинсы и штаны</a></li>
+                  <li><a href="catalog.html">Юбки и шорты</a></li>
+                  <li><a href="catalog.html">Колготки и носки</a></li>
+                  <li><a href="catalog.html">Пижамы</a></li>
+                  <li><a href="catalog.html">Нижнее белье</a></li>
+                  <li><a href="catalog.html">Украшения</a></li>
+                </ul>
+          </li>
+          <li class="mobile-menu__catalog-item"><span>Девочки</span>
+                <ul>
+                  <li><a href="catalog.html">Верхняя одежда</a></li>
+                  <li><a href="catalog.html">Пиджаки и жакеты</a></li>
+                  <li><a href="catalog.html">Жилеты</a></li>
+                  <li><a href="catalog.html">Свитеры и кардиганы</a></li>
+                  <li><a href="catalog.html">Свитшоты и худи</a></li>
+                  <li><a href="catalog.html">Блузки и рубашки</a></li>
+                  <li><a href="catalog.html">Футболки и лонгсливы</a></li>
+                  <li><a href="catalog.html">Костюмы</a></li>
+                  <li><a href="catalog.html">Платья и сарафаны</a></li>
+                  <li><a href="catalog.html">Комбенизоны и боди</a></li>
+                  <li><a href="catalog.html">Джинсы и штаны</a></li>
+                  <li><a href="catalog.html">Юбки и шорты</a></li>
+                  <li><a href="catalog.html">Колготки и носки</a></li>
+                  <li><a href="catalog.html">Пижамы</a></li>
+                  <li><a href="catalog.html">Нижнее белье</a></li>
+                  <li><a href="catalog.html">Украшения</a></li>
+                </ul>
+          </li>
+          <li class="mobile-menu__catalog-item"><span>Обувь</span>
+                <ul>
+                  <li><a href="catalog.html">Верхняя одежда</a></li>
+                  <li><a href="catalog.html">Пиджаки и жакеты</a></li>
+                  <li><a href="catalog.html">Жилеты</a></li>
+                  <li><a href="catalog.html">Свитеры и кардиганы</a></li>
+                  <li><a href="catalog.html">Свитшоты и худи</a></li>
+                  <li><a href="catalog.html">Блузки и рубашки</a></li>
+                  <li><a href="catalog.html">Футболки и лонгсливы</a></li>
+                  <li><a href="catalog.html">Костюмы</a></li>
+                  <li><a href="catalog.html">Платья и сарафаны</a></li>
+                  <li><a href="catalog.html">Комбенизоны и боди</a></li>
+                  <li><a href="catalog.html">Джинсы и штаны</a></li>
+                  <li><a href="catalog.html">Юбки и шорты</a></li>
+                  <li><a href="catalog.html">Колготки и носки</a></li>
+                  <li><a href="catalog.html">Пижамы</a></li>
+                  <li><a href="catalog.html">Нижнее белье</a></li>
+                  <li><a href="catalog.html">Украшения</a></li>
+                </ul>
+          </li>
+          <li class="mobile-menu__catalog-item"><span>Игрушки</span>
+                <ul>
+                  <li><a href="catalog.html">Верхняя одежда</a></li>
+                  <li><a href="catalog.html">Пиджаки и жакеты</a></li>
+                  <li><a href="catalog.html">Жилеты</a></li>
+                  <li><a href="catalog.html">Свитеры и кардиганы</a></li>
+                  <li><a href="catalog.html">Свитшоты и худи</a></li>
+                  <li><a href="catalog.html">Блузки и рубашки</a></li>
+                  <li><a href="catalog.html">Футболки и лонгсливы</a></li>
+                  <li><a href="catalog.html">Костюмы</a></li>
+                  <li><a href="catalog.html">Платья и сарафаны</a></li>
+                  <li><a href="catalog.html">Комбенизоны и боди</a></li>
+                  <li><a href="catalog.html">Джинсы и штаны</a></li>
+                  <li><a href="catalog.html">Юбки и шорты</a></li>
+                  <li><a href="catalog.html">Колготки и носки</a></li>
+                  <li><a href="catalog.html">Пижамы</a></li>
+                  <li><a href="catalog.html">Нижнее белье</a></li>
+                  <li><a href="catalog.html">Украшения</a></li>
+                </ul>
+          </li>
+        </ul>
+        <ul class="mobile-menu__nav">
+          <li class="mobile-menu__nav-item"><a href="about.html"><span>О нас</span></a></li>
+          <li class="mobile-menu__nav-item"><a href="contacts.html"><span>Контакты</span></a></li>
+          <li class="mobile-menu__nav-item"><a href="delivery.html"><span>Доставка</span></a></li>
+          <li class="mobile-menu__nav-item"><a href="about.html"><span>Условия оплаты и возврата</span></a></li>
+          <li class="mobile-menu__nav-item"><a href="about.html"><span>Политика конфиденциальности</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- include ./modals/info-modal-->
+    <script src="./js/bundle.js"></script>
+  </body>
+</html>

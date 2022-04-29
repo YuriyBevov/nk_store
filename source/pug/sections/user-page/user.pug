@@ -1,0 +1,62 @@
+section.user
+  .user__wrapper
+    .user__avatar
+      img(src="./assets/img/cat5.png" alt="Аватар" width="80" height="80")
+      a(href="#") Изменить
+    
+    .user__data
+      form(action="#")
+        label(for="user_name") Имя
+        input(type="text" placeholder="Константин" id="user_name")
+
+        label(for="user_surname") Фамилия
+        input(type="text" placeholder="Константинов" id="user_surname")
+
+        label(for="user_mail") Email
+        input(type="text" placeholder="test@yandex.ru" id="user_mail")
+
+        label(for="user_phone") Телефон
+        input(type="text" placeholder="+7(921)123-45-67" id="user_phone")
+
+        label(for="user_city") Город
+        input(type="text" placeholder="Санкт-Петербург" id="user_city")
+
+        fieldset.user__birth-field
+          span Дата рождения
+          .user__birth-controls
+            select(id="user_bday").custom-select-birth
+
+            select(id="user_bmonth").custom-select-birth
+                option(value="Январь" selected) Январь
+                option(value="Февраль") Февраль
+                option(value="Март") Март
+                option(value="Апрель") Апрель
+                option(value="Май") Май
+                option(value="Июнь") Июнь
+                option(value="Июль") Июль
+                option(value="Август") Август
+                option(value="Сентябрь") Сентябрь
+                option(value="Октябрь") Октябрь
+                option(value="Ноябрь") Ноябрь
+                option(value="Декабрь") Декабрь
+        
+            select(id="user_byear").custom-select-birth
+
+
+        fieldset.user__psw
+
+          label(for="user_current-psw") Текущий пароль
+          input(type="password" id="user_current-psw" placeholder="Текущий пароль")
+
+          label(for="user_new-psw") Новый пароль
+          input(type="password" id="user_new-psw" placeholder="Новый пароль")
+
+          label(for="user_confirm-psw") Повторите введенный пароль
+          input(type="password" id="user_confirm-psw" placeholder="Повторите введенный пароль")
+
+          span.user__form-error.wrong-psw * Неверный пароль
+          span.user__form-error.wrong-confirm * Введенные пароли не совпадают
+
+        .user__form-action
+          button(type="button") Изменить пароль
+          button(type="submit") Сохранить изменения

@@ -36,16 +36,30 @@ section.offer-history
             each tab in tabsArray
               .swiper-slide.tab.offer-history__tab(class= tab.isActive ? 'active' : null role="button" data-tab= tab.dataTab)= tab.title
           
+          .swiper-button-prev.tabs-button-prev
+          .swiper-button-next.tabs-button-next 
+          
         .tabs-content.offer-history__tabs-content
           .tab-content-box.offer-history__tab-content-box(data-tab-content="1").active
             .offer-history__field.accordeon.offer-history__accordeon
               .accordeon-field
                 .accordeon-head
-                  span.status.status-inwork В обработке
-                  span.offer № 246612DE
-                  span.date 25.11.2020
-                  span.time 18:38
-                  span.price 999999 руб.
+                  .offer-history__desc-box
+                    span.field-name Статус:
+                    span.field-desc.status.status-done Завершен
+
+                  .offer-history__desc-box
+                    span.field-name Номер заказа:
+                    span.field-desc.offer №246612DE
+                  
+                  .offer-history__desc-box
+                    span.field-name Дата и время:
+                    span.field-desc.date 25.11.2020 / 18:38
+
+                  .offer-history__desc-box
+                    span.field-name Итого:
+                    span.field-desc.total-price 999999 руб.
+
 
                   svg(width="16" height="16")
                     use(xlink:href="#icon-arrow")
@@ -53,35 +67,116 @@ section.offer-history
                 .offer-history__data.accordeon-body
                   .accordeon-body-field
                     img(src="./assets/img/cat4.png" width="100" height="100" alt="фото товара")
-                    a(href="#") Толстовка черная с крупным глянцевым принтом
-                    span 2шт.
-                    span 999999 руб.
-                  .accordeon-body-field
-                    img(src="./assets/img/cat5.png" width="100" height="100" alt="фото товара")
-                    a(href="#") Толстовка черная с крупным глянцевым принтом с крупным глянцевым принтом
-                    span 2223шт.
-                    span 999999 руб.
+                    .accordeon-body-field-desc
+                      a(href="#") Толстовка черная с крупным глянцевым принтом
+                      .offer-history__desc-box
+                        span.field-name Кол-во:
+                        span.field-desc.count 23шт.
+                      .offer-history__desc-box
+                        span.field-name Цена за 1ед.:
+                        span.field-desc.item-price 999999руб.
+                      
+                      .offer-history__desc-box
+                        span.field-name Сум-я стоимость:
+                        span.field-desc.price 999999руб.
+                      
+                      // только если статус завершенный
+                      .offer-history__desc-box
+                        a(href="#").review-btn Оставить отзыв
 
               .accordeon-field
                 .accordeon-head
-                  span.status.status-submit Подтвержден
-                  span.offer № 246612DERRYT
-                  span.date 25.11.2020
-                  span.time 18:38
-                  span.price 999999 руб.
+                  .offer-history__desc-box
+                    span.field-name Статус:
+                    span.field-desc.status.status-inwork В обработке
+
+                  .offer-history__desc-box
+                    span.field-name Номер заказа:
+                    span.field-desc.offer №246612DE
+                  
+                  .offer-history__desc-box
+                    span.field-name Дата и время:
+                    span.field-desc.date 25.11.2020 / 18:38
+
+                  .offer-history__desc-box
+                    span.field-name Итого:
+                    span.field-desc.total-price 999999 руб.
+
 
                   svg(width="16" height="16")
                     use(xlink:href="#icon-arrow")
 
                 .offer-history__data.accordeon-body
                   .accordeon-body-field
+                    img(src="./assets/img/cat4.png" width="100" height="100" alt="фото товара")
+                    .accordeon-body-field-desc
+                      a(href="#") Толстовка черная с крупным глянцевым принтом
+                      .offer-history__desc-box
+                        span.field-name Кол-во:
+                        span.field-desc.count 23шт.
+                      .offer-history__desc-box
+                        span.field-name Цена за 1ед.:
+                        span.field-desc.item-price 999999руб.
+                      
+                      .offer-history__desc-box
+                        span.field-name Сум-я стоимость:
+                        span.field-desc.price 999999руб.
+
+                  .accordeon-body-field
                     img(src="./assets/img/cat5.png" width="100" height="100" alt="фото товара")
-                    a(href="#") Толстовка черная с крупным глянцевым принтом с крупным глянцевым принтом
-                    span 2223шт.
-                    span 999999 руб.
+                    .accordeon-body-field-desc
+                      a(href="#") Толстовка черная с крупным глянцевым принтом
+                      .offer-history__desc-box
+                        span.field-name Кол-во:
+                        span.field-desc.count 233шт.
+                      .offer-history__desc-box
+                        span.field-name Цена за 1ед.:
+                        span.field-desc.item-price 999999руб.
+                      
+                      .offer-history__desc-box
+                        span.field-name Сум-я стоимость:
+                        span.field-desc.price 999999руб.
               
           .tab-content-box.offer-history__tab-content-box(data-tab-content="2")
-            p Tab 2
+            .offer-history__field.accordeon.offer-history__accordeon
+              .accordeon-field
+                .accordeon-head
+                  .offer-history__desc-box
+                    span.field-name Статус:
+                    span.field-desc.status.status-inwork В обработке
+
+                  .offer-history__desc-box
+                    span.field-name Номер заказа:
+                    span.field-desc.offer №246612DE
+                  
+                  .offer-history__desc-box
+                    span.field-name Дата и время:
+                    span.field-desc.date 25.11.2020 / 18:38
+
+                  .offer-history__desc-box
+                    span.field-name Итого:
+                    span.field-desc.total-price 999999 руб.
+
+                  svg(width="16" height="16")
+                    use(xlink:href="#icon-arrow")
+
+                .offer-history__data.accordeon-body
+                  .accordeon-body-field
+                    img(src="./assets/img/cat4.png" width="100" height="100" alt="фото товара")
+                    .accordeon-body-field-desc
+                      a(href="#") Толстовка черная с крупным глянцевым принтом
+                      .offer-history__desc-box
+                        span.field-name Кол-во:
+                        span.field-desc.count 23шт.
+                      .offer-history__desc-box
+                        span.field-name Цена за 1ед.:
+                        span.field-desc.item-price 999999руб.
+                      
+                      .offer-history__desc-box
+                        span.field-name Сум-я стоимость:
+                        span.field-desc.price 999999руб.
+
+                        
           .tab-content-box.offer-history__tab-content-box(data-tab-content="3")
             p Tab 3
           .tab-content-box.offer-history__tab-content-box(data-tab-content="4")

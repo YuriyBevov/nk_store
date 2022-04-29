@@ -348,35 +348,86 @@
                     <div class="swiper-slide tab offer-history__tab" role="button" data-tab="4">Завершенные</div>
                     <div class="swiper-slide tab offer-history__tab" role="button" data-tab="5">Отмененные</div>
                   </div>
+                  <div class="swiper-button-prev tabs-button-prev"></div>
+                  <div class="swiper-button-next tabs-button-next"> </div>
                 </div>
                 <div class="tabs-content offer-history__tabs-content">
                   <div class="tab-content-box offer-history__tab-content-box active" data-tab-content="1">
                     <div class="offer-history__field accordeon offer-history__accordeon">
                       <div class="accordeon-field">
-                        <div class="accordeon-head"><span class="status status-inwork">В обработке</span><span class="offer">№ 246612DE</span><span class="date">25.11.2020</span><span class="time">18:38</span><span class="price">999999 руб.</span>
+                        <div class="accordeon-head">
+                          <div class="offer-history__desc-box"><span class="field-name">Статус:</span><span class="field-desc status status-done">Завершен</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Номер заказа:</span><span class="field-desc offer">№246612DE</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Дата и время:</span><span class="field-desc date">25.11.2020 / 18:38</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Итого:</span><span class="field-desc total-price">999999 руб.</span></div>
                           <svg width="16" height="16">
                             <use xlink:href="#icon-arrow"></use>
                           </svg>
                         </div>
                         <div class="offer-history__data accordeon-body">
-                          <div class="accordeon-body-field"><img src="./assets/img/cat4.png" width="100" height="100" alt="фото товара"><a href="#">Толстовка черная с крупным глянцевым принтом</a><span>2шт.</span><span>999999 руб.</span></div>
-                          <div class="accordeon-body-field"><img src="./assets/img/cat5.png" width="100" height="100" alt="фото товара"><a href="#">Толстовка черная с крупным глянцевым принтом с крупным глянцевым принтом</a><span>2223шт.</span><span>999999 руб.</span></div>
+                          <div class="accordeon-body-field"><img src="./assets/img/cat4.png" width="100" height="100" alt="фото товара">
+                            <div class="accordeon-body-field-desc"><a href="#">Толстовка черная с крупным глянцевым принтом</a>
+                              <div class="offer-history__desc-box"><span class="field-name">Кол-во:</span><span class="field-desc count">23шт.</span></div>
+                              <div class="offer-history__desc-box"><span class="field-name">Цена за 1ед.:</span><span class="field-desc item-price">999999руб.</span></div>
+                              <div class="offer-history__desc-box"><span class="field-name">Сум-я стоимость:</span><span class="field-desc price">999999руб.</span></div>
+                              <!-- только если статус завершенный-->
+                              <div class="offer-history__desc-box"><a class="review-btn" href="#">Оставить отзыв</a></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="accordeon-field">
-                        <div class="accordeon-head"><span class="status status-submit">Подтвержден</span><span class="offer">№ 246612DERRYT</span><span class="date">25.11.2020</span><span class="time">18:38</span><span class="price">999999 руб.</span>
+                        <div class="accordeon-head">
+                          <div class="offer-history__desc-box"><span class="field-name">Статус:</span><span class="field-desc status status-inwork">В обработке</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Номер заказа:</span><span class="field-desc offer">№246612DE</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Дата и время:</span><span class="field-desc date">25.11.2020 / 18:38</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Итого:</span><span class="field-desc total-price">999999 руб.</span></div>
                           <svg width="16" height="16">
                             <use xlink:href="#icon-arrow"></use>
                           </svg>
                         </div>
                         <div class="offer-history__data accordeon-body">
-                          <div class="accordeon-body-field"><img src="./assets/img/cat5.png" width="100" height="100" alt="фото товара"><a href="#">Толстовка черная с крупным глянцевым принтом с крупным глянцевым принтом</a><span>2223шт.</span><span>999999 руб.</span></div>
+                          <div class="accordeon-body-field"><img src="./assets/img/cat4.png" width="100" height="100" alt="фото товара">
+                            <div class="accordeon-body-field-desc"><a href="#">Толстовка черная с крупным глянцевым принтом</a>
+                              <div class="offer-history__desc-box"><span class="field-name">Кол-во:</span><span class="field-desc count">23шт.</span></div>
+                              <div class="offer-history__desc-box"><span class="field-name">Цена за 1ед.:</span><span class="field-desc item-price">999999руб.</span></div>
+                              <div class="offer-history__desc-box"><span class="field-name">Сум-я стоимость:</span><span class="field-desc price">999999руб.</span></div>
+                            </div>
+                          </div>
+                          <div class="accordeon-body-field"><img src="./assets/img/cat5.png" width="100" height="100" alt="фото товара">
+                            <div class="accordeon-body-field-desc"><a href="#">Толстовка черная с крупным глянцевым принтом</a>
+                              <div class="offer-history__desc-box"><span class="field-name">Кол-во:</span><span class="field-desc count">233шт.</span></div>
+                              <div class="offer-history__desc-box"><span class="field-name">Цена за 1ед.:</span><span class="field-desc item-price">999999руб.</span></div>
+                              <div class="offer-history__desc-box"><span class="field-name">Сум-я стоимость:</span><span class="field-desc price">999999руб.</span></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="tab-content-box offer-history__tab-content-box" data-tab-content="2">
-                    <p>Tab 2</p>
+                    <div class="offer-history__field accordeon offer-history__accordeon">
+                      <div class="accordeon-field">
+                        <div class="accordeon-head">
+                          <div class="offer-history__desc-box"><span class="field-name">Статус:</span><span class="field-desc status status-inwork">В обработке</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Номер заказа:</span><span class="field-desc offer">№246612DE</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Дата и время:</span><span class="field-desc date">25.11.2020 / 18:38</span></div>
+                          <div class="offer-history__desc-box"><span class="field-name">Итого:</span><span class="field-desc total-price">999999 руб.</span></div>
+                          <svg width="16" height="16">
+                            <use xlink:href="#icon-arrow"></use>
+                          </svg>
+                        </div>
+                        <div class="offer-history__data accordeon-body">
+                          <div class="accordeon-body-field"><img src="./assets/img/cat4.png" width="100" height="100" alt="фото товара">
+                            <div class="accordeon-body-field-desc"><a href="#">Толстовка черная с крупным глянцевым принтом</a>
+                              <div class="offer-history__desc-box"><span class="field-name">Кол-во:</span><span class="field-desc count">23шт.</span></div>
+                              <div class="offer-history__desc-box"><span class="field-name">Цена за 1ед.:</span><span class="field-desc item-price">999999руб.</span></div>
+                              <div class="offer-history__desc-box"><span class="field-name">Сум-я стоимость:</span><span class="field-desc price">999999руб.</span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="tab-content-box offer-history__tab-content-box" data-tab-content="3">
                     <p>Tab 3</p>

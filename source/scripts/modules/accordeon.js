@@ -1,8 +1,9 @@
-import { Accordeon } from '../functions.js';
+import { Accordeon } from '../classes.js';
 
-// Использование:
-let accordeon = document.querySelector('.offer-history__accordeon');
+let accordeon = document.querySelectorAll('.offer-history__accordeon');
 
 if(accordeon) {
-    new Accordeon(accordeon).init(); 
+    accordeon.forEach(acc => {
+        new Accordeon(acc).init(); 
+    })
 }
