@@ -49,6 +49,34 @@
   font-display: swap; }
 
 @font-face {
+  font-family: "MontserratAlternates";
+  src: url("../fonts/MontserratAlternates-Regular.woff2") format("woff2"), url("../fonts/MontserratAlternates-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "MontserratAlternates";
+  src: url("../fonts/MontserratAlternates-Medium.woff2") format("woff2"), url("../fonts/MontserratAlternates-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "MontserratAlternates";
+  src: url("../fonts/MontserratAlternates-SemiBold.woff2") format("woff2"), url("../fonts/MontserratAlternates-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "MontserratAlternates";
+  src: url("../fonts/MontserratAlternates-Bold.woff2") format("woff2"), url("../fonts/MontserratAlternates-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
   font-family: "Lobster";
   src: url("../fonts/Lobster-Regular.woff2") format("woff2"), url("../fonts/Lobster-Regular.woff") format("woff");
   font-weight: 400;
@@ -1572,13 +1600,13 @@ button.swiper-pagination-bullet {
     flex-wrap: wrap;
     margin: 0 auto; }
   .catalog-nav__link {
-    font-family: "HeinrichScript";
-    font-size: 24px;
+    font-family: "MontserratAlternates";
+    font-size: 20px;
     line-height: 1;
     color: #2C2B3C;
     padding: 0 20px; }
     .catalog-nav__link span {
-      padding-top: 10px;
+      padding: 10px 0;
       border-bottom: 2px solid transparent;
       transition: border 0.3s ease-out; }
     .catalog-nav__link:hover span {
@@ -3519,13 +3547,12 @@ body {
         padding-right: 20px;
         padding-top: 0; } }
   .index .about__title {
-    font-family: "HeinrichScript";
+    font-family: "MontserratAlternates";
     font-size: 44px;
     line-height: 1;
     margin-bottom: 20px;
     font-weight: 400;
-    color: #2C2B3C;
-    border-bottom: 1px solid #2C2B3C; }
+    color: #2C2B3C; }
     @media (max-width: 1140px) {
       .index .about__title {
         font-size: 36px; } }
@@ -3535,7 +3562,7 @@ body {
     @media (max-width: 768px) {
       .index .about__title {
         position: relative;
-        top: -60px;
+        top: -80px;
         margin-bottom: 0;
         text-shadow: 0 0 1px #d86161; } }
     @media (max-width: 480px) {
@@ -3553,14 +3580,14 @@ body {
     position: relative;
     width: 100%;
     margin-bottom: 10px;
-    font-family: "HeinrichScript";
-    font-size: 28px;
+    font-family: "MontserratAlternates";
+    font-size: 22px;
     line-height: 1;
     padding-left: 25px;
-    text-shadow: 0 0 1px #2C2B3C; }
-    @media (max-width: 1140px) {
-      .index .about__item {
-        font-size: 24px; } }
+    text-shadow: 0 0 1px #2C2B3C;
+    /*@media(max-width: $lg_w) {
+                font-size: 24px;
+            }*/ }
     @media (max-width: 960px) {
       .index .about__item {
         font-size: 22px; } }
@@ -4548,7 +4575,7 @@ body {
     justify-content: center;
     height: 100%; }
   .not-found__title {
-    font-family: "HeinrichScript";
+    font-family: "MontserratAlternates";
     font-weight: 400;
     margin-bottom: 20px;
     text-align: center; }

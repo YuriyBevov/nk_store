@@ -165,7 +165,7 @@
             font-weight: 400;
             color: $main-black;
 
-            border-bottom: 1px solid $main-black;
+            //border-bottom: 1px solid $main-black;
             
             @media(max-width: $lg_w) {
                 font-size: 36px;
@@ -177,7 +177,7 @@
 
             @media(max-width: $md_w) {
                 position: relative;
-                top: -60px;
+                top: -80px;
                 margin-bottom: 0;
                 text-shadow: 0 0 1px #d86161;
             }
@@ -204,15 +204,15 @@
             width: 100%;
             margin-bottom: 10px;
             font-family: $font_heinrich;
-            font-size: 28px;
+            font-size: 22px;
             line-height: 1;
             padding-left: 25px;
             text-shadow: 0 0 1px $main-black;
 
             
-            @media(max-width: $lg_w) {
+            /*@media(max-width: $lg_w) {
                 font-size: 24px;
-            }
+            }*/
 
             @media(max-width: 960px) {
                 font-size: 22px;
