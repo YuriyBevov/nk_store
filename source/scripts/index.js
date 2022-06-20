@@ -18,3 +18,4 @@ import './modules/accordeon.js';
 import './modules/zoom.js';
 import './modules/birthPicker.js';
 import './modules/modalOpener.js';
+import './modules/userForm.js';

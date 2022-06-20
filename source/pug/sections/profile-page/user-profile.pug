@@ -1,13 +1,21 @@
 section.user-profile
   .user-profile__wrapper
-    .user-profile__content
-      img(src="./assets/img/cat4.png" alt="Фото пользователя" width="65" height="65")
-
-      .user-profile__info
-        span.name Константин Константинов
-        span.main testmail123456@yandex.ru
-        span.phone +7 (123)456-78-90
+    .user-profile__info
+      .info-field.info-field--name
+        svg(width="24" height="24")
+          use(xlink:href="#icon-user")
+        span.user-name Константин Константинов
+                      
+      .info-field
+        svg(width="24" height="24")
+          use(xlink:href="#icon-phone")
+        span +7 (123)456-78-90
       
-        .user-profile__action
-          a(href="user.html") Редактировать 
-          a(href="index.html") Выйти
+      .info-field
+        svg(width="24" height="24")
+          use(xlink:href="#icon-mail")
+        span testmail123456@yandex.ru
+    
+      .user-profile__action
+        a(href="user.html") Редактировать 
+        a(href="index.html") Выйти

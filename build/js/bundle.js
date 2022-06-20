@@ -15736,6 +15736,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_zoom_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/zoom.js */ "./source/scripts/modules/zoom.js");
 /* harmony import */ var _modules_birthPicker_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/birthPicker.js */ "./source/scripts/modules/birthPicker.js");
 /* harmony import */ var _modules_modalOpener_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/modalOpener.js */ "./source/scripts/modules/modalOpener.js");
+/* harmony import */ var _modules_userForm_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/userForm.js */ "./source/scripts/modules/userForm.js");
+/* harmony import */ var _modules_userForm_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_modules_userForm_js__WEBPACK_IMPORTED_MODULE_18__);
+
 
 
 
@@ -16556,6 +16559,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["changeTabs"])('.tab', '.tab-content-box');
 });
+
+/***/ }),
+
+/***/ "./source/scripts/modules/userForm.js":
+/*!********************************************!*\
+  !*** ./source/scripts/modules/userForm.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

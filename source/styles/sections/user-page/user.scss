@@ -1,41 +1,133 @@
 .user {
     .user {
+        @extend .section-pt-mobile;
+        padding-bottom: 40px;
         &__wrapper {
             @extend .wrapper;
             display: flex;
             flex-wrap: wrap;
         }
 
-        &__avatar {
-            width: 100px;
-            
-            img {
-                width: 80px;
-                height: 80px;
-            }
-        }
-
         &__data {
-            width: calc(100% - 100px);
+            width: 100%;
 
             form {
                 display: flex;
-                flex-direction: column;
+                flex-wrap: wrap;
+                max-width: 640px;
+
+                fieldset {
+                    margin-bottom: 20px;
+                    margin-right: 10px;
+                    width: 50%;
+                    max-width: fit-content;
+
+                    &.city {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+
+                    @media(max-width: $sm_w) {
+                        margin-right: 0;
+                    }
+                    
+                }
+
+                label {
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                    color: $blue;
+                }
+
+                input {
+                    font-size: 16px;
+                    padding: 10px;
+                    width: 300px;
+                    height: 40px;
+                    border: none;
+                    color: $main-black;
+                    &::placeholder {
+                        font-size: 16px;
+                        color: $main-black;
+                    }
+                }
             }
 
             .user__birth-controls {
                 display: flex;
                 align-items: center;
+
+                .custom-select-container {
+                    margin-right: 5px;
+
+                    .custom-select-opener {
+                        height: 40px;
+                    }
+                }
             }
             
             fieldset {
                 @extend .fieldset-default;
+                display: flex;
+                flex-direction: column;
             }
         }
 
         &__psw {
             display: flex;
             flex-direction: column;
+            margin-bottom: 20px;
+
+            .hidden-field {
+                display: none;
+                opacity: 0;
+            }
+
+            .hidden-field.active {
+                display: flex;
+                animation: fadeIn 0.4s 0.1s ease-in forwards;
+            }
+        }
+
+        .error-field {
+            span {
+                display: none;
+                font-size: 16px;
+                color: $red;
+                animation: fadeIn 0.4s 0.1s ease-in forwards;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .user__form-action {
+            button {
+                @extend .button-default;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid $main-black;
+                color: $main-black;
+                
+                transition: color $main-transition, border-color $main-transition;
+
+                &:hover,
+                &:focus {
+                    border-color: $blue;
+                    color: $blue;    
+                }
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
     height: 100%;
 }
 
-.product-info {
+.product-info { 
     @extend .section-margin-bottom;
 
     @media(max-width: $sm_w) {

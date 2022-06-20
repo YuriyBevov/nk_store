@@ -41,13 +41,13 @@
 
             .field-name {
                 display: inline-block;
-                font-size: 10px;
+                font-size: 14px;
                 margin-bottom: 3px;
                 color: $gray;
             }
 
             .field-desc {
-                font-size: 12px;
+                font-size: 14px;
                 line-height: 1.2;
                 
                 color: $main-black;
@@ -121,8 +121,7 @@
                         flex-wrap: wrap;
 
                         a {
-                            font-size: 12px;
-                            line-height: 1.2;
+                            font-size: 16px;
                             font-weight: 400;
                             color: $main-black;
                             width: 100%;

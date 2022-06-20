@@ -23,6 +23,12 @@
     border: 0;
 }
 
+.flex-centered-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .section-margin-bottom {
     margin-bottom: 50px;
 

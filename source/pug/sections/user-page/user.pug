@@ -1,28 +1,22 @@
 section.user
-  .user__wrapper
-    .user__avatar
-      img(src="./assets/img/cat5.png" alt="Аватар" width="80" height="80")
-      a(href="#") Изменить
-    
+  .user__wrapper   
     .user__data
       form(action="#")
-        label(for="user_name") Имя
-        input(type="text" placeholder="Константин" id="user_name")
-
-        label(for="user_surname") Фамилия
-        input(type="text" placeholder="Константинов" id="user_surname")
-
-        label(for="user_mail") Email
-        input(type="text" placeholder="test@yandex.ru" id="user_mail")
-
-        label(for="user_phone") Телефон
-        input(type="text" placeholder="+7(921)123-45-67" id="user_phone")
-
-        label(for="user_city") Город
-        input(type="text" placeholder="Санкт-Петербург" id="user_city")
+        fieldset
+          label(for="user_name") Имя
+          input(type="text" placeholder="Константин" id="user_name")
+        fieldset
+          label(for="user_surname") Фамилия
+          input(type="text" placeholder="Константинов" id="user_surname")
+        fieldset
+          label(for="user_mail") Email
+          input(type="text" placeholder="test@yandex.ru" id="user_mail")
+        fieldset
+          label(for="user_phone") Телефон
+          input(type="text" placeholder="+7(921)123-45-67" id="user_phone")
 
         fieldset.user__birth-field
-          span Дата рождения
+          label(for="user_bday") Дата рождения
           .user__birth-controls
             select(id="user_bday").custom-select-birth
 
@@ -41,22 +35,26 @@ section.user
                 option(value="Декабрь") Декабрь
         
             select(id="user_byear").custom-select-birth
+        
+        fieldset.city
+          label(for="user_city") Город
+          input(type="text" placeholder="Санкт-Петербург" id="user_city")
 
+        .user__psw
+          fieldset.hidden-field.prev-pswd-field
+            label(for="user_current-psw") Текущий пароль
+            input(type="password" id="user_current-psw" placeholder="Текущий пароль")
+          fieldset.hidden-field.change-pswd-field
+            label(for="user_new-psw") Новый пароль
+            input(type="password" id="user_new-psw" placeholder="Новый пароль")
+          fieldset.hidden-field.change-pswd-field
+            label(for="user_confirm-psw") Повторите введенный пароль
+            input(type="password" id="user_confirm-psw" placeholder="Повторите введенный пароль")
 
-        fieldset.user__psw
-
-          label(for="user_current-psw") Текущий пароль
-          input(type="password" id="user_current-psw" placeholder="Текущий пароль")
-
-          label(for="user_new-psw") Новый пароль
-          input(type="password" id="user_new-psw" placeholder="Новый пароль")
-
-          label(for="user_confirm-psw") Повторите введенный пароль
-          input(type="password" id="user_confirm-psw" placeholder="Повторите введенный пароль")
-
-          span.user__form-error.wrong-psw * Неверный пароль
-          span.user__form-error.wrong-confirm * Введенные пароли не совпадают
+          .error-field
+            span.wrong-psw * Неверный пароль
+            span.wrong-confirm * Введенные пароли не совпадают
 
         .user__form-action
-          button(type="button") Изменить пароль
+          button(type="button").js-change-pswd Изменить пароль
           button(type="submit") Сохранить изменения
