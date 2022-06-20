@@ -25,6 +25,7 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    z-index: 3;
 }
 
 .flip-card__front {
@@ -32,6 +33,8 @@
 }
 
 .flip-card__back {
+    display: flex;
+    flex-direction: column;
     background-color: $blue;
     transform: rotateY(180deg);
 
@@ -40,6 +43,8 @@
         overflow-y: auto;
         max-height: 280px;
         padding: 15px;
+        margin: auto 0;
+        
         li {
             display: flex;
             margin-bottom: 10px;
@@ -52,7 +57,7 @@
                 font-size: 12px;
                 line-height: 1.2;
                 width: 50%;
-                color: $black;
+                color: $white;
             }
         }
     }

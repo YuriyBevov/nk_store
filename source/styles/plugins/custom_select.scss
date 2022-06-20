@@ -67,6 +67,7 @@
 }
 
 .custom-select-container.is-open .custom-select-panel {
+  width: fit-content;
   max-height: 150px;
   overflow-y: auto;
   z-index: 101;

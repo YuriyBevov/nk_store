@@ -1,0 +1,61 @@
+.size-modal {
+    max-width: 900px;
+
+    &__close {
+        top: 25px;
+        right: 20px;
+    }
+
+    &__header {
+        padding: 25px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $blue;
+
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: $blue;
+        }
+    }
+
+    &__content {
+        padding: 25px;       
+
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+    
+        table {
+            margin-bottom: 20px;
+        }
+    
+        tr {
+            font-size: 16px;
+    
+            /*@media(max-width: $tablet-width) {
+                font-size: 1.2rem;
+                line-height: 1.4rem;
+            }*/
+    
+            td {
+                padding: 5px;
+                border: 1px dashed $gray;
+            }
+        }
+    
+        tr:first-child {
+            font-size: 18px;
+    
+            /*@media(max-width: $tablet-width) {
+                font-size: 1.4rem;
+                line-height: 1.6rem;
+            }*/
+            
+            td {
+                padding: 10px 5px;
+            }
+        }
+    }
+}

@@ -3,39 +3,44 @@ include ../mixins/favourite_btn
 include ../mixins/main_btn
 
 .favourite-card
-  .favourite-card__header
-    img(src="./assets/img/cart_img.png" alt="Название товара" width="180" height="240")
+  .favourite-card__overlay
+    button(type="button" aria-label="Вернуть в избранное")
+      svg(width="36" height="36")
+        use(xlink:href="#icon-refresh")
+  .favourite-card__content      
+    .favourite-card__header
+      img(src="./assets/img/cart_img.png" alt="Название товара" width="180" height="240")
 
-    .favourite-card__container
-      span.favourite-card__code Арт: 1123456
+      .favourite-card__container
+        span.favourite-card__code Арт: 1123456
 
-      .favourite-card__price-container
-        span.favourite-card__price-title Цена:
-        span.favourite-card__price-current 999 999 руб.
-        span.favourite-card__price-old 999 999 руб.
+        .favourite-card__price-container
+          span.favourite-card__price-title Цена:
+          span.favourite-card__price-current 999 999 руб.
+          span.favourite-card__price-old 999 999 руб.
+        
+        .favourite-card__btn-container
+          +main_btn('link', 'В корзину', '#', 'favourite-card__cart-add-btn js-cart-add-btn', 'icon-cart', 24, 24)
+          +main_btn('link', 'Купить в один клик', '#', 'favourite-card__buy-btn')
+
+    .favourite-card__footer
+      h2.favourite-card__title Толстовка с крупным глянцевым принтом
+
+      include ./rating
+
+      .favourite-card__status-container
+        // span.product-info__status-available-to-order Под заказ
+        // span.product-info__status-available-not Нет в наличии
+        span.product-info__status-available В наличии
+        span.product-info__status-rest Осталось 3шт.
+      .favourite-card__info-container
+        span.favourite-card__info-field Брэнд: <a href="#">Noble People Noble</a>
+        span.favourite-card__info-field Возраст: <a href="#">1-3 года</a>
       
-      .favourite-card__btn-container
-        +main_btn('link', 'В корзину', '#', 'favourite-card__cart-add-btn js-cart-add-btn', 'icon-cart', 24, 24)
-        +main_btn('link', 'Купить в один клик', '#', 'favourite-card__buy-btn')
+      .favourite-card__options-container
+        include ./product-options-picker
 
-  .favourite-card__footer
-    h2.favourite-card__title Толстовка с крупным глянцевым принтом
-
-    include ./rating
-
-    .favourite-card__status-container
-      // span.product-info__status-available-to-order Под заказ
-      // span.product-info__status-available-not Нет в наличии
-      span.product-info__status-available В наличии
-      span.product-info__status-rest Осталось 3шт.
-    .favourite-card__info-container
-      span.favourite-card__info-field Брэнд: <a href="#">Noble People Noble</a>
-      span.favourite-card__info-field Возраст: <a href="#">1-3 года</a>
-    
-    .favourite-card__options-container
-      include ./product-options-picker
-
-     
-  button(type="button").favourite-card__remove-btn
-    svg(width="24" height="24")
+      
+    button(type="button" aria-label="Удалить из избранного").favourite-card__remove-btn
+      svg(width="24" height="24")
         use(xlink:href="#icon-close")

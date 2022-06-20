@@ -8,6 +8,25 @@
             flex-wrap: wrap;
         }
 
+        &__avatar {
+            margin-bottom: 30px;
+            img {
+                width: 160px;
+                height: 160px;
+                margin-right: 20px;
+            }
+            input[type="file"] {
+                display: none;
+            }
+
+            label {
+                font-size: 16px;
+                color: $blue;
+
+                cursor: pointer;
+            }
+        }
+
         &__data {
             width: 100%;
 

@@ -13,7 +13,7 @@
 @import "plugins/zoomist";
 
 //--- components
-
+@import "components/loader";
 @import "components/crawl-line";
 @import "components/search-field";
 @import "components/catalog-nav";
@@ -41,8 +41,10 @@
 
 //--- modals
 
-@import "components/modal_common";
-@import "components/review-modal";
+@import "modals/modal_common";
+@import "modals/review-modal";
+@import "modals/auth-modal";
+@import "modals/size-modal";
 
 // blocks
 @import "common/header";

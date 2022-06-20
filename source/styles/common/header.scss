@@ -33,46 +33,35 @@
         }
     }
 
-    &__contacts {
+    /*&__contacts {
         display: flex;
         flex-direction: column;
-    }
+        margin-top: auto;
 
-    &__city {
-        display: flex;
-        align-items: flex-end;
-        margin-bottom: 10px;
-        font-size: 14px;
-        line-height: 1.2;
-        color: $main-black;
-
-        svg{
-            fill: $blue;
+        @media(max-width: $md_w) {
+            display: none;
         }
     }
 
-    &__phones {
-        position: relative;
+    &__link {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 5px 0;
+        color: $main-black;       
 
         svg {
             fill: $blue;
+            margin-right: 10px;
         }
 
-        a {
-            
-            font-size: 14px;
-            line-height: 1.2;
-            color: $main-black;
+        @include focus-color($blue);
 
-            &:not(:last-child) {
-                margin-bottom: 5px;
-            }
-
-            @include focus-color($blue);
+        @media(max-width: $lg_w) {
+            margin-right: 10px;
         }
-    }
+    }*/
 
     &__menu {
         display: flex;

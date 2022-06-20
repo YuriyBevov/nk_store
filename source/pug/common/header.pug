@@ -34,17 +34,18 @@ header.header
   .header__content
     .header__wrapper
       .header__logo
-        img(src="./assets/img/main-logo.png" alt="Лого" width="150" height="80")
+        a(href="index.html" aria-label="Обновить") 
+          img(src="./assets/img/main-logo.png" alt="Лого" width="150" height="80")
       
-      .header__contacts
+      //.header__contacts
+        a(href="mailto:testtest@yandex.ru").header__link
+          +svg-icon(24,24,'icon-mail')
+          span testtest@yandex.ru
 
-        .header__city
-          +svg-icon(24,24,'icon-map')
-          span г. Москва
-
-        .header__phones
+      
+        a(href="tel:+79062723744").header__link
           +svg-icon(24,24,'icon-phone')
-          a(href="tel:+79062723744") +7(906)272-37-44
+          span +7(906)272-37-44
       
       .header__menu
         nav.header__nav

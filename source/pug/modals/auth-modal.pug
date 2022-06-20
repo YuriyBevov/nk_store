@@ -1,0 +1,30 @@
+.modal-overlay.auth-modal-overlay
+  .modal(id="auth-modal").auth-modal
+    button(type="button").modal__close.auth-modal__close
+      svg(width="24" height="24")
+        use(xlink:href="#icon-close")
+    .modal__content.auth-modal__content
+      .auth-modal__header
+        span Авторизация
+            
+      .auth-modal__body
+        form(action="#")
+          fieldset
+            label(for="auth_name") E-mail*
+            input(type="text" id="auth_name" placeholder="Почта")
+          fieldset
+            label(for="auth_pswd") Пароль*
+            input(type="password" id="auth_pswd" placeholder="Пароль")
+
+          fieldset
+            a(href="#").forget-link Забыли пароль ?
+
+            
+            input(type="checkbox" id="auth_save-accept")
+            label(for="auth_save-accept").checkbox-label Запомнить меня
+        
+          fieldset.form-action
+            button(type="submit") Войти
+            a(href="registeration.html") Зарегистрироваться
+          
+

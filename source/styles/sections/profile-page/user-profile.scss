@@ -7,6 +7,23 @@
             @extend .wrapper;
         }
 
+        &__content {
+            display: flex;
+
+            img {
+                width: 120px;
+                height: 120px;
+
+                @media(max-width: $sm_w) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            @media(max-width: $sm_w) {
+                flex-direction: column;
+            }
+        }
+
         &__info {
             display: flex;
             flex-direction: column;

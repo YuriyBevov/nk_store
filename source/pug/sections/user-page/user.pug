@@ -1,5 +1,10 @@
 section.user
-  .user__wrapper   
+  .user__wrapper
+    .user__avatar
+      img(src="./assets/img/user-avatar.png" alt="Аватар" width="80" height="80")
+      input(type="file" id="user_avatar")
+      label(for="user_avatar") Изменить
+    
     .user__data
       form(action="#")
         fieldset
@@ -13,7 +18,7 @@ section.user
           input(type="text" placeholder="test@yandex.ru" id="user_mail")
         fieldset
           label(for="user_phone") Телефон
-          input(type="text" placeholder="+7(921)123-45-67" id="user_phone")
+          input(type="tel" placeholder="+7(921)123-45-67" id="user_phone")
 
         fieldset.user__birth-field
           label(for="user_bday") Дата рождения

@@ -1,9 +1,49 @@
 .favourite-card {
-    @extend .flex-wrap;
     position: relative;
 
     &__remove-btn {
         @extend .cart__item-remove-btn;
+        top: 15px !important;
+        right: 15px !important;
+    }
+
+    &__content {
+        @extend .flex-wrap;
+        position: relative;
+        padding: 20px;
+
+        &.removed {
+            opacity: 0.3;
+        }
+    }
+
+    &__overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border-radius: 20px;
+        z-index: 10;
+
+        button {
+            @extend .button-default;
+            @extend .flex-centered-content;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            svg { fill: $red; }
+        }
+
+        &.active {
+            display: block;
+        }
     }
 
     img {

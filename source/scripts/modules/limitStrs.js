@@ -3,7 +3,7 @@ import { limitStr } from '../functions.js';
 let reviewCardText = document.querySelectorAll('.review-card__content');
 
 reviewCardText.forEach(content => {
-    content.innerHTML = limitStr(content.innerHTML, 195);
+    content.innerHTML = limitStr(content.innerHTML, 220);
 })
 
 let productCardTitles = document.querySelectorAll('.product-card__title');

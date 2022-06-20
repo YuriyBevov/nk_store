@@ -51,8 +51,8 @@
   "license": "ISC",
   "homepage": "",
   "dependencies": {
-    "@fancyapps/ui": "^4.0.26",
     "custom-select": "^1.1.15",
+    "imask": "^6.4.2",
     "nouislider": "^15.5.1",
     "smooth-zoom": "^1.1.4",
     "swiper": "^6.7.5",

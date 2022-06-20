@@ -1,0 +1,83 @@
+.auth-modal {
+    &__close {
+        right: 20px !important;
+    }
+    &__content {
+        padding: 15px 25px;
+    }
+
+    &__header {
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $main-black;
+
+        span {
+            font-size: 24px;
+            color: $blue;
+        }
+    }
+
+    &__body {
+        @extend .flex-wrap;
+        form {
+            width: 100%;
+            max-width: 400px;
+            color: $main-black;
+            fieldset {
+                @extend .fieldset-default;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+
+            label {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            input {
+                font-size: 16px;
+                padding: 10px;
+                border: 1px solid $main-black;
+                border-radius: 3px;
+                color: $main-black;
+
+                &::placeholder {
+                    font-size: 16px;
+                    color: $main-black;
+                }
+            }
+
+            .forget-link {
+                margin-bottom: 20px;
+                color: $purple;
+            }
+
+            @extend .main-checkbox;
+
+            .checkbox-label::before {
+                border: 1px solid $main-black !important;
+            }
+
+            input[type="checkbox"]:checked + label.checkbox-label::before {
+                background-image: url('../assets/img/checkbox-arr-black.svg');
+            }
+
+            .form-action {
+                @extend .flex-wrap;
+                flex-direction: row;
+
+                button,
+                a {
+                    padding: 15px;
+                    margin-right: 10px;
+                    border: 1px solid $main-black;
+                    background-color: transparent;
+                    color: $main-black;
+                }
+            }
+        }
+    }
+
+    
+}
