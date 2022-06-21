@@ -20819,6 +20819,7 @@ var Modal = /*#__PURE__*/function () {
       evt.preventDefault();
 
       if (_this2.isInited) {
+        console.log('modal opener');
         _this2.isBodyLocked ? _this2.bodyLocker(true) : null;
 
         _this2.overlay.classList.add('is-opened');

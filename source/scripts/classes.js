@@ -155,6 +155,7 @@ class Modal {
     openModal = (evt) => {
         evt.preventDefault();
         if(this.isInited) {
+            console.log('modal opener')
             this.isBodyLocked ?
             this.bodyLocker(true) : null;
 

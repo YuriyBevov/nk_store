@@ -1,25 +1,41 @@
 .size-modal {
-    max-width: 900px;
-
     &__close {
         top: 25px;
         right: 20px;
+
+        @media(max-width: $sm_w) {
+            top: 15px;
+            right: 10px;
+        }
     }
 
     &__header {
         padding: 25px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         border-bottom: 1px solid $blue;
 
         h2 {
             font-size: 24px;
             font-weight: 500;
+            padding-right: 30px;
             color: $blue;
+        }
+
+        @media(max-width: $sm_w) {
+            padding: 15px;
+
+            h2 {
+                font-size: 22px;
+            }
         }
     }
 
     &__content {
-        padding: 25px;       
+        padding: 25px;
+        
+        @media(max-width: $sm_w) {
+            padding: 15px;
+        }
 
         h3 {
             font-size: 22px;
@@ -28,30 +44,42 @@
         }
     
         table {
+            width: 100%;
             margin-bottom: 20px;
+            border-spacing: 5px;
         }
     
         tr {
             font-size: 16px;
     
-            /*@media(max-width: $tablet-width) {
-                font-size: 1.2rem;
-                line-height: 1.4rem;
-            }*/
+            @media(max-width: $sm_w) {
+                font-size: 14px;
+            }
     
             td {
                 padding: 5px;
                 border: 1px dashed $gray;
+                text-align: center;
+            }
+
+            &:nth-child(even) {
+                background-color: $blue;
+
+                td {
+                    border-color: transparent;
+                    color: $white;
+                }
             }
         }
     
         tr:first-child {
-            font-size: 18px;
+            font-size: 14px;
+            background-color: $purple;
+            color: $white;
     
-            /*@media(max-width: $tablet-width) {
-                font-size: 1.4rem;
-                line-height: 1.6rem;
-            }*/
+            @media(max-width: $sm_w) {
+                font-size: 12px
+            }
             
             td {
                 padding: 10px 5px;

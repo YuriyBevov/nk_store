@@ -1,5 +1,7 @@
 .favourite-card {
     position: relative;
+    border-radius: 20px;
+    background-color: $main-bg;
 
     &__remove-btn {
         @extend .cart__item-remove-btn;
@@ -46,19 +48,6 @@
         }
     }
 
-    img {
-        display: block;
-        width: 180px;
-        height: 240px;
-        object-fit: cover;
-        margin-right: 20px;
-        border: 1px solid $gold;
-
-        @media(max-width: 960px) {
-            margin-bottom: 10px;
-        }
-    }
-
     &__header {
         @extend .flex-wrap;
         width: 100%;
@@ -71,6 +60,19 @@
 
         @media(max-width: $md_w) {
             flex-direction: row;
+        }
+
+        .product-img {
+            display: block;
+            width: 180px;
+            height: 240px;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 1px solid $gold;
+    
+            @media(max-width: 960px) {
+                margin-bottom: 10px;
+            }
         }
     }
 

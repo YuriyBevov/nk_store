@@ -9,11 +9,11 @@ include ../mixins/main_btn
         use(xlink:href="#icon-refresh")
   .favourite-card__content      
     .favourite-card__header
-      img(src="./assets/img/cart_img.png" alt="Название товара" width="180" height="240")
+      img.product-img(src="./assets/img/cart_img.png" alt="Название товара" width="180" height="240")
 
       .favourite-card__container
         span.favourite-card__code Арт: 1123456
-
+        
         .favourite-card__price-container
           span.favourite-card__price-title Цена:
           span.favourite-card__price-current 999 999 руб.
@@ -25,9 +25,7 @@ include ../mixins/main_btn
 
     .favourite-card__footer
       h2.favourite-card__title Толстовка с крупным глянцевым принтом
-
       include ./rating
-
       .favourite-card__status-container
         // span.product-info__status-available-to-order Под заказ
         // span.product-info__status-available-not Нет в наличии
