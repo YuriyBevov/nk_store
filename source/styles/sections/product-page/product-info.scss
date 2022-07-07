@@ -74,9 +74,15 @@
         display: flex;
         overflow: hidden;
 
-        /*.carousel {
-            width: 100%;
-        } */
+        button {
+            @extend .flex-centered-content;
+            position: absolute;
+            top: 0;
+            right: 0;
+            @extend .button-default;
+            padding: 10px;
+            z-index: 100;
+        }
     }
 
     &__slider-container {

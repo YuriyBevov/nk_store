@@ -3,12 +3,5 @@
     button(type="button").modal__close.review-modal__close
       svg(width="24" height="24")
         use(xlink:href="#icon-close")
-    .modal__content.review-modal__content
-      .review-modal__header
-        img(src="./assets/img/avatar.png" alt="Аватар" width="100" height="100")
-        span Константинов К.
-            
-      .review-modal__body
-        | Хорошие вещи за хорошие деньги! Доставляют в тот день и время, когда удобно покупателю! <br/><br/>
-        | Все четко: позвонил оператор, обсудили заказ. Позвонил курьер — договорились о доставке. <br/><br/>
-        | В целом магазин нравится — широкий ассортимент для мальчиков и девочек!
+    .modal__content
+      include ../components/user-review

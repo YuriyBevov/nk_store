@@ -20,3 +20,5 @@ import './modules/birthPicker.js';
 import './modules/modalOpener.js';
 import './modules/iMask.js';
 import './modules/favouriteCardRemove.js';
+import './modules/showMoreReviews.js';
+import './modules/zoomist.js';

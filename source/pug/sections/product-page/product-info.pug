@@ -16,14 +16,19 @@ section.product-info
           .swiper-wrapper
             each item in [1, 2, 3, 4, 5, 6, 7, 8, 9]
               .swiper-slide
-                .zoomist(data-zoomist-src="./assets/img/product-info2.png")
-                //img( src="./assets/img/product-info2.png" alt="Фото товара" width="600" height="800")
+                //.zoomist(data-zoomist-src="./assets/img/product-info2.png")
+                
+                img( src="./assets/img/product-info2.png" alt="Фото товара" width="600" height="800")
               .swiper-slide
-                .zoomist(data-zoomist-src="./assets/img/cat3.png")
-                //img( src="./assets/img/cat3.png" alt="Фото товара" width="600" height="800")
+                //.zoomist(data-zoomist-src="./assets/img/cat3.png")
+                img( src="./assets/img/cat3.png" alt="Фото товара" width="600" height="800")
 
           .swiper-button-next.thumbs-swiper-button-next.thumbs-swiper-button
           .swiper-button-prev.thumbs-swiper-button-prev.thumbs-swiper-button
+
+          button(type="button" data-modal-anchor="zoomist-modal").js-zoom-btn
+            svg(width="24" height="24")
+              use(xlink:href="#icon-search")
 
 
     .product-info__content

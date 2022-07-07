@@ -27,6 +27,8 @@
 @import "components/breadcrumbs";
 @import "components/thumbs-swiper";
 @import "components/rating";
+@import "components/user-review";
+@import "components/user-rate";
 @import "components/product-options-picker";
 @import "components/counter";
 @import "components/favourite-card";
@@ -40,7 +42,7 @@
 @import "components/accordeon";
 
 //--- modals
-
+@import "modals/zoomist-modal";
 @import "modals/modal_common";
 @import "modals/review-modal";
 @import "modals/auth-modal";

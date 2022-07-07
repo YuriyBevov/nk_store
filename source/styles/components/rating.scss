@@ -6,8 +6,6 @@
 
     &__stars {
         position: relative;
-        /*display: flex;
-        flex-wrap: wrap;*/
         margin-right: 20px;
         margin-left: -13px;
         height: 40px;
@@ -46,20 +44,6 @@
         &::after {
             transform: translateX(-48px);
             background-color: $gold;
-        }
-    }
-
-    &-star {
-        svg {
-            fill: $gray;
-            opacity: 0.4;
-        }
-
-        &.active {
-            svg {
-                fill: $gold;
-                opacity: 1;
-            }
         }
     }
 

@@ -1,0 +1,20 @@
+.user-rate {
+    &__stars {
+        display: flex;
+        align-items: center;
+
+        .rating-star {
+            fill: $gray;
+            opacity: 0.4;
+        }
+
+        .rating-star.active {
+            fill: $gold;
+            opacity: 1;
+        }
+    }
+
+    &__date span {
+        font-size: 14px !important;
+    }
+}

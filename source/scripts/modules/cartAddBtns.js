@@ -14,7 +14,6 @@ const onClickToggleCartAdd = (evt) => {
         evt.currentTarget.style.opacity = '';
         evt.currentTarget.querySelector('span').innerHTML = 'В корзину';
     }
-
 }
 
 cartAddBtns.forEach(btn => {

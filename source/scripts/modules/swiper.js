@@ -1,8 +1,6 @@
-//import { offerChange } from './onSwiperChange.js';
-
 import SwiperCore, { EffectFade, Autoplay, Scrollbar, Navigation, Pagination, Thumbs, Zoom } from 'swiper/core';
 SwiperCore.use([ EffectFade, Autoplay, Scrollbar, Navigation, Pagination, Thumbs, Zoom]);
-import Swiper from 'swiper'
+import Swiper from 'swiper';
 
 let mainSlider = document.querySelectorAll('.main-swiper');
 
@@ -60,14 +58,13 @@ if(reviewsSlider) {
 
 const thumbsSliderMain = document.querySelector('.thumbs-swiper');
 
-let zoomed = document.querySelectorAll('.zoomist');
+/*let zoomed = document.querySelectorAll('.zoomist');
 
 let zoomedArray = [];
 
 if(zoomed) {
    zoomed.forEach(element => {
       let zoomer = new Zoomist(element, {
-         //height: '100%',
          slider: true,
          zoomer: true,
          maxRatio: 4,
@@ -77,7 +74,7 @@ if(zoomed) {
          zoomRatio: 0.2,
          on: {
             ready() {
-            console.log('Zoomist ready!')
+               console.log('Zoomist ready!')
             }
          }
       });
@@ -92,12 +89,10 @@ if(zoomed) {
          })
       })
    });
-}
+}*/
 
 if(thumbsSliderMain) {
    let sliderThumbs = new Swiper(thumbsSliderMain, {
-      //centeredSlides: true,
-      ///centeredSlidesBounds: true,
       slidesPerView: 4,
       watchOverflow: true,
       watchSlidesVisibility: true,
@@ -113,11 +108,11 @@ if(thumbsSliderMain) {
          },
       },
 
-      on: {
+      /*on: {
          slideChange: function() {
             console.log('change', zoomedArray);
          }
-      }
+      }*/
    });
 
    let slider = new Swiper(".thumbs-swiper-main", {
@@ -125,7 +120,7 @@ if(thumbsSliderMain) {
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
       preventInteractionOnTransition: true,
-      allowTouchMove: false,
+      allowTouchMove: true,
 
       navigation: {
          nextEl: '.swiper-button-next',
@@ -141,14 +136,12 @@ if(thumbsSliderMain) {
          swiper: sliderThumbs
       },
 
-      on: {
-
+      /*on: {
          slideChange: function() {
-            console.log('change', zoomedArray);
             zoomedArray.forEach(el => {
                el.reset();
             })
          }
-      }
+      }*/
    });
 }

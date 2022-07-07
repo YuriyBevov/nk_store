@@ -35,8 +35,6 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-webp": "^4.0.1",
     "posthtml-include": "^1.7.1",
-    "sass": "^1.49.9",
-    "sass-loader": "^12.6.0",
     "webpack": "^5.70.0",
     "webpack-stream": "^5.2.1"
   },

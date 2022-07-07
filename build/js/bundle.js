@@ -20819,7 +20819,6 @@ var Modal = /*#__PURE__*/function () {
       evt.preventDefault();
 
       if (_this2.isInited) {
-        console.log('modal opener');
         _this2.isBodyLocked ? _this2.bodyLocker(true) : null;
 
         _this2.overlay.classList.add('is-opened');
@@ -20996,6 +20995,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_iMask_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/iMask.js */ "./source/scripts/modules/iMask.js");
 /* harmony import */ var _modules_favouriteCardRemove_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/favouriteCardRemove.js */ "./source/scripts/modules/favouriteCardRemove.js");
 /* harmony import */ var _modules_favouriteCardRemove_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_favouriteCardRemove_js__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/showMoreReviews.js */ "./source/scripts/modules/showMoreReviews.js");
+/* harmony import */ var _modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _modules_zoomist_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/zoomist.js */ "./source/scripts/modules/zoomist.js");
+/* harmony import */ var _modules_zoomist_js__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_modules_zoomist_js__WEBPACK_IMPORTED_MODULE_21__);
+
+
 
 
 
@@ -21341,9 +21346,9 @@ phoneFields.forEach(function (field) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
 
-var reviewCardText = document.querySelectorAll('.review-card__content');
-reviewCardText.forEach(function (content) {
-  content.innerHTML = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["limitStr"])(content.innerHTML, 220);
+var reviewCardTexts = document.querySelectorAll('.review-card__content');
+reviewCardTexts.forEach(function (text) {
+  text.innerHTML = Object(_functions_js__WEBPACK_IMPORTED_MODULE_0__["limitStr"])(text.innerHTML, 220);
 });
 var productCardTitles = document.querySelectorAll('.product-card__title');
 productCardTitles.forEach(function (title) {
@@ -21702,6 +21707,48 @@ window.addEventListener('resize', onResizeCheckHeaderHeight);
 
 /***/ }),
 
+/***/ "./source/scripts/modules/showMoreReviews.js":
+/*!***************************************************!*\
+  !*** ./source/scripts/modules/showMoreReviews.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var reviews = document.querySelectorAll('.product-reviews-modal__content .user-review');
+var showMoreBtn = document.querySelector('.product-reviews-modal__more');
+var step = 3;
+var current = step;
+var total = reviews.length;
+
+var onClickShowMoreReviews = function onClickShowMoreReviews() {
+  if (current + step < total) {
+    for (var i = current; i < current + step; i++) {
+      reviews[i].classList.remove('hidden');
+    }
+
+    current += step;
+  } else {
+    showMoreBtn.removeEventListener('click', onClickShowMoreReviews);
+    showMoreBtn.style.display = 'none';
+
+    for (var _i = current; _i < total; _i++) {
+      reviews[_i].classList.remove('hidden');
+    }
+  }
+};
+
+if (total <= step) {
+  showMoreBtn.style.display = 'none';
+} else {
+  for (var i = current; i < total; i++) {
+    reviews[i].classList.add('hidden');
+  }
+
+  showMoreBtn.addEventListener('click', onClickShowMoreReviews);
+}
+
+/***/ }),
+
 /***/ "./source/scripts/modules/swiper.js":
 /*!******************************************!*\
   !*** ./source/scripts/modules/swiper.js ***!
@@ -21712,7 +21759,6 @@ window.addEventListener('resize', onResizeCheckHeaderHeight);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/swiper.esm.js");
-//import { offerChange } from './onSwiperChange.js';
 
 swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_core__WEBPACK_IMPORTED_MODULE_0__["EffectFade"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Scrollbar"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Thumbs"], swiper_core__WEBPACK_IMPORTED_MODULE_0__["Zoom"]]);
 
@@ -21768,40 +21814,41 @@ if (reviewsSlider) {
 }
 
 var thumbsSliderMain = document.querySelector('.thumbs-swiper');
-var zoomed = document.querySelectorAll('.zoomist');
-var zoomedArray = [];
+/*let zoomed = document.querySelectorAll('.zoomist');
 
-if (zoomed) {
-  zoomed.forEach(function (element) {
-    var zoomer = new Zoomist(element, {
-      //height: '100%',
-      slider: true,
-      zoomer: true,
-      maxRatio: 4,
-      bounds: true,
-      fill: 'fill',
-      height: 400,
-      zoomRatio: 0.2,
-      on: {
-        ready: function ready() {
-          console.log('Zoomist ready!');
-        }
-      }
-    });
-    zoomedArray.push(zoomer);
-    var btns = document.querySelectorAll('.thumbs-swiper-button');
-    btns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        zoomer.reset();
+let zoomedArray = [];
+
+if(zoomed) {
+   zoomed.forEach(element => {
+      let zoomer = new Zoomist(element, {
+         slider: true,
+         zoomer: true,
+         maxRatio: 4,
+         bounds: true,
+         fill: 'fill',
+         height: 400,
+         zoomRatio: 0.2,
+         on: {
+            ready() {
+               console.log('Zoomist ready!')
+            }
+         }
       });
-    });
-  });
-}
+
+      zoomedArray.push(zoomer);
+
+      let btns = document.querySelectorAll('.thumbs-swiper-button');
+
+      btns.forEach(btn => {
+         btn.addEventListener('click', function() {
+            zoomer.reset();
+         })
+      })
+   });
+}*/
 
 if (thumbsSliderMain) {
   var sliderThumbs = new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](thumbsSliderMain, {
-    //centeredSlides: true,
-    ///centeredSlidesBounds: true,
     slidesPerView: 4,
     watchOverflow: true,
     watchSlidesVisibility: true,
@@ -21814,19 +21861,20 @@ if (thumbsSliderMain) {
         slidesPerView: 3,
         direction: "vertical"
       }
-    },
-    on: {
-      slideChange: function slideChange() {
-        console.log('change', zoomedArray);
-      }
     }
+    /*on: {
+       slideChange: function() {
+          console.log('change', zoomedArray);
+       }
+    }*/
+
   });
   var slider = new swiper_core__WEBPACK_IMPORTED_MODULE_0__["default"](".thumbs-swiper-main", {
     watchOverflow: true,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
     preventInteractionOnTransition: true,
-    allowTouchMove: false,
+    allowTouchMove: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -21837,15 +21885,15 @@ if (thumbsSliderMain) {
     },
     thumbs: {
       swiper: sliderThumbs
-    },
-    on: {
-      slideChange: function slideChange() {
-        console.log('change', zoomedArray);
-        zoomedArray.forEach(function (el) {
-          el.reset();
-        });
-      }
     }
+    /*on: {
+       slideChange: function() {
+          zoomedArray.forEach(el => {
+             el.reset();
+          })
+       }
+    }*/
+
   });
 }
 
@@ -21899,6 +21947,88 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var smooth_zoom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-zoom */ "./node_modules/smooth-zoom/dist/zoom.esm.js");
 
 Object(smooth_zoom__WEBPACK_IMPORTED_MODULE_0__["default"])(".zoomable");
+
+/***/ }),
+
+/***/ "./source/scripts/modules/zoomist.js":
+/*!*******************************************!*\
+  !*** ./source/scripts/modules/zoomist.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+console.log('zoomist');
+/*let zoomed = document.querySelectorAll('.zoomist');
+
+let zoomedArray = [];
+
+if(zoomed) {
+   zoomed.forEach(element => {
+      let zoomer = new Zoomist(element, {
+         slider: true,
+         zoomer: true,
+         maxRatio: 4,
+         bounds: true,
+         fill: 'fill',
+         height: 400,
+         zoomRatio: 0.2,
+         on: {
+            ready() {
+               console.log('Zoomist ready!')
+            }
+         }
+      });
+
+      zoomedArray.push(zoomer);
+
+      let btns = document.querySelectorAll('.thumbs-swiper-button');
+
+      btns.forEach(btn => {
+         btn.addEventListener('click', function() {
+            zoomer.reset();
+         })
+      })
+   });
+}*/
+
+var zoomer = document.querySelector('.js-zoom-btn');
+var zoomModalOverlay = document.querySelector('.zoomist-modal-overlay');
+var zoomModal = document.querySelector('.zoomist-modal');
+var closeModalBtn = document.querySelector('.zoomist-modal__close');
+
+var onClickZoomImage = function onClickZoomImage(evt) {
+  zoomModalOverlay.classList.add('is-opened');
+  zoomModal.classList.add('is-active');
+  var active = document.querySelector('.thumbs-swiper-main .swiper-slide-active > img');
+  var activeSrc = active.getAttribute('src');
+  var zoomistSrc = document.querySelector('.zoomist');
+  zoomistSrc.setAttribute('data-zoomist-src', activeSrc);
+  var zoomist = new Zoomist('.zoomist', {
+    slider: true,
+    zoomer: true,
+    maxRatio: 4,
+    bounds: true,
+    fill: 'fill',
+    height: 'auto',
+    zoomRatio: 0.2,
+    on: {
+      ready: function ready() {
+        console.log('Zoomist ready!');
+      }
+    }
+  });
+
+  var onClickCloseZoomModal = function onClickCloseZoomModal() {
+    closeModalBtn.removeEventListener('click', onClickCloseZoomModal);
+    zoomist.destroy();
+    zoomModalOverlay.classList.remove('is-opened');
+    zoomModal.classList.remove('is-active');
+  };
+
+  closeModalBtn.addEventListener('click', onClickCloseZoomModal);
+};
+
+zoomer.addEventListener('click', onClickZoomImage);
 
 /***/ }),
 
