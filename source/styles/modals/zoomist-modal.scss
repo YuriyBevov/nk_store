@@ -30,12 +30,26 @@ body {
 
     width: 100%;
     max-width: 80vw;
-    height: 100%;
+    height: fit-content;
     max-height: 80vh;
     background-color: $white;
     opacity: 0;
     overflow: hidden;
     overflow-y: auto;
+
+    @media(max-width: $md_w) {
+        max-width: 95vw;
+    }
+
+    &::-webkit-scrollbar { /* 1 - скроллбар */
+        width: 12px;
+        min-height: 12px;
+        background-color: #E5E5E5;
+    }
+    
+    &::-webkit-scrollbar-thumb { /* 5 - ползунок */
+        background-color: #1089ff;
+    }
 
     &__close {
         @extend .flex-item-center;
@@ -54,17 +68,6 @@ body {
         overflow: hidden;
         overflow-y: auto;
         height: 100%;
-
-        &::-webkit-scrollbar { /* 1 - скроллбар */
-            width: 12px;
-            min-height: 12px;
-            background-color: #E5E5E5;
-          
-          }
-          
-          &::-webkit-scrollbar-thumb { /* 5 - ползунок */
-            background-color: #1089ff;
-          }
     }
 
     &.is-active {
