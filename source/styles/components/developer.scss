@@ -1,0 +1,15 @@
+.developer {
+    border-top: 2px solid $white;
+    @extend .flex-centered-content;
+
+    padding: 20px 0;
+    background-color: #251B40;
+
+    a {
+        @extend .flex-centered-content;
+    }
+
+    img {
+        object-fit: contain;
+    }
+}

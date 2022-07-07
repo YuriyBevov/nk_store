@@ -40,6 +40,7 @@
 @import "components/flip-card";
 @import "components/tabs";
 @import "components/accordeon";
+@import "components/developer";
 
 //--- modals
 @import "modals/zoomist-modal";
@@ -79,11 +80,19 @@
 /* cart-page sections */
 @import "sections/user-page/user";
 
+/* details-page sections */
+@import "sections/details-page/details";
+
+/* public-page sections */
+@import "sections/public-page/public";
+
 /* common sections */
 @import "sections/common/history";
 
 /* not-found sections */
 @import "sections/not-found-page/not-found";
+
+@import "blocks/text-section";
 
 @import "common/footer";
 

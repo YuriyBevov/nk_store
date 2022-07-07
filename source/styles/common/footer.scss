@@ -4,6 +4,7 @@
     
     min-height: 30vh;
     padding: 20px 0;
+    padding-bottom: 0;
 
     &::before {
         position: absolute;
@@ -68,7 +69,6 @@
             position: relative;
             display: flex;
             font-size: 18px;
-            line-height: 1.2;
             padding: 2px 9px;
             margin-right: 15px;
 
@@ -94,10 +94,6 @@
             flex-direction: row;
             margin-bottom: 20px;
         }
-
-        /*@media(max-width: $md_w) {
-            flex-direction: column;
-        } */
     }
 
     &__social {
@@ -107,7 +103,7 @@
         span {
             display: none;
             font-size: 14px;
-            line-height: 1.2;
+            
             margin-bottom: 10px;
             padding-left: 5px;
             color: $main-black;
@@ -168,8 +164,7 @@
                     display: flex;
                     width: fit-content;
                     padding: 0 10px;
-                    font-size: 12px;
-                    line-height: 1.2;
+                    font-size: 14px;
                     color: $main-black;
 
                     @include focus-color($purple);
@@ -185,7 +180,6 @@
 
             @media(max-width: $lg_w) {
                 padding-right: 0;
-                margin-bottom: 20px;
             }
 
             @media(max-width: $md_w) {
@@ -198,31 +192,6 @@
                 li {
                     width: inherit;
                 }
-            }
-        }
-
-        &-dev {
-            width: 30%;
-            align-self: flex-end;
-            margin-bottom: 10px;
-
-            p {
-                font-size: 12px;
-                line-height: 1.2;
-                padding: 0 10px;
-                color: $main-black;
-
-                @media(max-width: 580px) {
-                    text-align: center;
-                }
-            }
-
-            a {
-                color: $purple;
-            }
-
-            @media(max-width: $lg_w) {
-                width: 100%;
             }
         }
     }

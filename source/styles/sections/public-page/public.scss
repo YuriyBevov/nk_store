@@ -1,0 +1,25 @@
+.public {
+    @extend .section-margin-bottom;
+    
+    @media(max-width: $sm_w) {
+        padding-top: 20px;
+    }
+
+    &__wrapper {
+        @extend .wrapper;
+    }
+
+    &__title {
+        font-size: 44px;
+        margin-bottom: 30px;
+        color: $main-black; 
+
+        @media(max-width: $lg_w) {
+            font-size: 28px;
+        }
+
+        @media(max-width: $md_w) {
+            font-size: 22px;
+        }
+    }
+}

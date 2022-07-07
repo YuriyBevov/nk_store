@@ -1,0 +1,17 @@
+extends layouts/main-layout.pug
+include ./mixins/breadcrumbs
+
+block variables
+  -
+    const title = "интернет магазин"
+    const desc = ""
+    const keywords = ""
+
+block content
+  .product
+    +breadcrumbs([
+        { title: 'Главная', link: 'index.html' },
+        { title: 'Реквизиты компании'}
+    ])
+
+    include ./sections/details-page/details

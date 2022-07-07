@@ -4,6 +4,7 @@
     @media(max-width: $sm_w) {
         padding-top: 20px;
     }
+    
     &__wrapper {
         @extend .wrapper;
         @extend .flex-wrap;
