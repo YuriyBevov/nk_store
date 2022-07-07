@@ -20998,7 +20998,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/showMoreReviews.js */ "./source/scripts/modules/showMoreReviews.js");
 /* harmony import */ var _modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _modules_zoomist_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/zoomist.js */ "./source/scripts/modules/zoomist.js");
-/* harmony import */ var _modules_zoomist_js__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_modules_zoomist_js__WEBPACK_IMPORTED_MODULE_21__);
 
 
 
@@ -21954,49 +21953,20 @@ Object(smooth_zoom__WEBPACK_IMPORTED_MODULE_0__["default"])(".zoomable");
 /*!*******************************************!*\
   !*** ./source/scripts/modules/zoomist.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-console.log('zoomist');
-/*let zoomed = document.querySelectorAll('.zoomist');
-
-let zoomedArray = [];
-
-if(zoomed) {
-   zoomed.forEach(element => {
-      let zoomer = new Zoomist(element, {
-         slider: true,
-         zoomer: true,
-         maxRatio: 4,
-         bounds: true,
-         fill: 'fill',
-         height: 400,
-         zoomRatio: 0.2,
-         on: {
-            ready() {
-               console.log('Zoomist ready!')
-            }
-         }
-      });
-
-      zoomedArray.push(zoomer);
-
-      let btns = document.querySelectorAll('.thumbs-swiper-button');
-
-      btns.forEach(btn => {
-         btn.addEventListener('click', function() {
-            zoomer.reset();
-         })
-      })
-   });
-}*/
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions */ "./source/scripts/functions.js");
 
 var zoomer = document.querySelector('.js-zoom-btn');
 var zoomModalOverlay = document.querySelector('.zoomist-modal-overlay');
 var zoomModal = document.querySelector('.zoomist-modal');
 var closeModalBtn = document.querySelector('.zoomist-modal__close');
 
-var onClickZoomImage = function onClickZoomImage(evt) {
+var onClickZoomImage = function onClickZoomImage() {
+  Object(_functions__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(true);
   zoomModalOverlay.classList.add('is-opened');
   zoomModal.classList.add('is-active');
   var active = document.querySelector('.thumbs-swiper-main .swiper-slide-active > img');
@@ -22010,22 +21980,30 @@ var onClickZoomImage = function onClickZoomImage(evt) {
     bounds: true,
     fill: 'fill',
     height: 'auto',
-    zoomRatio: 0.2,
-    on: {
-      ready: function ready() {
-        console.log('Zoomist ready!');
-      }
-    }
+    zoomRatio: 0.2
   });
 
-  var onClickCloseZoomModal = function onClickCloseZoomModal() {
+  function closeZoomModal() {
+    Object(_functions__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(false);
     closeModalBtn.removeEventListener('click', onClickCloseZoomModal);
+    document.removeEventListener('keydown', onEscCloseZoomModal);
     zoomist.destroy();
     zoomModalOverlay.classList.remove('is-opened');
     zoomModal.classList.remove('is-active');
+  }
+
+  var onClickCloseZoomModal = function onClickCloseZoomModal() {
+    closeZoomModal();
+  };
+
+  var onEscCloseZoomModal = function onEscCloseZoomModal(evt) {
+    if (evt.key === 'Escape') {
+      closeZoomModal();
+    }
   };
 
   closeModalBtn.addEventListener('click', onClickCloseZoomModal);
+  document.addEventListener('keydown', onEscCloseZoomModal);
 };
 
 zoomer.addEventListener('click', onClickZoomImage);

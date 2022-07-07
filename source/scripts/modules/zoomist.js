@@ -1,44 +1,12 @@
-console.log('zoomist');
-
-/*let zoomed = document.querySelectorAll('.zoomist');
-
-let zoomedArray = [];
-
-if(zoomed) {
-   zoomed.forEach(element => {
-      let zoomer = new Zoomist(element, {
-         slider: true,
-         zoomer: true,
-         maxRatio: 4,
-         bounds: true,
-         fill: 'fill',
-         height: 400,
-         zoomRatio: 0.2,
-         on: {
-            ready() {
-               console.log('Zoomist ready!')
-            }
-         }
-      });
-
-      zoomedArray.push(zoomer);
-
-      let btns = document.querySelectorAll('.thumbs-swiper-button');
-
-      btns.forEach(btn => {
-         btn.addEventListener('click', function() {
-            zoomer.reset();
-         })
-      })
-   });
-}*/
+import { bodyLocker } from "../functions";
 
 const zoomer = document.querySelector('.js-zoom-btn');
 const zoomModalOverlay = document.querySelector('.zoomist-modal-overlay');
 const zoomModal = document.querySelector('.zoomist-modal');
 const closeModalBtn = document.querySelector('.zoomist-modal__close');
 
-const onClickZoomImage = (evt) => {
+const onClickZoomImage = () => {
+    bodyLocker(true);
     zoomModalOverlay.classList.add('is-opened');
     zoomModal.classList.add('is-active');
 
@@ -56,22 +24,29 @@ const onClickZoomImage = (evt) => {
         fill: 'fill',
         height: 'auto',
         zoomRatio: 0.2,
-        on: {
-           ready() {
-              console.log('Zoomist ready!')
-           }
-        }
     });
 
-    const onClickCloseZoomModal = () => {
+    function closeZoomModal() {
+        bodyLocker(false);
         closeModalBtn.removeEventListener('click', onClickCloseZoomModal);
-
+        document.removeEventListener('keydown', onEscCloseZoomModal);
         zoomist.destroy();
         zoomModalOverlay.classList.remove('is-opened');
         zoomModal.classList.remove('is-active');
     }
 
+    const onClickCloseZoomModal = () => {
+        closeZoomModal();
+    }
+
+    const onEscCloseZoomModal = (evt) => {
+        if(evt.key === 'Escape') {
+            closeZoomModal();
+        }
+    }
+
     closeModalBtn.addEventListener('click', onClickCloseZoomModal);
+    document.addEventListener('keydown', onEscCloseZoomModal);
 }
 
 zoomer.addEventListener('click', onClickZoomImage);
