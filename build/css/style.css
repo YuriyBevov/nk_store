@@ -1457,7 +1457,7 @@ button.swiper-pagination-bullet {
   position: fixed;
   z-index: 2;
   top: 0;
-  right: 82px;
+  right: 124px;
   background-color: rgba(255, 255, 255, 0.8); }
 
 .zoomist-slider-main {
@@ -1529,7 +1529,7 @@ button.swiper-pagination-bullet {
   position: fixed;
   z-index: 2;
   top: 0;
-  right: 0;
+  right: 42px;
   overflow: hidden; }
 
 .zoomist-in-zoomer, .zoomist-out-zoomer {
@@ -3059,20 +3059,23 @@ body {
   overflow: hidden;
   overflow-y: auto; }
   .zoomist-modal__close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
     z-index: 10; }
   .zoomist-modal__content {
     overflow: hidden;
     overflow-y: auto;
     height: 100%; }
-    .zoomist-modal__content ::-webkit-scrollbar {
+    .zoomist-modal__content::-webkit-scrollbar {
       /* 1 - скроллбар */
-      width: 40px;
+      width: 12px;
       min-height: 12px;
       background-color: #E5E5E5; }
-    .zoomist-modal__content ::-webkit-scrollbar-thumb {
+    .zoomist-modal__content::-webkit-scrollbar-thumb {
       /* 5 - ползунок */
       background-color: #1089ff; }
   .zoomist-modal.is-active {
@@ -4144,7 +4147,8 @@ body {
       top: 0;
       right: 0;
       padding: 10px;
-      z-index: 100; }
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.8); }
   @media (max-width: 768px) {
     .product-info__slider-container {
       margin-bottom: 25px; } }

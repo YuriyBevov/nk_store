@@ -41,9 +41,12 @@ body {
         @extend .flex-item-center;
         @extend .button-default;
 
-        position: absolute;
-        top: 15px;
-        right: 15px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.9);
         z-index: 10;
     }
 
@@ -52,14 +55,14 @@ body {
         overflow-y: auto;
         height: 100%;
 
-        ::-webkit-scrollbar { /* 1 - скроллбар */
-            width: 40px;
+        &::-webkit-scrollbar { /* 1 - скроллбар */
+            width: 12px;
             min-height: 12px;
             background-color: #E5E5E5;
           
           }
           
-          ::-webkit-scrollbar-thumb { /* 5 - ползунок */
+          &::-webkit-scrollbar-thumb { /* 5 - ползунок */
             background-color: #1089ff;
           }
     }
