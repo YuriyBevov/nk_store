@@ -15,6 +15,13 @@
             svg {
                 fill: $white;
             }
+
+            transition: opacity $main-transition;
+
+            &:hover,
+            &:focus {
+                opacity: 0.8;
+            }
         }
 
         border-radius: 50%;

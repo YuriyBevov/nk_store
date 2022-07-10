@@ -12,7 +12,6 @@ html(lang="ru")
   +head(title, desc, keywords)
 
   body
-
     div(style="display:none")
       include ../../assets/img/svg-sprite.svg 
 
@@ -23,9 +22,12 @@ html(lang="ru")
 
     include ../common/footer
     include ../components/mobile-menu
-    block modals
-
-    include ../modals/auth-modal
+    
     include ../components/loader
+
+    block modals
+    include ../modals/auth-modal
+    include ../modals/error-modal
+    include ../modals/success-modal
     block scripts
       script(src="./js/bundle.js")

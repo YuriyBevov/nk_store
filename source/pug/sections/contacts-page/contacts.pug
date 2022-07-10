@@ -1,0 +1,24 @@
+section.contacts
+  .contacts__wrapper
+    h1.contacts__title Контакты
+
+    p.contacts__desc Вы можете связаться с нами любым удобным для Вас способом, либо заказать обратный звонок:
+
+    .contacts__field
+      span Телефоны для связи:
+      a(href="tel:88121234567") 8 (812) 123-45-67
+      a(href="tel:88121234567") 8 (812) 123-45-67
+
+    .contacts__field
+      span E-mail:
+      a(href="mailto:yandex@yandex.ru") yandex@yandex.ru
+    
+    .contacts__field
+      label(for="callback-start-field") Обратный звонок:
+      form(action="#")
+        fieldset
+          input(type="text" id="callback-start-field" placeholder="Имя:")
+          input(type="tel" placeholder="Номер телефона:")
+
+        button(type="submit") Заказать  
+

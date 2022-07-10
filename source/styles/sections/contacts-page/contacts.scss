@@ -1,0 +1,147 @@
+.contacts {
+    @extend .section-margin-bottom;
+
+    @media(max-width: $sm_w) {
+        padding-top: 20px;
+    }
+
+    &__wrapper {
+        @extend .wrapper;
+    }
+
+    &__title {
+        font-size: 44px;
+        margin-bottom: 30px;
+
+        color: $main-black;
+
+        @media(max-width: $xl_w) {
+            font-size: 36px;
+        }
+
+        @media(max-width: $md_w) {
+            font-size: 28px;
+        }
+    }
+
+    &__desc {
+        font-size: 24px;
+        max-width: 850px;
+        margin-bottom: 20px;
+
+        @media(max-width: $xl_w) {
+            font-size: 22px;
+        }
+
+        @media(max-width: $md_w) {
+            font-size: 18px;
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+
+        span,
+        label {
+            font-size: 16px;
+            color: $main-black;
+            margin-bottom: 10px;
+        }
+
+        a {
+            width: fit-content;
+            font-size: 20px;
+            color: $black;
+            margin-bottom: 5px;
+
+            @media(max-width: $xl_w) {
+                font-size: 18px;
+            }
+    
+            @media(max-width: $md_w) {
+                font-size: 16px;
+            }
+
+            transition: color $main-transition;
+
+            &:hover,
+            &:focus {
+                color: $purple;
+            }
+        }
+
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 600px;
+
+        fieldset {
+            @extend .fieldset-default;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+    
+            @media(max-width: $md_w) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            input {
+                width: calc(50% - 10px);
+                height: 40px;
+
+                padding: 0;
+                padding: 10px;
+                border: none;
+        
+                @media(max-width: $md_w) {
+                    width: 100%;
+                    max-width: 400px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            input,
+            input::placeholder {
+                font-size: 16px;
+
+                color: $main-black;
+            }
+
+            input:last-child {
+                margin-left: auto;
+        
+                @media(max-width: $md_w) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        button {
+            @extend .button-default;
+
+            font-size: 18px;
+
+            width: fit-content;
+            min-width: 200px;
+
+            padding: 10px;
+
+            border: 1px solid $main-black;
+            color: $main-black;
+
+            transition: color $main-transition, border $main-transition;
+
+            &:hover,
+            &:focus {
+                color: $purple;
+                border-color: $purple;
+            }
+        }
+    }
+}

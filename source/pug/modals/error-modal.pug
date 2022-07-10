@@ -1,0 +1,18 @@
+.modal-overlay.error-modal-overlay
+  .modal(id="error-modal").error-modal
+    button(type="button").modal__close.error-modal__close
+      svg(width="24" height="24")
+        use(xlink:href="#icon-close")
+    .modal__content.error-modal__content
+      span Упс...
+      p Что-то пошло не&nbsp;так. <br/> Попробуйте снова, или свяжитесь с&nbsp;нами удобным для Вас способом.
+
+    .modal__footer
+      a(href="tel:+78121234578" aria-label="Позвонить")
+        svg(width="24" height="24")
+          use(xlink:href="#icon-phone")
+        span +7 (812) 123-45-67
+      a(href="mailto:yandex@info.ru" aria-label="Отправить письмо на почту")
+        svg(width="24" height="24")
+          use(xlink:href="#icon-mail")
+        span yandex@info.ru

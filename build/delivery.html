@@ -383,87 +383,19 @@
       </div>
     </header>
     <main>
-      <div class="user">
+      <div class="info-page">
         <div class="breadcrumbs wrapper">
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item"><a href="index.html">Главная</a>
             </li>
-            <li class="breadcrumbs__item"><a href="profile.html">Личный кабинет</a>
-            </li>
-            <li class="breadcrumbs__item"><span>Личные данные</span>
+            <li class="breadcrumbs__item"><span>Условия доставки</span>
             </li>
           </ul>
         </div>
-        <section class="user">
-          <div class="user__wrapper">
-            <div class="user__avatar"><img src="./assets/img/user-avatar.png" alt="Аватар" width="80" height="80">
-              <input type="file" id="user_avatar">
-              <label for="user_avatar">Изменить</label>
-            </div>
-            <div class="user__data">
-              <form action="#">
-                <fieldset>
-                  <label for="user_name">Имя</label>
-                  <input type="text" placeholder="Константин" id="user_name">
-                </fieldset>
-                <fieldset>
-                  <label for="user_surname">Фамилия</label>
-                  <input type="text" placeholder="Константинов" id="user_surname">
-                </fieldset>
-                <fieldset>
-                  <label for="user_mail">Email</label>
-                  <input type="text" placeholder="test@yandex.ru" id="user_mail">
-                </fieldset>
-                <fieldset>
-                  <label for="user_phone">Телефон</label>
-                  <input type="tel" placeholder="+7(921)123-45-67" id="user_phone">
-                </fieldset>
-                <fieldset class="user__birth-field">
-                  <label for="user_bday">Дата рождения</label>
-                  <div class="user__birth-controls">
-                    <select class="custom-select-birth" id="user_bday"></select>
-                    <select class="custom-select-birth" id="user_bmonth">
-                      <option value="Январь" selected="">Январь</option>
-                      <option value="Февраль">Февраль</option>
-                      <option value="Март">Март</option>
-                      <option value="Апрель">Апрель</option>
-                      <option value="Май">Май</option>
-                      <option value="Июнь">Июнь</option>
-                      <option value="Июль">Июль</option>
-                      <option value="Август">Август</option>
-                      <option value="Сентябрь">Сентябрь</option>
-                      <option value="Октябрь">Октябрь</option>
-                      <option value="Ноябрь">Ноябрь</option>
-                      <option value="Декабрь">Декабрь</option>
-                    </select>
-                    <select class="custom-select-birth" id="user_byear"></select>
-                  </div>
-                </fieldset>
-                <fieldset class="city">
-                  <label for="user_city">Город</label>
-                  <input type="text" placeholder="Санкт-Петербург" id="user_city">
-                </fieldset>
-                <div class="user__psw">
-                  <fieldset class="hidden-field prev-pswd-field">
-                    <label for="user_current-psw">Текущий пароль</label>
-                    <input type="password" id="user_current-psw" placeholder="Текущий пароль">
-                  </fieldset>
-                  <fieldset class="hidden-field change-pswd-field">
-                    <label for="user_new-psw">Новый пароль</label>
-                    <input type="password" id="user_new-psw" placeholder="Новый пароль">
-                  </fieldset>
-                  <fieldset class="hidden-field change-pswd-field">
-                    <label for="user_confirm-psw">Повторите введенный пароль</label>
-                    <input type="password" id="user_confirm-psw" placeholder="Повторите введенный пароль">
-                  </fieldset>
-                  <div class="error-field"><span class="wrong-psw">* Неверный пароль</span><span class="wrong-confirm">* Введенные пароли не совпадают</span></div>
-                </div>
-                <div class="user__form-action">
-                  <button class="js-change-pswd" type="button">Изменить пароль</button>
-                  <button type="submit">Сохранить изменения</button>
-                </div>
-              </form>
-            </div>
+        <section class="info-section">
+          <div class="info-section__wrapper">
+            <h1 class="info-section__title">Условия доставки</h1>
+            <div class="info-section__text"></div>
           </div>
         </section>
       </div>
@@ -674,7 +606,6 @@
         <div class="loader-item"></div>
       </div>
     </div>
-    <!-- include ./modals/info-modal-->
     <div class="modal-overlay auth-modal-overlay">
       <div class="modal auth-modal" id="auth-modal">
         <button class="modal__close auth-modal__close" type="button">

@@ -21714,36 +21714,39 @@ window.addEventListener('resize', onResizeCheckHeaderHeight);
 /***/ (function(module, exports) {
 
 var reviews = document.querySelectorAll('.product-reviews-modal__content .user-review');
-var showMoreBtn = document.querySelector('.product-reviews-modal__more');
-var step = 3;
-var current = step;
-var total = reviews.length;
 
-var onClickShowMoreReviews = function onClickShowMoreReviews() {
-  if (current + step < total) {
-    for (var i = current; i < current + step; i++) {
-      reviews[i].classList.remove('hidden');
+if (reviews.length) {
+  var showMoreBtn = document.querySelector('.product-reviews-modal__more');
+  var step = 3;
+  var current = step;
+  var total = reviews.length;
+
+  var onClickShowMoreReviews = function onClickShowMoreReviews() {
+    if (current + step < total) {
+      for (var i = current; i < current + step; i++) {
+        reviews[i].classList.remove('hidden');
+      }
+
+      current += step;
+    } else {
+      showMoreBtn.removeEventListener('click', onClickShowMoreReviews);
+      showMoreBtn.style.display = 'none';
+
+      for (var _i = current; _i < total; _i++) {
+        reviews[_i].classList.remove('hidden');
+      }
     }
+  };
 
-    current += step;
-  } else {
-    showMoreBtn.removeEventListener('click', onClickShowMoreReviews);
+  if (total <= step) {
     showMoreBtn.style.display = 'none';
-
-    for (var _i = current; _i < total; _i++) {
-      reviews[_i].classList.remove('hidden');
+  } else {
+    for (var i = current; i < total; i++) {
+      reviews[i].classList.add('hidden');
     }
-  }
-};
 
-if (total <= step) {
-  showMoreBtn.style.display = 'none';
-} else {
-  for (var i = current; i < total; i++) {
-    reviews[i].classList.add('hidden');
+    showMoreBtn.addEventListener('click', onClickShowMoreReviews);
   }
-
-  showMoreBtn.addEventListener('click', onClickShowMoreReviews);
 }
 
 /***/ }),
@@ -21961,52 +21964,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions */ "./source/scripts/functions.js");
 
 var zoomer = document.querySelector('.js-zoom-btn');
-var zoomModalOverlay = document.querySelector('.zoomist-modal-overlay');
-var zoomModal = document.querySelector('.zoomist-modal');
-var closeModalBtn = document.querySelector('.zoomist-modal__close');
 
-var onClickZoomImage = function onClickZoomImage() {
-  Object(_functions__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(true);
-  zoomModalOverlay.classList.add('is-opened');
-  zoomModal.classList.add('is-active');
-  var active = document.querySelector('.thumbs-swiper-main .swiper-slide-active > img');
-  var activeSrc = active.getAttribute('src');
-  var zoomistSrc = document.querySelector('.zoomist');
-  zoomistSrc.setAttribute('data-zoomist-src', activeSrc);
-  var zoomist = new Zoomist('.zoomist', {
-    slider: true,
-    zoomer: true,
-    maxRatio: 4,
-    bounds: true,
-    fill: 'fill',
-    height: 'auto',
-    zoomRatio: 0.2
-  });
+if (zoomer) {
+  var zoomModalOverlay = document.querySelector('.zoomist-modal-overlay');
+  var zoomModal = document.querySelector('.zoomist-modal');
+  var closeModalBtn = document.querySelector('.zoomist-modal__close');
 
-  function closeZoomModal() {
-    Object(_functions__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(false);
-    closeModalBtn.removeEventListener('click', onClickCloseZoomModal);
-    document.removeEventListener('keydown', onEscCloseZoomModal);
-    zoomist.destroy();
-    zoomModalOverlay.classList.remove('is-opened');
-    zoomModal.classList.remove('is-active');
-  }
+  var onClickZoomImage = function onClickZoomImage() {
+    Object(_functions__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(true);
+    zoomModalOverlay.classList.add('is-opened');
+    zoomModal.classList.add('is-active');
+    var active = document.querySelector('.thumbs-swiper-main .swiper-slide-active > img');
+    var activeSrc = active.getAttribute('src');
+    var zoomistSrc = document.querySelector('.zoomist');
+    zoomistSrc.setAttribute('data-zoomist-src', activeSrc);
+    var zoomist = new Zoomist('.zoomist', {
+      slider: true,
+      zoomer: true,
+      maxRatio: 4,
+      bounds: true,
+      fill: 'fill',
+      height: 'auto',
+      zoomRatio: 0.2
+    });
 
-  var onClickCloseZoomModal = function onClickCloseZoomModal() {
-    closeZoomModal();
-  };
-
-  var onEscCloseZoomModal = function onEscCloseZoomModal(evt) {
-    if (evt.key === 'Escape') {
-      closeZoomModal();
+    function closeZoomModal() {
+      Object(_functions__WEBPACK_IMPORTED_MODULE_0__["bodyLocker"])(false);
+      closeModalBtn.removeEventListener('click', onClickCloseZoomModal);
+      document.removeEventListener('keydown', onEscCloseZoomModal);
+      zoomist.destroy();
+      zoomModalOverlay.classList.remove('is-opened');
+      zoomModal.classList.remove('is-active');
     }
+
+    var onClickCloseZoomModal = function onClickCloseZoomModal() {
+      closeZoomModal();
+    };
+
+    var onEscCloseZoomModal = function onEscCloseZoomModal(evt) {
+      if (evt.key === 'Escape') {
+        closeZoomModal();
+      }
+    };
+
+    closeModalBtn.addEventListener('click', onClickCloseZoomModal);
+    document.addEventListener('keydown', onEscCloseZoomModal);
   };
 
-  closeModalBtn.addEventListener('click', onClickCloseZoomModal);
-  document.addEventListener('keydown', onEscCloseZoomModal);
-};
-
-zoomer.addEventListener('click', onClickZoomImage);
+  zoomer.addEventListener('click', onClickZoomImage);
+}
 
 /***/ }),
 

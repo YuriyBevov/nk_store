@@ -83,16 +83,15 @@
 /* details-page sections */
 @import "sections/details-page/details";
 
-/* public-page sections */
-@import "sections/public-page/public";
+/* details-page sections */
+@import "sections/contacts-page/contacts";
 
 /* common sections */
 @import "sections/common/history";
+@import "sections/common/info-section";
 
 /* not-found sections */
 @import "sections/not-found-page/not-found";
-
-@import "blocks/text-section";
 
 @import "common/footer";
 

@@ -398,7 +398,7 @@ template {
   display: none; }
 
 /* общие классы для сайта */
-.wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .public__wrapper, .history__wrapper, .not-found__wrapper, .footer__wrapper {
+.wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
   max-width: 1440px;
   min-width: 320px;
   padding: 0 30px;
@@ -406,13 +406,13 @@ template {
   height: 100%;
   margin: 0 auto; }
   @media (max-width: 1140px) {
-    .wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .public__wrapper, .history__wrapper, .not-found__wrapper, .footer__wrapper {
+    .wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
       padding: 0 15px; } }
   @media (max-width: 480px) {
-    .wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .public__wrapper, .history__wrapper, .not-found__wrapper, .footer__wrapper {
+    .wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
       padding: 0 10px; } }
 
-.fieldset-default, .auth-modal__body form fieldset, .user .user__data fieldset {
+.fieldset-default, .auth-modal__body form fieldset, .user .user__data fieldset, .contacts form fieldset {
   margin: 0;
   padding: 0;
   border: 0; }
@@ -422,13 +422,13 @@ template {
   align-items: center;
   justify-content: center; }
 
-.section-margin-bottom, .breadcrumbs, .intro, .cats, .popular, .index .about, .reviews, .register, .product-info, .cart, .catalog, .favourite, .profile .user-profile, .profile .offer-history, .details, .public, .history, .not-found {
+.section-margin-bottom, .breadcrumbs, .intro, .cats, .popular, .index .about, .reviews, .register, .product-info, .cart, .catalog, .favourite, .profile .user-profile, .profile .offer-history, .details, .contacts, .history, .info-section, .not-found {
   margin-bottom: 50px; }
   @media (max-width: 1140px) {
-    .section-margin-bottom, .breadcrumbs, .intro, .cats, .popular, .index .about, .reviews, .register, .product-info, .cart, .catalog, .favourite, .profile .user-profile, .profile .offer-history, .details, .public, .history, .not-found {
+    .section-margin-bottom, .breadcrumbs, .intro, .cats, .popular, .index .about, .reviews, .register, .product-info, .cart, .catalog, .favourite, .profile .user-profile, .profile .offer-history, .details, .contacts, .history, .info-section, .not-found {
       margin-bottom: 30px; } }
   @media (max-width: 768px) {
-    .section-margin-bottom, .breadcrumbs, .intro, .cats, .popular, .index .about, .reviews, .register, .product-info, .cart, .catalog, .favourite, .profile .user-profile, .profile .offer-history, .details, .public, .history, .not-found {
+    .section-margin-bottom, .breadcrumbs, .intro, .cats, .popular, .index .about, .reviews, .register, .product-info, .cart, .catalog, .favourite, .profile .user-profile, .profile .offer-history, .details, .contacts, .history, .info-section, .not-found {
       margin-bottom: 20px; } }
 
 @media (max-width: 480px) {
@@ -484,7 +484,7 @@ template {
   -o-object-fit: contain;
      object-fit: contain; }
 
-.button-default, .search-field button, .catalog-section__close, .favourite-card__overlay button, .zoomist-modal__close, .modal__close, .product-info__slider-container button, .user .user .user__form-action button {
+.button-default, .search-field button, .catalog-section__close, .favourite-card__overlay button, .zoomist-modal__close, .modal__close, .product-info__slider-container button, .user .user .user__form-action button, .contacts form button {
   border: 0;
   margin: 0;
   padding: 0;
@@ -1567,7 +1567,7 @@ button.swiper-pagination-bullet {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 101; }
+    z-index: 105; }
     .loader-overlay.hidden {
       display: none; }
   .loader-item {
@@ -1707,9 +1707,12 @@ button.swiper-pagination-bullet {
     background-color: rgba(143, 31, 232, 0.86); }
     .social-list li a {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      transition: opacity 0.3s ease-out; }
       .social-list li a svg {
         fill: #ffffff; }
+      .social-list li a:hover, .social-list li a:focus {
+        opacity: 0.8; }
 
 .mobile-menu {
   display: none;
@@ -3033,6 +3036,8 @@ button.swiper-pagination-bullet {
   padding: 20px 0;
   background-color: #251B40; }
   .developer img {
+    width: 100%;
+    height: 100%;
     -o-object-fit: contain;
        object-fit: contain; }
 
@@ -5058,21 +5063,108 @@ body {
     .details__item-link:hover, .details__item-link:focus {
       color: rgba(143, 31, 232, 0.86); }
 
-/* public-page sections */
+/* details-page sections */
 @media (max-width: 480px) {
-  .public {
+  .contacts {
     padding-top: 20px; } }
 
-.public__title {
+.contacts__title {
   font-size: 44px;
   margin-bottom: 30px;
   color: #2C2B3C; }
-  @media (max-width: 1140px) {
-    .public__title {
-      font-size: 28px; } }
+  @media (max-width: 1440px) {
+    .contacts__title {
+      font-size: 36px; } }
   @media (max-width: 768px) {
-    .public__title {
+    .contacts__title {
+      font-size: 28px; } }
+
+.contacts__desc {
+  font-size: 24px;
+  max-width: 850px;
+  margin-bottom: 20px; }
+  @media (max-width: 1440px) {
+    .contacts__desc {
       font-size: 22px; } }
+  @media (max-width: 768px) {
+    .contacts__desc {
+      font-size: 18px; } }
+
+.contacts__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; }
+  .contacts__field span,
+  .contacts__field label {
+    font-size: 16px;
+    color: #2C2B3C;
+    margin-bottom: 10px; }
+  .contacts__field a {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 5px;
+    transition: color 0.3s ease-out; }
+    @media (max-width: 1440px) {
+      .contacts__field a {
+        font-size: 18px; } }
+    @media (max-width: 768px) {
+      .contacts__field a {
+        font-size: 16px; } }
+    .contacts__field a:hover, .contacts__field a:focus {
+      color: rgba(143, 31, 232, 0.86); }
+
+.contacts form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; }
+  .contacts form fieldset {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; }
+    @media (max-width: 768px) {
+      .contacts form fieldset {
+        flex-direction: column;
+        align-items: flex-start; } }
+    .contacts form fieldset input {
+      width: calc(50% - 10px);
+      height: 40px;
+      padding: 0;
+      padding: 10px;
+      border: none; }
+      @media (max-width: 768px) {
+        .contacts form fieldset input {
+          width: 100%;
+          max-width: 400px;
+          margin-bottom: 10px; } }
+    .contacts form fieldset input::-moz-placeholder {
+      font-size: 16px;
+      color: #2C2B3C; }
+    .contacts form fieldset input,
+    .contacts form fieldset input::placeholder {
+      font-size: 16px;
+      color: #2C2B3C; }
+    .contacts form fieldset input:last-child {
+      margin-left: auto; }
+      @media (max-width: 768px) {
+        .contacts form fieldset input:last-child {
+          margin-left: 0; } }
+  .contacts form button {
+    font-size: 18px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid #2C2B3C;
+    color: #2C2B3C;
+    transition: color 0.3s ease-out, border 0.3s ease-out; }
+    .contacts form button:hover, .contacts form button:focus {
+      color: rgba(143, 31, 232, 0.86);
+      border-color: rgba(143, 31, 232, 0.86); }
 
 /* common sections */
 .history {
@@ -5082,6 +5174,29 @@ body {
     position: relative; }
   .history-swiper {
     padding-bottom: 30px; }
+
+@media (max-width: 480px) {
+  .info-section {
+    padding-top: 20px; } }
+
+.info-section__title {
+  font-size: 44px;
+  margin-bottom: 30px;
+  color: #2C2B3C; }
+  @media (max-width: 1140px) {
+    .info-section__title {
+      font-size: 28px; } }
+  @media (max-width: 768px) {
+    .info-section__title {
+      font-size: 22px; } }
+
+.info-section__text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #2C2B3C; }
+  @media (max-width: 768px) {
+    .info-section__text p {
+      font-size: 16px; } }
 
 /* not-found sections */
 .not-found {
@@ -5131,14 +5246,6 @@ body {
       .not-found__btn {
         font-size: 18px;
         border-radius: 12px; } }
-
-.text-section p {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #2C2B3C; }
-  @media (max-width: 768px) {
-    .text-section p {
-      font-size: 16px; } }
 
 .footer {
   position: relative;

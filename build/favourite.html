@@ -154,8 +154,8 @@
                 <li class="header__nav-item"><a href="about.html">О нас</a></li>
                 <li class="header__nav-item"><a href="contacts.html">Контакты</a></li>
                 <li class="header__nav-item"><a href="delivery.html">Доставка</a></li>
-                <li class="header__nav-item"><a href="#">Условия оплаты и возврата</a></li>
-                <li class="header__nav-item"><a href="#">Политика конфиденциальности</a></li>
+                <li class="header__nav-item"><a href="conditions.html">Условия оплаты и возврата</a></li>
+                <li class="header__nav-item"><a href="confidential.html">Политика конфиденциальности</a></li>
               </ul>
             </nav>
             <div class="header__user">
@@ -705,10 +705,10 @@
         <div class="footer__bottom">
           <ul class="footer__bottom-menu">
             <li class="footer__bottom-menu-item"><a href="#">Сертификаты на продукцию </a></li>
-            <li class="footer__bottom-menu-item"><a href="#">Условия оплаты и возврата </a></li>
+            <li class="footer__bottom-menu-item"><a href="conditions.html">Условия оплаты и возврата </a></li>
             <li class="footer__bottom-menu-item"><a href="details.html">Реквизиты компании</a></li>
             <li class="footer__bottom-menu-item"><a href="public.html">Публичная оферта</a></li>
-            <li class="footer__bottom-menu-item"><a href="#">Политика об обработке и защите персональных данных</a></li>
+            <li class="footer__bottom-menu-item"><a href="confidential.html">Политика об обработке и защите персональных данных</a></li>
           </ul>
         </div>
       </div>
@@ -869,6 +869,13 @@
           <li class="mobile-menu__nav-item"><a href="about.html"><span>Условия оплаты и возврата</span></a></li>
           <li class="mobile-menu__nav-item"><a href="about.html"><span>Политика конфиденциальности</span></a></li>
         </ul>
+      </div>
+    </div>
+    <div class="loader-overlay hidden" aria-hidden="true">
+      <div class="loader">
+        <div class="loader-item"></div>
+        <div class="loader-item"></div>
+        <div class="loader-item"></div>
       </div>
     </div>
     <div class="modal-overlay size-modal-overlay">
@@ -1705,11 +1712,37 @@
         </div>
       </div>
     </div>
-    <div class="loader-overlay hidden" aria-hidden="true">
-      <div class="loader">
-        <div class="loader-item"></div>
-        <div class="loader-item"></div>
-        <div class="loader-item"></div>
+    <div class="modal-overlay error-modal-overlay">
+      <div class="modal error-modal" id="error-modal">
+        <button class="modal__close error-modal__close" type="button">
+          <svg width="24" height="24">
+            <use xlink:href="#icon-close"></use>
+          </svg>
+        </button>
+        <div class="modal__content error-modal__content"><span>Упс...</span>
+          <p>Что-то пошло не&nbsp;так. <br> Попробуйте снова, или свяжитесь с&nbsp;нами удобным для Вас способом.</p>
+        </div>
+        <div class="modal__footer"><a href="tel:+78121234578" aria-label="Позвонить">
+            <svg width="24" height="24">
+              <use xlink:href="#icon-phone"></use>
+            </svg><span>+7 (812) 123-45-67</span></a><a href="mailto:yandex@info.ru" aria-label="Отправить письмо на почту">
+            <svg width="24" height="24">
+              <use xlink:href="#icon-mail"></use>
+            </svg><span>yandex@info.ru</span></a></div>
+      </div>
+    </div>
+    <div class="modal-overlay success-modal-overlay">
+      <div class="modal success-modal" id="success-modal">
+        <button class="modal__close success-modal__close" type="button">
+          <svg width="24" height="24">
+            <use xlink:href="#icon-close"></use>
+          </svg>
+        </button>
+        <div class="modal__content success-modal__content">
+          <svg width="100" height="100">
+            <use xlink:href="#icon-thumb-up"></use>
+          </svg><span>Спасибо&nbsp;!</span>
+        </div>
       </div>
     </div>
     <script src="./js/bundle.js"></script>
