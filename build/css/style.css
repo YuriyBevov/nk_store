@@ -398,7 +398,7 @@ template {
   display: none; }
 
 /* общие классы для сайта */
-.wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
+.wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .registration-page .registration__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
   max-width: 1440px;
   min-width: 320px;
   padding: 0 30px;
@@ -406,13 +406,13 @@ template {
   height: 100%;
   margin: 0 auto; }
   @media (max-width: 1140px) {
-    .wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
+    .wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .registration-page .registration__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
       padding: 0 15px; } }
   @media (max-width: 480px) {
-    .wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
+    .wrapper, .catalog-nav__wrapper, .mobile-menu__wrapper, .catalog-section__wrapper, .header__wrapper, .intro-swiper__container, .cats__wrapper, .popular__wrapper, .index .about__wrapper, .reviews__wrapper, .product-info__wrapper, .cart__wrapper, .catalog__wrapper, .favourite__wrapper, .profile .user-profile__wrapper, .profile .offer-history__wrapper, .user .user__wrapper, .details__wrapper, .contacts__wrapper, .registration-page .registration__wrapper, .history__wrapper, .info-section__wrapper, .not-found__wrapper, .footer__wrapper {
       padding: 0 10px; } }
 
-.fieldset-default, .auth-modal__body form fieldset, .user .user__data fieldset, .contacts form fieldset {
+.fieldset-default, .auth-modal__body form fieldset, .add-review-modal__content fieldset, .user .user__data fieldset, .contacts form fieldset, .registration-page .registration__data fieldset {
   margin: 0;
   padding: 0;
   border: 0; }
@@ -432,7 +432,7 @@ template {
       margin-bottom: 20px; } }
 
 @media (max-width: 480px) {
-  .section-pt-mobile, .profile .user-profile, .user .user {
+  .section-pt-mobile, .profile .user-profile, .user .user, .registration-page .registration {
     padding-top: 20px; } }
 
 .text-nowrap, .profile .offer-history__desc-box .field-desc {
@@ -484,7 +484,7 @@ template {
   -o-object-fit: contain;
      object-fit: contain; }
 
-.button-default, .search-field button, .catalog-section__close, .favourite-card__overlay button, .zoomist-modal__close, .modal__close, .product-info__slider-container button, .user .user .user__form-action button, .contacts form button {
+.button-default, .search-field button, .catalog-section__close, .favourite-card__overlay button, .zoomist-modal__close, .modal__close, .add-review-modal__content form button[type="submit"], .product-info__slider-container button, .user .user .user__form-action button, .contacts form button, .registration-page .registration__data .registration__form-action button {
   border: 0;
   margin: 0;
   padding: 0;
@@ -1807,33 +1807,34 @@ button.swiper-pagination-bullet {
           background-image: url("../assets/img/arrow.svg");
           transform: rotate(-90deg);
           transition: transform 0.3s ease-out; }
-      .mobile-menu__catalog-item ul {
+      .mobile-menu__catalog-item .catalog-section-mobile-list {
         display: none;
-        -webkit-animation: fadeIn 0.3s ease-in forwards;
-                animation: fadeIn 0.3s ease-in forwards; }
-      .mobile-menu__catalog-item.active span::after {
-        transform: rotate(0); }
-      .mobile-menu__catalog-item.active ul {
-        display: block;
         height: -webkit-fit-content;
         height: -moz-fit-content;
         height: fit-content;
         max-height: 300px;
         overflow: hidden;
         overflow-y: auto;
-        margin: 20px 0; }
-        .mobile-menu__catalog-item.active ul li {
+        margin: 10px 0;
+        padding: 0 20px;
+        -webkit-animation: fadeIn 0.3s ease-in forwards;
+                animation: fadeIn 0.3s ease-in forwards; }
+        .mobile-menu__catalog-item .catalog-section-mobile-list li {
           margin-bottom: 10px;
           padding-left: 15px; }
-          .mobile-menu__catalog-item.active ul li a {
+          .mobile-menu__catalog-item .catalog-section-mobile-list li a {
             font-size: 16px;
             line-height: 1.2;
             color: #2C2B3C;
             transition: color 0.3s ease-out; }
-            .mobile-menu__catalog-item.active ul li a:hover, .mobile-menu__catalog-item.active ul li a:focus {
+            .mobile-menu__catalog-item .catalog-section-mobile-list li a:hover, .mobile-menu__catalog-item .catalog-section-mobile-list li a:focus {
               color: rgba(143, 31, 232, 0.86); }
-            .mobile-menu__catalog-item.active ul li a:active {
+            .mobile-menu__catalog-item .catalog-section-mobile-list li a:active {
               opacity: 0.8; }
+      .mobile-menu__catalog-item.active span::after {
+        transform: rotate(0); }
+      .mobile-menu__catalog-item.active .catalog-section-mobile-list {
+        display: block; }
   .mobile-menu__nav {
     padding-bottom: 30px; }
     .mobile-menu__nav-item {
@@ -1847,6 +1848,28 @@ button.swiper-pagination-bullet {
           color: rgba(143, 31, 232, 0.86); }
         .mobile-menu__nav-item a:active {
           opacity: 0.8; }
+
+.catalog-section-mobile-list {
+  margin: 0; }
+  .catalog-section-mobile-list--multi {
+    padding: 0 !important; }
+  .catalog-section-mobile-list li {
+    padding-left: 0 !important;
+    padding-right: 20px; }
+    .catalog-section-mobile-list li span {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      background-color: #f5f5dc; }
+      .catalog-section-mobile-list li span::after {
+        display: none; }
+    .catalog-section-mobile-list li li {
+      padding-left: 20px !important; }
 
 .catalog-section {
   display: none;
@@ -1907,6 +1930,7 @@ button.swiper-pagination-bullet {
     padding-right: 20px; }
   .catalog-section__item {
     width: calc(50% - 20px);
+    min-width: 200px;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -1930,6 +1954,41 @@ button.swiper-pagination-bullet {
     @media (max-width: 960px) {
       .catalog-section__item {
         width: 100%; } }
+  .catalog-section__list--multi {
+    height: 100%;
+    padding-right: 0;
+    margin-right: 20px; }
+    .catalog-section__list--multi > .catalog-section__item {
+      height: inherit;
+      overflow: hidden;
+      overflow-y: auto;
+      padding-right: 10px;
+      margin-right: 10px; }
+      .catalog-section__list--multi > .catalog-section__item:first-child {
+        border-right: 1px solid #f5f5dc; }
+      @media (max-width: 960px) {
+        .catalog-section__list--multi > .catalog-section__item {
+          height: -webkit-fit-content;
+          height: -moz-fit-content;
+          height: fit-content; }
+          .catalog-section__list--multi > .catalog-section__item:first-child {
+            border-right: none; } }
+    .catalog-section__list--multi .catalog-section__item span {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      margin-bottom: 10px;
+      background-color: #f5f5dc; }
+    .catalog-section__list--multi .catalog-section__item:first-child span {
+      color: rgba(143, 31, 232, 0.86); }
+    .catalog-section__list--multi .catalog-section__item:last-child span {
+      color: rgba(23, 123, 239, 0.86); }
+    .catalog-section__list--multi .catalog-section__list--inner {
+      max-width: 100%; }
   .catalog-section__side {
     position: -webkit-sticky;
     position: sticky;
@@ -2406,12 +2465,6 @@ button.swiper-pagination-bullet {
 .user-rate__stars {
   display: flex;
   align-items: center; }
-  .user-rate__stars .rating-star {
-    fill: #666666;
-    opacity: 0.4; }
-  .user-rate__stars .rating-star.active {
-    fill: #a58e18;
-    opacity: 1; }
 
 .user-rate__date span {
   font-size: 14px !important; }
@@ -3024,7 +3077,7 @@ button.swiper-pagination-bullet {
     cursor: pointer; }
     .accordeon-head svg {
       position: absolute;
-      top: 10px;
+      top: 15px;
       right: 10px;
       transform: rotate(180deg);
       transition: transform 0.3s linear; }
@@ -3040,6 +3093,14 @@ button.swiper-pagination-bullet {
     height: 100%;
     -o-object-fit: contain;
        object-fit: contain; }
+
+.rating-star {
+  fill: #666666;
+  opacity: 0.4; }
+
+.rating-star.active {
+  fill: #a58e18;
+  opacity: 1; }
 
 body {
   position: relative; }
@@ -3298,6 +3359,45 @@ body {
   border: none;
   border-bottom: 1px solid #2C2B3C;
   background-color: transparent; }
+
+.add-review-modal__content {
+  padding: 17px 20px; }
+  .add-review-modal__content fieldset {
+    margin-bottom: 20px; }
+  .add-review-modal__content form button[type="submit"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #2C2B3C;
+    color: #2C2B3C;
+    transition: color 0.3s ease-out, border-color 0.3s ease-out; }
+    .add-review-modal__content form button[type="submit"]:hover, .add-review-modal__content form button[type="submit"]:focus {
+      border-color: rgba(23, 123, 239, 0.86);
+      color: rgba(23, 123, 239, 0.86); }
+
+.add-review-modal span {
+  display: inline-block;
+  margin-bottom: 10px; }
+
+.add-review-modal label {
+  cursor: pointer; }
+
+.add-review-modal__rate {
+  display: flex;
+  align-items: center; }
+
+.add-review-modal__review {
+  display: flex;
+  flex-direction: column; }
+  .add-review-modal__review label {
+    margin-bottom: 20px; }
+  .add-review-modal__review textarea {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    overflow-y: auto;
+    resize: none;
+    padding: 10px;
+    color: #2C2B3C; }
 
 .header {
   position: -webkit-sticky;
@@ -5165,6 +5265,80 @@ body {
     .contacts form button:hover, .contacts form button:focus {
       color: rgba(143, 31, 232, 0.86);
       border-color: rgba(143, 31, 232, 0.86); }
+
+/* registration-page sections */
+.registration-page .registration {
+  padding-bottom: 40px; }
+  .registration-page .registration__wrapper {
+    display: flex;
+    flex-wrap: wrap; }
+  .registration-page .registration__avatar {
+    margin-bottom: 30px; }
+    .registration-page .registration__avatar img {
+      width: 160px;
+      height: 160px;
+      margin-right: 20px; }
+    .registration-page .registration__avatar input[type="file"] {
+      display: none; }
+    .registration-page .registration__avatar label {
+      font-size: 16px;
+      color: rgba(23, 123, 239, 0.86);
+      cursor: pointer; }
+  .registration-page .registration__data {
+    width: 100%; }
+    .registration-page .registration__data form {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 640px; }
+      .registration-page .registration__data form fieldset {
+        margin-bottom: 20px;
+        margin-right: 10px;
+        width: 50%;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content; }
+        .registration-page .registration__data form fieldset.city {
+          width: 100%;
+          max-width: 100%; }
+        @media (max-width: 480px) {
+          .registration-page .registration__data form fieldset {
+            margin-right: 0; } }
+      .registration-page .registration__data form label {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: rgba(23, 123, 239, 0.86); }
+      .registration-page .registration__data form input {
+        font-size: 16px;
+        padding: 10px;
+        width: 300px;
+        height: 40px;
+        border: none;
+        color: #2C2B3C; }
+        .registration-page .registration__data form input::-moz-placeholder {
+          font-size: 16px;
+          color: #2C2B3C; }
+        .registration-page .registration__data form input::placeholder {
+          font-size: 16px;
+          color: #2C2B3C; }
+    .registration-page .registration__data .registration__birth-controls {
+      display: flex;
+      align-items: center; }
+      .registration-page .registration__data .registration__birth-controls .custom-select-container {
+        margin-right: 5px; }
+        .registration-page .registration__data .registration__birth-controls .custom-select-container .custom-select-opener {
+          height: 40px; }
+    .registration-page .registration__data fieldset {
+      display: flex;
+      flex-direction: column; }
+    .registration-page .registration__data .registration__form-action button {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #2C2B3C;
+      color: #2C2B3C;
+      transition: color 0.3s ease-out, border-color 0.3s ease-out; }
+      .registration-page .registration__data .registration__form-action button:hover, .registration-page .registration__data .registration__form-action button:focus {
+        border-color: rgba(23, 123, 239, 0.86);
+        color: rgba(23, 123, 239, 0.86); }
 
 /* common sections */
 .history {

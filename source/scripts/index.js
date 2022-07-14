@@ -21,4 +21,5 @@ import './modules/modalOpener.js';
 import './modules/iMask.js';
 import './modules/favouriteCardRemove.js';
 import './modules/showMoreReviews.js';
+import './modules/addReviewModalRate.js';
 import './modules/zoomist.js';

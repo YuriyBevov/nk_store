@@ -17,7 +17,7 @@
     &__close {
         position: absolute;
         top: -12px;
-        right: 20px;
+        right: 20px; 
 
         @extend .button-default;
 
@@ -81,6 +81,7 @@
 
     &__item {
         width: calc(50% - 20px);
+        min-width: 200px;
         height: fit-content;
         margin-bottom: 15px;
         margin-right: auto;
@@ -102,6 +103,59 @@
 
         @media(max-width: 960px) {
             width: 100%;
+        }
+    }
+
+    &__list--multi {
+        height: 100%;
+        padding-right: 0;
+        margin-right: 20px;
+
+        & > .catalog-section__item {
+            height: inherit;
+            overflow: hidden;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-right: 10px;
+
+            &:first-child {
+                border-right: 1px solid $beige;
+            }
+
+            @media(max-width: 960px) {
+                height: fit-content;
+
+                &:first-child {
+                    border-right: none;
+                }
+            }
+        }
+        .catalog-section__item {
+            span {
+                position: sticky;
+                top: 0;
+
+                display: block;
+                width: 100%;
+
+                padding: 10px;
+                font-size: 20px;
+                margin-bottom: 10px;
+
+                background-color: $beige;
+            }
+
+            &:first-child span {
+                color: $purple;
+            }
+
+            &:last-child span {
+                color: $blue;
+            }
+        }
+
+        .catalog-section__list--inner {
+            max-width: 100%;
         }
     }
 

@@ -129,9 +129,31 @@
                 }
             }
 
-            ul {
+            .catalog-section-mobile-list {
                 display: none;
+                
+                height: fit-content;
+                max-height: 300px;
+                overflow: hidden;
+                overflow-y: auto;
+                margin: 10px 0;
+                padding: 0 20px;
+                
                 animation: fadeIn 0.3s ease-in forwards;
+
+                li {
+                    margin-bottom: 10px;
+                    padding-left: 15px;
+
+                    a {
+                        font-size: 16px;
+                        line-height: 1.2;    
+
+                        color: $main-black;
+
+                        @include focus-color($purple);
+                    }
+                }
             }
 
             &.active {
@@ -139,27 +161,8 @@
                     transform: rotate(0);
                 }
 
-                ul {
+                .catalog-section-mobile-list {
                     display: block;
-                    height: fit-content;
-                    max-height: 300px;
-                    overflow: hidden;
-                    overflow-y: auto;
-                    margin: 20px 0;
-
-                    li {
-                        margin-bottom: 10px;
-                        padding-left: 15px;
-
-                        a {
-                            font-size: 16px;
-                            line-height: 1.2;    
-
-                            color: $main-black;
-
-                            @include focus-color($purple);
-                        }
-                    }
                 }
             }
         }
@@ -176,6 +179,39 @@
 
                 @include focus-color($purple);
             }
+        }
+    }
+}
+
+.catalog-section-mobile-list {
+    margin: 0;
+
+    &--multi {
+        padding: 0 !important;
+    }
+
+    li {
+        padding-left: 0 !important;
+        padding-right: 20px;
+
+        span {
+            position: sticky;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 10px;
+
+            background-color: $beige;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        li {
+            padding-left: 20px !important;
         }
     }
 }

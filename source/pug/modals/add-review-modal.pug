@@ -1,0 +1,38 @@
+include ../mixins/rating-star
+
+.modal-overlay.add-review-modal-overlay
+  .modal(id="add-review").add-review-modal
+    button(type="button").modal__close.add-review-modal__close
+      svg(width="24" height="24")
+        use(xlink:href="#icon-close")
+    .modal__content.add-review-modal__content
+      span Оставьте свою оценку:
+      form(action="#")
+        fieldset.add-review-modal__rate
+          .star-control  
+            label(for="rate_1")
+              +rating-star(true)
+            input(type="radio" name="rate" id="rate_1" checked).visually-hidden
+          .star-control  
+            label(for="rate_2")
+              +rating-star(false)
+            input(type="radio" name="rate"  id="rate_2").visually-hidden
+          .star-control  
+            label(for="rate_3")
+              +rating-star(false)
+            input(type="radio" name="rate"  id="rate_3").visually-hidden
+          .star-control  
+            label(for="rate_4")
+              +rating-star(false)
+            input(type="radio" name="rate"  id="rate_4").visually-hidden
+          .star-control  
+            label(for="rate_5")
+              +rating-star(false)
+            input(type="radio" name="rate"  id="rate_5").visually-hidden
+        
+        fieldset.add-review-modal__review
+          label(for="review_text") Оставьте свой отзыв:
+          textarea(id="review_text")
+
+        button(type="submit") Опубликовать
+          

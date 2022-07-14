@@ -1,0 +1,113 @@
+.registration-page {
+  .registration {
+    @extend .section-pt-mobile;
+    padding-bottom: 40px;
+    &__wrapper {
+        @extend .wrapper;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__avatar {
+        margin-bottom: 30px;
+        img {
+            width: 160px;
+            height: 160px;
+            margin-right: 20px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            font-size: 16px;
+            color: $blue;
+
+            cursor: pointer;
+        }
+    }
+
+    &__data {
+        width: 100%;
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 640px;
+
+            fieldset {
+                margin-bottom: 20px;
+                margin-right: 10px;
+                width: 50%;
+                max-width: fit-content;
+
+                &.city {
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                @media(max-width: $sm_w) {
+                    margin-right: 0;
+                }
+                
+            }
+
+            label {
+                font-size: 16px;
+                margin-bottom: 15px;
+                color: $blue;
+            }
+
+            input {
+                font-size: 16px;
+                padding: 10px;
+                width: 300px;
+                height: 40px;
+                border: none;
+                color: $main-black;
+                &::placeholder {
+                    font-size: 16px;
+                    color: $main-black;
+                }
+            }
+        }
+
+        .registration__birth-controls {
+            display: flex;
+            align-items: center;
+
+            .custom-select-container {
+                margin-right: 5px;
+
+                .custom-select-opener {
+                    height: 40px;
+                }
+            }
+        }
+        
+        fieldset {
+            @extend .fieldset-default;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .registration__form-action {
+            button {
+                @extend .button-default;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid $main-black;
+                color: $main-black;
+                
+                transition: color $main-transition, border-color $main-transition;
+
+                &:hover,
+                &:focus {
+                    border-color: $blue;
+                    color: $blue;    
+                }
+            }
+        }
+    }
+  }
+}

@@ -1,5 +1,15 @@
 mixin catalog-section-mobile(obj)
-  ul
-    each item in obj.catalog  
-      li
-        a(href= item.url)= item.name
+  if obj.type !== 'multi'
+    ul.catalog-section-mobile-list
+      each item in obj.catalog  
+        li
+          a(href= item.url)= item.name
+  else
+    ul.catalog-section-mobile-list.catalog-section-mobile-list--multi
+      each item in obj.catalog  
+        li
+          span= item.title
+          ul
+            each inner in item.catalog
+              li
+                a(href= inner.url)= inner.name

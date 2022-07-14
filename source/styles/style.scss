@@ -41,6 +41,7 @@
 @import "components/tabs";
 @import "components/accordeon";
 @import "components/developer";
+@import "components/rating-star";
 
 //--- modals
 @import "modals/zoomist-modal";
@@ -49,6 +50,7 @@
 @import "modals/auth-modal";
 @import "modals/size-modal";
 @import "modals/product-reviews-modal";
+@import "modals/add-review-modal";
 
 // blocks
 @import "common/header";
@@ -85,6 +87,9 @@
 
 /* details-page sections */
 @import "sections/contacts-page/contacts";
+
+/* registration-page sections */
+@import "sections/registration-page/registration";
 
 /* common sections */
 @import "sections/common/history";

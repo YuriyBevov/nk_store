@@ -123,26 +123,54 @@ nav.catalog-nav
         a(href="catalog.html").catalog-nav__link
           span Обувь
         
-        +catalog-section({
+        +catalog-section({ 
 
-            catalog: [ 
-              { name: 'Верхняя одежда', url: 'catalog.html' }, 
-              { name: 'Пиджаки и жакеты', url: 'catalog.html' }, 
-              { name: 'Жилеты', url: 'catalog.html' }, 
-              { name: 'Свитеры и кардиганы', url: 'catalog.html' }, 
-              { name: 'Свитшоты и худи', url: 'catalog.html' }, 
-              { name: 'Блузки и рубашки', url: 'catalog.html' }, 
-              { name: 'Футболки и лонгсливы', url: 'catalog.html' }, 
-              { name: 'Костюмы', url: 'catalog.html' }, 
-              { name: 'Платья и сарафаны', url: 'catalog.html' }, 
-              { name: 'Комбенизоны и боди', url: 'catalog.html' }, 
-              { name: 'Джинсы и штаны', url: 'catalog.html' }, 
-              { name: 'Юбки и шорты', url: 'catalog.html' }, 
-              { name: 'Колготки и носки', url: 'catalog.html' }, 
-              { name: 'Пижамы', url: 'catalog.html' }, 
-              { name: 'Нижнее белье', url: 'catalog.html' }, 
-              { name: 'Украшения', url: 'catalog.html' },
+            catalog: [
+              {
+                title: 'Девочки',
+                catalog: [
+                  {name: 'Кроссовки', url: 'catalog.html'},
+                  {name: 'Балетки', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'}
+                ]
+              },
+              {
+                title: 'Мальчики',
+                catalog: [
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'},
+                  {name: 'Кеды', url: 'catalog.html'},
+                  {name: 'Домашняя обувь', url: 'catalog.html'}
+                ]
+              }
             ],
+
+            type: 'multi',
 
             banner: { url: './assets/img/catalog-section_banner3.png', link: 'catalog.html' }
           }

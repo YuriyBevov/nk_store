@@ -1,0 +1,9 @@
+.rating-star {
+    fill: $gray;
+    opacity: 0.4;
+}
+
+.rating-star.active {
+    fill: $gold;
+    opacity: 1;
+}

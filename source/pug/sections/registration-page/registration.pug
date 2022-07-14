@@ -1,0 +1,49 @@
+section.registration
+  .registration__wrapper
+    .registration__avatar
+      img(src="./assets/img/user-avatar.png" alt="Аватар" width="80" height="80")
+      input(type="file" id="registration_avatar")
+      label(for="registration_avatar") Изменить
+    
+    .registration__data
+      form(action="#")
+        fieldset
+          label(for="registration_name") Имя
+          input(type="text" placeholder="Константин" id="registration_name")
+        fieldset
+          label(for="registration_surname") Фамилия
+          input(type="text" placeholder="Константинов" id="registration_surname")
+        fieldset
+          label(for="registration_mail") Email
+          input(type="text" placeholder="test@yandex.ru" id="registration_mail")
+        fieldset
+          label(for="registration_phone") Телефон
+          input(type="tel" placeholder="+7(921)123-45-67" id="registration_phone")
+
+        fieldset.registration__birth-field
+          label(for="registration_bday") Дата рождения
+          .registration__birth-controls.custom-select-birth-controls
+            select(id="registration_bday").custom-select-birth.custom-select-bday
+
+            select(id="registration_bmonth").custom-select-birth.custom-select-bmonth
+                option(value="Январь" selected) Январь
+                option(value="Февраль") Февраль
+                option(value="Март") Март
+                option(value="Апрель") Апрель
+                option(value="Май") Май
+                option(value="Июнь") Июнь
+                option(value="Июль") Июль
+                option(value="Август") Август
+                option(value="Сентябрь") Сентябрь
+                option(value="Октябрь") Октябрь
+                option(value="Ноябрь") Ноябрь
+                option(value="Декабрь") Декабрь
+        
+            select(id="registration_byear").custom-select-birth.custom-select-byear
+        
+        fieldset.city
+          label(for="registration_city") Город
+          input(type="text" placeholder="Санкт-Петербург" id="registration_city")
+
+        .registration__form-action
+          button(type="submit") Зарегистрироваться

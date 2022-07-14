@@ -3,10 +3,20 @@ mixin catalog-section(obj)
   .catalog-section
     .catalog-section__wrapper
 
-      ul.catalog-section__list
-        each item in obj.catalog  
-          li.catalog-section__item
-            a(href= item.url)= item.name
+      if obj.type !== 'multi'
+        ul.catalog-section__list
+          each item in obj.catalog  
+            li.catalog-section__item
+              a(href= item.url)= item.name
+      else 
+        ul.catalog-section__list.catalog-section__list--multi
+          each item in obj.catalog  
+            li.catalog-section__item
+              span= item.title
+              ul.catalog-section__list.catalog-section__list--inner
+                each inner in item.catalog
+                  li.catalog-section__item.catalog-section__item--inner
+                    a(href= inner.url)= inner.name
 
       .catalog-section__side
         button(type="button").catalog-section__close.js-close

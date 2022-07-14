@@ -20997,7 +20997,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_favouriteCardRemove_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_favouriteCardRemove_js__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/showMoreReviews.js */ "./source/scripts/modules/showMoreReviews.js");
 /* harmony import */ var _modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_modules_showMoreReviews_js__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _modules_zoomist_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/zoomist.js */ "./source/scripts/modules/zoomist.js");
+/* harmony import */ var _modules_addReviewModalRate_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/addReviewModalRate.js */ "./source/scripts/modules/addReviewModalRate.js");
+/* harmony import */ var _modules_addReviewModalRate_js__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_modules_addReviewModalRate_js__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _modules_zoomist_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/zoomist.js */ "./source/scripts/modules/zoomist.js");
+
 
 
 
@@ -21046,6 +21049,45 @@ if (accordeon) {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/addReviewModalRate.js":
+/*!******************************************************!*\
+  !*** ./source/scripts/modules/addReviewModalRate.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var rate = document.querySelector('.add-review-modal__rate');
+
+if (rate) {
+  var starControls = rate.querySelectorAll('.star-control label');
+
+  function setActiveRate(el) {
+    el.querySelector('.rating-star').classList.add('active');
+  }
+
+  var onClickSetRate = function onClickSetRate(evt) {
+    starControls.forEach(function (control) {
+      var star = control.querySelector('.rating-star');
+      star.classList.contains('active') ? star.classList.remove('active') : null;
+    });
+
+    for (var i = 0; i < starControls.length; i++) {
+      if (starControls[i] !== evt.currentTarget) {
+        setActiveRate(starControls[i]);
+      } else {
+        setActiveRate(starControls[i]);
+        return;
+      }
+    }
+  };
+
+  starControls.forEach(function (control) {
+    control.addEventListener('click', onClickSetRate);
+  });
+}
+
+/***/ }),
+
 /***/ "./source/scripts/modules/birthPicker.js":
 /*!***********************************************!*\
   !*** ./source/scripts/modules/birthPicker.js ***!
@@ -21058,66 +21100,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var custom_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! custom-select */ "./node_modules/custom-select/build/index.js");
 /* harmony import */ var custom_select__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(custom_select__WEBPACK_IMPORTED_MODULE_0__);
 
-var yearSelect = document.querySelector('#user_byear');
-var monthSelect = document.querySelector('#user_bmonth');
-var daySelect = document.querySelector('#user_bday');
+var birthFields = document.querySelectorAll('.custom-select-birth-controls');
 
-function populateYears() {
-  var date = new Date();
-  var year = date.getFullYear();
+if (birthFields.length) {
+  birthFields.forEach(function (field) {
+    var yearSelect = field.querySelector('.custom-select-byear');
+    var monthSelect = field.querySelector('.custom-select-bmonth');
+    var daySelect = field.querySelector('.custom-select-bday');
 
-  for (var i = 0; i <= 100; i++) {
-    var option = document.createElement('option');
-    option.textContent = year - i;
-    yearSelect.appendChild(option);
-  }
-}
+    function populateYears() {
+      var date = new Date();
+      var year = date.getFullYear();
 
-var sel;
+      for (var i = 0; i <= 100; i++) {
+        var option = document.createElement('option');
+        option.textContent = year - i;
+        yearSelect.appendChild(option);
+      }
+    }
 
-function populateDays(month) {
-  while (daySelect.firstChild) {
-    daySelect.removeChild(daySelect.firstChild);
-  }
+    var sel;
 
-  var dayNum;
+    function populateDays(month) {
+      while (daySelect.firstChild) {
+        daySelect.removeChild(daySelect.firstChild);
+      }
 
-  if (month === 'Январь' || month === 'Март' || month === 'Май' || month === 'Июль' || month === 'август' || month === 'Октябрь' || month === 'Декабрь') {
-    dayNum = 31;
-  } else if (month === 'Апрель' || month === 'Июнь' || month === 'Сентябрь' || month === 'Ноябрь') {
-    dayNum = 30;
-  } else {
-    var year = yearSelect.value;
-    var leap = year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
-    dayNum = leap ? 29 : 28;
-  }
+      var dayNum;
 
-  for (var i = 1; i <= dayNum; i++) {
-    var option = document.createElement('option');
-    option.textContent = i;
-    daySelect.appendChild(option);
-  }
+      if (month === 'Январь' || month === 'Март' || month === 'Май' || month === 'Июль' || month === 'август' || month === 'Октябрь' || month === 'Декабрь') {
+        dayNum = 31;
+      } else if (month === 'Апрель' || month === 'Июнь' || month === 'Сентябрь' || month === 'Ноябрь') {
+        dayNum = 30;
+      } else {
+        var year = yearSelect.value;
+        var leap = year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+        dayNum = leap ? 29 : 28;
+      }
 
-  if (sel) {
-    sel.forEach(function (i) {
-      i.destroy();
-    });
-  }
+      for (var i = 1; i <= dayNum; i++) {
+        var option = document.createElement('option');
+        option.textContent = i;
+        daySelect.appendChild(option);
+      }
 
-  sel = custom_select__WEBPACK_IMPORTED_MODULE_0___default()('.custom-select-birth');
-}
+      if (sel) {
+        sel.forEach(function (i) {
+          i.destroy();
+        });
+      }
 
-if (yearSelect && monthSelect && daySelect) {
-  yearSelect.onchange = function () {
-    populateDays(monthSelect.value);
-  };
+      sel = custom_select__WEBPACK_IMPORTED_MODULE_0___default()('.custom-select-birth');
+    }
 
-  monthSelect.onchange = function () {
-    populateDays(monthSelect.value);
-  };
+    yearSelect.onchange = function () {
+      populateDays(monthSelect.value);
+    };
 
-  populateYears();
-  populateDays('Январь');
+    monthSelect.onchange = function () {
+      populateDays(monthSelect.value);
+    };
+
+    populateYears();
+    populateDays('Январь');
+  });
 }
 
 /***/ }),

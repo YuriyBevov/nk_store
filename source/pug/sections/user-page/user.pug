@@ -22,10 +22,10 @@ section.user
 
         fieldset.user__birth-field
           label(for="user_bday") Дата рождения
-          .user__birth-controls
-            select(id="user_bday").custom-select-birth
+          .user__birth-controls.custom-select-birth-controls
+            select(id="user_bday").custom-select-birth.custom-select-bday
 
-            select(id="user_bmonth").custom-select-birth
+            select(id="user_bmonth").custom-select-birth.custom-select-bmonth
                 option(value="Январь" selected) Январь
                 option(value="Февраль") Февраль
                 option(value="Март") Март
@@ -39,7 +39,7 @@ section.user
                 option(value="Ноябрь") Ноябрь
                 option(value="Декабрь") Декабрь
         
-            select(id="user_byear").custom-select-birth
+            select(id="user_byear").custom-select-birth.custom-select-byear
         
         fieldset.city
           label(for="user_city") Город

@@ -80,9 +80,27 @@ section.offer-history
                         span.field-name Сум-я стоимость:
                         span.field-desc.price 999999руб.
                       
-                      // только если статус завершенный
+                      // только если статус заказа завершенный
                       .offer-history__desc-box
-                        a(href="#").review-btn Оставить отзыв
+                        a(href="#" data-modal-anchor="add-review").review-btn Оставить отзыв
+                  .accordeon-body-field
+                    img(src="./assets/img/cat4.png" width="100" height="100" alt="фото товара")
+                    .accordeon-body-field-desc
+                      a(href="#") Толстовка черная с крупным глянцевым принтом
+                      .offer-history__desc-box
+                        span.field-name Кол-во:
+                        span.field-desc.count 23шт.
+                      .offer-history__desc-box
+                        span.field-name Цена за 1ед.:
+                        span.field-desc.item-price 999999руб.
+                      
+                      .offer-history__desc-box
+                        span.field-name Сум-я стоимость:
+                        span.field-desc.price 999999руб.
+                      
+                      // только если статус заказа завершенный
+                      .offer-history__desc-box
+                        a(href="#" data-modal-anchor="add-review").review-btn Оставить отзыв
 
               .accordeon-field
                 .accordeon-head
@@ -183,4 +201,6 @@ section.offer-history
             p Tab 4
           .tab-content-box.offer-history__tab-content-box(data-tab-content="5")
             p Tab 5
+  
+    include ../../modals/add-review-modal
             
