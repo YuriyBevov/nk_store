@@ -2,7 +2,7 @@ $product_card_header_width: 260px;
 $product_card_header_height: 280px;
 .product-card {
     width: 100%;
-    max-width: $product_card_header_width;
+    //max-width: $product_card_header_width; !!
     background-color: $main-bg;
     border-radius: 4px;
 
