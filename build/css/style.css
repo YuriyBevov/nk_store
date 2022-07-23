@@ -1402,7 +1402,6 @@ button.swiper-pagination-bullet {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  min-width: 220px;
   max-height: 150px;
   overflow-y: auto;
   z-index: 101; }
