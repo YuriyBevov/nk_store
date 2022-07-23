@@ -1766,7 +1766,8 @@ button.swiper-pagination-bullet {
       margin-bottom: 10px; }
     .mobile-menu__user-link {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      padding: 5px 0;
       font-size: 18px;
       line-height: 1;
       color: #2C2B3C;

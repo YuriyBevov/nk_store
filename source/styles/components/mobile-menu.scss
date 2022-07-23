@@ -1,7 +1,6 @@
 .mobile-menu {
     display: none;
     padding: 20px 0;
-
     height: 100vh;
     max-height: calc(100vh - 119px);
     position: absolute;
@@ -64,7 +63,8 @@
 
         &-link {
             display: flex;
-            align-items: flex-end;
+            align-items: center;
+            padding: 5px 0;
 
             font-size: 18px;
             line-height: 1;
